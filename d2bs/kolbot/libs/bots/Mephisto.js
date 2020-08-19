@@ -138,6 +138,7 @@ function Mephisto() {
 		throw new Error("Failed to move to Durance Level 3");
 	}
 
+	delay(10000);	
 	if (Config.Mephisto.KillCouncil) {
 		this.killCouncil();
 	}

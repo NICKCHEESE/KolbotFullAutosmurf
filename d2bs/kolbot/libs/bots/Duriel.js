@@ -55,6 +55,7 @@ function Duriel () {
 		throw new Error("Failed to move to Tal Rasha's Tomb");
 	}
 
+	delay(10000)		  
 	if (!Pather.moveToPreset(me.area, 2, 152, -11, 3)) {
 		throw new Error("Failed to move to Orifice");
 	}

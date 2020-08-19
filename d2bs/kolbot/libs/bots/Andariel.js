@@ -5,6 +5,7 @@
 */
 
 function Andariel () {
+	delay(20000);	  
 	this.killAndariel = function () {
 		var i,
 			target = getUnit(1, 156);
@@ -40,7 +41,7 @@ function Andariel () {
 	if (!Pather.moveToExit([36, 37], true)) {
 		throw new Error("Failed to move to Catacombs Level 4");
 	}
-
+	delay(10000);
 	Pather.moveTo(22549, 9520);
 
 	if (me.classid === 1 && me.gametype === 0) {
