@@ -1,4 +1,11 @@
-## Rules
+This is just a little project to get a full team of bots go from level 1 to killing hell Baal.
+Consists of an amalgamation of code and programs from many different sources and authors. 
+Still very much a work in progress
+
+
+
+
+# Rules
 
 1. D2BS, D2Bot and kolbot # are educational tools with an open source developer community. These tools are meant to be used offline or on private servers that explicitly allow them. These tools are not meant to be abused on battle.net (a Blizzard Entertainment entity).
 
