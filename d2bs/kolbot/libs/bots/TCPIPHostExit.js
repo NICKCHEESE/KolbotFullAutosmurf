@@ -10,8 +10,8 @@ function TCPIPHostExit() {
 	delay(10000);
 	
 	
-	quit(true);
+	quit();
 	
 	
-	return true;
+	
 }

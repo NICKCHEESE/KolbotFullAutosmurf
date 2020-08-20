@@ -10,10 +10,10 @@ function AutoSmurf() {
 	// USER SETTINGS
 	// -------- Normal Difficulty -------------
 	var caveLvl = 7,
-		tristLvl = 15,
+		tristLvl = 16,
 		tombsLvl = 26,
 		mephLvl = 26,
-		diaLvl = 27,
+		diaLvl = 30,
 		baalLvl = 48,
 	// -------- Nightmare Difficulty ----------
 		mephLvlnm = 48,

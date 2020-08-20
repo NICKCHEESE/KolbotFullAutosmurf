@@ -22,6 +22,7 @@ var AutoBuildTemplate = {
 
 	1:	{	
 			Update: function () {
+				Config.AutoEquip = true;
 				Config.TownCheck = false; // Don't go to town for more potions
 				Config.StashGold = 10000; // Minimum amount of gold to stash.
 				Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];

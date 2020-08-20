@@ -75,28 +75,29 @@ var AutoBuildTemplate = {
 			//SkillPoints: [-1],										// This doesn't matter. We don't have skill points to spend at lvl 1
 			//StatPoints: [-1,-1,-1,-1,-1],								// This doesn't matter. We don't have stat points to spend at lvl 1
 			Update: function () {
-            Config.TownCheck = false; // Don't go to town for more potions
-            Config.StashGold = 10000; // Minimum amount of gold to stash.
-            Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
-            Config.LowManaSkill = [0, 0];
-            Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Keep tons of health potions!
-            Config.MinColumn = [3, 3, 3, 3];
-            Config.OpenChests = true; // Might as well open em.
-            Config.Cubing = false; // Don't cube yet!
-            Config.Inventory[0] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-            Config.Inventory[1] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-            Config.Inventory[2] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-            Config.Inventory[3] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-            Config.OpenChests = true;
-            Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
-            Config.LogExperience = true; //Print experience statistics in the manager.
-            Config.StashGold = 200; //Minimum amount of gold to stash.
-            Config.UseHP = 50;
-            Config.UseMP = 15;
-            Config.UseRejuvHP = 35;
-			Config.Cubing=false;
-            Config.PickRange = 60;
-            Config.BossPriority = true;
+				Config.AutoEquip = true;	
+				Config.TownCheck = false; // Don't go to town for more potions
+				Config.StashGold = 10000; // Minimum amount of gold to stash.
+				Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
+				Config.LowManaSkill = [0, 0];
+				Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Keep tons of health potions!
+				Config.MinColumn = [3, 3, 3, 3];
+				Config.OpenChests = true; // Might as well open em.
+				Config.Cubing = false; // Don't cube yet!
+				Config.Inventory[0] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+				Config.Inventory[1] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+				Config.Inventory[2] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+				Config.Inventory[3] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+				Config.OpenChests = true;
+				Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
+				Config.LogExperience = true; //Print experience statistics in the manager.
+				Config.StashGold = 200; //Minimum amount of gold to stash.
+				Config.UseHP = 50;
+				Config.UseMP = 15;
+				Config.UseRejuvHP = 35;
+				Config.Cubing=false;
+				Config.PickRange = 60;
+				Config.BossPriority = true;
 			}
 		},
 

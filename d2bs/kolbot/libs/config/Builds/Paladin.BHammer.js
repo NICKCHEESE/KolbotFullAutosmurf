@@ -79,6 +79,7 @@ var AutoBuildTemplate = {
 			//SkillPoints: [-1],										// This doesn't matter. We don't have skill points to spend at lvl 1]
 			//StatPoints: [-1,-1,-1,-1,-1],								// This doesn't matter. We don't have stat points to spend at lvl 1
 			Update: function () {
+				Config.AutoEquip = true;
 				Config.TownCheck = false; // Don't go to town for more potions
 				Config.StashGold = 10000; // Minimum amount of gold to stash.
 				Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
