@@ -94,8 +94,6 @@ function LoadConfig() {
 	Scripts.OuterSteppes = false;
 	Scripts.Izual = false;
 	Scripts.Hephasto = false;
-		Config.Hephasto.ClearRiver = false; // Clear river after killing Hephasto
-		Config.Hephasto.ClearType = 0xF; // 0xF = skip normal, 0x7 = champions/bosses, 0 = all
 	Scripts.Vizier = false; // Intended for classic sorc, kills Vizier only.
 	Scripts.FastDiablo = false;
 	Scripts.Diablo = false;
@@ -153,7 +151,6 @@ function LoadConfig() {
 		Config.TravincalLeech.Helper = true; // If set to true the character will teleport to the stairs and help attack.
 	Scripts.MFHelper = true; // Run the same MF run as the MFLeader. Leader must have Config.MFLeader = true
 	Scripts.Wakka = false; // Walking chaos leecher with auto leader assignment, stays at safe distance from the leader
-		Config.Wakka.Wait = 1; // Minutes to wait for leader
 	Scripts.SealLeecher = false; // Enter safe portals to Chaos. Leader should run SealLeader.
 	Scripts.DiabloHelper = true; // Chaos helper, kills monsters and doesn't open seals on its own.
 		Config.DiabloHelper.Wait = 120; // Seconds to wait for a runner to be in Chaos. If Config.Leader is set, it will wait only for the leader.
@@ -320,19 +317,18 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/sell.nip");
 	Config.PickitFiles.push("Autosmurf/merc.nip");
 	
-	Config.PickitFiles.push("Archive/Charms.nip");
-	Config.PickitFiles.push("Archive/Crafting.nip");
-	Config.PickitFiles.push("Archive/PSet.nip");
-	Config.PickitFiles.push("Archive/magic-rare.nip");
-	Config.PickitFiles.push("Archive/Jewels.nip");
-	Config.PickitFiles.push("Archive/keyorg.nip");
-	Config.PickitFiles.push("Archive/Unique.nip");
-	Config.PickitFiles.push("Archive/Set.nip");
-	Config.PickitFiles.push("Archive/jewels2.nip");
-	Config.PickitFiles.push("Archive/therealpickit.nip");
-	Config.PickitFiles.push("Archive/White.nip");
-	Config.PickitFiles.push("Archive/White1.nip");
-	Config.PickitFiles.push("Archive/White2.nip");
+	Config.PickitFiles.push("Autosmurf/Charms.nip");
+	Config.PickitFiles.push("Autosmurf/Crafting.nip");
+	Config.PickitFiles.push("Autosmurf/magic-rare.nip");
+	Config.PickitFiles.push("Autosmurf/Jewels.nip");
+	Config.PickitFiles.push("Autosmurf/keyorg.nip");
+	Config.PickitFiles.push("Autosmurf/Unique.nip");
+	Config.PickitFiles.push("Autosmurf/Set.nip");
+	Config.PickitFiles.push("Autosmurf/jewels2.nip");
+	Config.PickitFiles.push("Autosmurf/therealpickit.nip");
+	Config.PickitFiles.push("Autosmurf/White.nip");
+	Config.PickitFiles.push("Autosmurf/White1.nip");
+	Config.PickitFiles.push("Autosmurf/White2.nip");
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = false; // Check and pick items between attacks
 	Config.ManualPlayPick = false; // If set to true and D2BotMap entry script is used, will enable picking in manual play.

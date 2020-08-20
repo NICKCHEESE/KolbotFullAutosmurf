@@ -14,18 +14,18 @@ function AutoSmurf() {
 		tombsLvl = 24,
 		mephLvl = 24,
 		diaLvl = 27,
-		baalLvl = 44,
+		baalLvl = 45,
 	// -------- Nightmare Difficulty ----------
 		mephLvlnm = 45,
 		diaLvlnm = 50,
 		mfLvlnm = 58,
-		baalLvlnm = 70,
+		baalLvlnm = 77,
 	// ---------- Hell Difficulty --------------
-		mephLvlhell = 70,
+		mephLvlhell = 77,
 		diaLvlhell = 80,
 		mfLvlhell = 86,
 
-		raiseTheDeads = false, //if using a necro, attemps to raise some skeletons in nightmare and hell
+		raiseTheDeads = true, //if using a necro, attemps to raise some skeletons in nightmare and hell
 		
 		maxWaitTimeMinutes = 3, //Max time to wait in case smurf synchronization fails
 	
@@ -152,8 +152,8 @@ function AutoSmurf() {
 
 			print("I am the BOer");
 		} else {
-			for (var i = 0 ; i < Config.AutoSmurf.OtherChars.length ; i += 1) {
-				if (Config.AutoSmurf.OtherChars[i] === me.name) {
+			for (var i = 0 ; i < Config.AutoSmurf.NonSorcChar.length ; i += 1) {
+				if (Config.AutoSmurf.NonSorcChar[i] === me.name) {
 					otherChar = true;
 
 					print("I am a Follower");
