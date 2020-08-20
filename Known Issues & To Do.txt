@@ -1,6 +1,9 @@
 Biggest known issue by far: Myself. I only 'know' how to read tweak code/scripts. I'm too stupid to write them, or at least write them properly.
 
 
+I also, ovbiously, have no idea what I'm doing. But, I'm learning.
+
+
 Need/want to change NPC's in Autosmurf scripts from ("name") to (NPC.Name)
 
 
