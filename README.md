@@ -1,5 +1,7 @@
 This is just a little project to get a full team of bots go from level 1 to killing hell Baal.
+
 Consists of an amalgamation of code and programs from many different sources and authors. 
+
 Still very much a work in progress
 
 
