@@ -4,7 +4,7 @@ include("OOG.js");
 include("gambling.js");
 include("craftingsystem.js");
 include("common/misc.js");
-
+include("common/util.js");
 
 var i, j, gameInfo, joinInfo, gameStart, ingame, handle,
 	gameCount = DataFile.getStats().runs + 1,
@@ -20,55 +20,67 @@ function ReceiveCopyData(mode, msg) {
 	var obj;
 
 	switch (msg) {
-		case "Handle":
-			handle = mode;
+	case "Handle":
+		handle = mode;
+
 		break;
 	}
 
 	switch (mode) {
-		case 1: // JoinInfo
-			joinInfo = JSON.parse(msg);
+	case 1: // JoinInfo
+		//print("Got Join Info");
+
+		joinInfo = JSON.parse(msg);
+
 		break;
-		case 2: // Game info
-			gameInfo = JSON.parse(msg);
+	case 2: // Game info
+		print("Recieved Game Info");
+
+		gameInfo = JSON.parse(msg);
+
 		break;
-		case 3: // Game request
-			if (AutoMule.inGame || Gambling.inGame || TorchSystem.inGame || CraftingSystem.inGame) {
-				break;
-			}
-			if (gameInfo) {
-				obj = JSON.parse(msg);
-				D2Bot.joinMe(obj.profile, me.gamename || "", "", me.gamepassword || "", me.gameReady ? "yes" : "no");
-			}
+	case 3: // Game request
+		// Don't let others join mule/torch/key/gold drop game
+		if (AutoMule.inGame || Gambling.inGame || TorchSystem.inGame || CraftingSystem.inGame) {
+			break;
+		}
+
+		if (gameInfo) {
+			obj = JSON.parse(msg);
+
+			D2Bot.joinMe(obj.profile, me.gamename || "", "", me.gamepassword || "", me.gameReady ? "yes" : "no");
+		}
+
 		break;
-		case 4:
-			// Heartbeat ping
-			if (msg === "pingreq") {
-				sendCopyData(null, me.windowtitle, 4, "pingrep");
-			}
+	case 4:
+		// Heartbeat ping
+		if (msg === "pingreq") {
+			sendCopyData(null, me.windowtitle, 4, "pingrep");
+		}
+
 		break;
 	}
 }
 
-function timer(tick) {
-	if (!tick) {
-		return "";
-	}
-	var min, sec;
-	min = Math.floor((getTickCount() - tick) / 60000).toString();
-	
-	if (min <= 9) {
-		min = "0" + min;
-	}
-	sec = (Math.floor((getTickCount() - tick) / 1000) % 60).toString();
-	
-	if (sec <= 9) {
-		sec = "0" + sec;
-	}
-	return " (" + min + ":" + sec + ")";
+function timer (tick) {
+	return " (" + new Date(getTickCount() - tick).toISOString().slice(11, -5) + ")";
+			
+  
+			  
+															  
+ 
+				
+				  
+  
+																	
+ 
+				
+				  
+  
+									 
 }
 
-function main() {
+function main () {
 	debugLog(me.profile);
 	addEventListener('copydata', ReceiveCopyData);
 
@@ -82,7 +94,7 @@ function main() {
 
 	while (!gameInfo) {
 		D2Bot.requestGameInfo();
-		delay(10000);
+		delay(500);
 	}
 
 	if (gameInfo.error) {
@@ -138,40 +150,40 @@ function locationAction() {
 
 	MainSwitch:
 	switch (ScreenLocation) {
-		case 0:// Splash Screen
+		case 0: // Splash Screen
 		break;
-		case 8:// Main Screen
-			ControlAction.click(6, 264, 433, 272, 35);//Other Multiplayer
-			delay(10000);
+		case 8: // Main Screen
+			ControlAction.click(6, 264, 433, 272, 35); //Other Multiplayer
+			delay(500);
 		break;
-		case 12:// Character Select Screen
+		case 12: // Character Select Screen
 			try {
 				login(me.profile);
 			} catch (err) {
 				print(err+" "+getLocation());
 			}
 		break;
-		case 16:// Logging in Select
+		case 16: // Logging in Select
 			delay(500);
 		break;
-		case 30:// Connecting
+		case 30: // Connecting
 			ControlAction.click(6, 351, 337, 96, 32);
 			delay(500);
 		break;
-		case 39:// Other Multiplayer Screen
-			ControlAction.click(6, 264, 350, 272, 35);//TCP/IP Game
+		case 39: // Other Multiplayer Screen
+			ControlAction.click(6, 264, 350, 272, 35); //TCP/IP Game
 			delay(500);
 		break;
-		case 40:// TCP IP Screen
-			// ControlAction.click(6, 265, 206, 272, 35);//Host Game
-			ControlAction.click(6, 265, 264, 272, 35);//Join Game
-			delay(500);
+		case 40: // TCP IP Screen
+			// ControlAction.click(6, 265, 206, 272, 35); //Host Game
+			ControlAction.click(6, 265, 264, 272, 35); //Join Game
+			delay(10000);
 		break;
-		case 41:// Join Game
-			// ControlAction.click(6, 281, 337, 96, 32);//Cancel
+		case 41: // Join Game
+			// ControlAction.click(6, 281, 337, 96, 32); //Cancel
 			delay(500);
 			D2Bot.updateStatus("Join Game");
-			ControlAction.click(6, 421, 337, 96, 32);//Join
+			ControlAction.click(6, 421, 337, 96, 32); //Join
 		break;
 		default:
 			if (ScreenLocation !== undefined) {
