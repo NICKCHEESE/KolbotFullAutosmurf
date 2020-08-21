@@ -1,3 +1,10 @@
+My own personal kolbot setup project. It is very much a work in progress. Feedback and tips are appreciated as I'm learning on the fly here.
+
+Credits go to: Kolton, Blizzhackers, GZer, Dark-f, JeanMax and anyone else that I'm not aware of who had a part in making/coding/scripting D2BS/D2Bot/D2NT/ETAL/kolbot/Autosmurf etc etc. I'm just an idiot tinkering with shit.
+
+Use at your own risk.
+
+
 ## Rules
 
 1. D2BS, D2Bot and kolbot # are educational tools with an open source developer community. These tools are meant to be used offline or on private servers that explicitly allow them. These tools are not meant to be abused on battle.net (a Blizzard Entertainment entity).
