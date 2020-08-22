@@ -237,7 +237,7 @@ function spendSkillPoints () {
 
 function main () {
 	try {
-		AutoBuild.print("Loaded helper thread");
+		AutoBuild.print("ÿc3Loaded helper thread");
 
 		while (true) {
 			var levels = gainedLevels();
@@ -272,9 +272,9 @@ function main () {
 			delay(1e3);
 		}
 	} catch (err) {
-		print("Something broke!");
-		print("Error:"+ err.toSource());
-		print("Stack trace: \n"+ err.stack);
+		print("ÿc1Something broke!");
+		print("ÿc1Error:"+ err.toSource());
+		print("ÿc1Stack trace: \n"+ err.stack);
 		return false;
 	}
 

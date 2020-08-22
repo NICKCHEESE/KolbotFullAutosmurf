@@ -1732,7 +1732,7 @@ var Misc = {
 							}
 
 							if (needhp) {
-								print("We need healing potions");
+								print("ÿc5We need healing potions!");
 
 								check = true;
 							}
@@ -1752,7 +1752,7 @@ var Misc = {
 							}
 
 							if (needmp) {
-								print("We need mana potions");
+								print("ÿc5We need mana potions");
 
 								check = true;
 							}
@@ -1792,7 +1792,7 @@ var Misc = {
 			unit = getUnit(-1, name);
 
 		if (!unit) {
-			print("player not found");
+			print("ÿc1Player not found!");
 
 			return false;
 		}

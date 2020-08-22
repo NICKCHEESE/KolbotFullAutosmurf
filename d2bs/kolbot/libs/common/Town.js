@@ -1386,6 +1386,7 @@ CursorLoop:
 			}
 		} else {
 			print("ÿc4Town: ÿc1Can't afford repairs.");
+			delay(10000);
 		}
 
 		return repairAction;
@@ -1813,7 +1814,7 @@ MainLoop:
 		for (i = 0; !!items && i < items.length; i += 1) {
 			if (items[i].location === 3 && items[i].mode === 0 && items[i].itemType === 22) {
 				if (getUIFlag(0xC) || (Config.PacketShopping && getInteractedNPC() && getInteractedNPC().itemcount > 0)) { // Might as well sell the item if already in shop
-					print("clearInventory sell " + items[i].name);
+					print("ÿc4Clearing inventory. ÿc:Selling: " + items[i].name);
 					Misc.itemLogger("Sold", items[i]);
 					items[i].sell();
 				} else {
@@ -1948,7 +1949,7 @@ MainLoop:
 					}
 
 					if (getUIFlag(0xC) || (Config.PacketShopping && getInteractedNPC() && getInteractedNPC().itemcount > 0)) { // Might as well sell the item if already in shop
-						print("clearInventory sell " + items[i].name);
+						print("ÿc4Clearing inventory. ÿc:Selling: " + items[i].name);
 						Misc.itemLogger("Sold", items[i]);
 						items[i].sell();
 					} else {
@@ -1959,7 +1960,7 @@ MainLoop:
 					break;
 				case 4: // Sell item
 					try {
-						print("LowGold sell " + items[i].name);
+						print("ÿc9Low on gold. Selling: " + items[i].name);
 						this.initNPC("Shop", "clearInventory");
 						Misc.itemLogger("Sold", items[i]);
 						items[i].sell();

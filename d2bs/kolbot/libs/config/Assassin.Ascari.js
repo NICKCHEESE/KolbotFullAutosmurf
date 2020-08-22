@@ -308,7 +308,7 @@ function LoadConfig() {
 	Config.MinColumn[3] = 0;
 
 	// Pickit config. Default folder is kolbot/pickit.
-	Config.PickitFiles.push("Autosmurf/charms.nip");
+	/*Config.PickitFiles.push("Autosmurf/charms.nip");
 	Config.PickitFiles.push("Autosmurf/magic.nip");
 	Config.PickitFiles.push("Autosmurf/rare.nip");
 	Config.PickitFiles.push("Autosmurf/runes.nip");
@@ -317,7 +317,12 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/unique.nip");	
 	Config.PickitFiles.push("Autosmurf/sell.nip");
 	Config.PickitFiles.push("Autosmurf/merc.nip");
+	*/
 	
+	Config.PickitFiles.push("Autoequip/Trap.xpac.nip");
+	Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
+	Config.PickitFiles.push("Autoequip/Merc.xpac.nip");
+	Config.PickitFiles.push("Autosmurf/Runes.nip");
 	Config.PickitFiles.push("Autosmurf/Charms.nip");
 	Config.PickitFiles.push("Autosmurf/Crafting.nip");
 	Config.PickitFiles.push("Autosmurf/magic-rare.nip");

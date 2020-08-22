@@ -63,7 +63,7 @@ function main() {
 		function (msg) {
 			if (msg === "townCheck") {
 				if (me.area === 136) {
-					print("Can't tp from uber trist.");
+					print("ÿc1Can't tp from uber trist.");
 				} else {
 					townCheck = true;
 				}

@@ -41,7 +41,7 @@ function main() {
 		canQuit = true,
 		timerLastDrink = [];
 
-	print("ÿc3Start ToolsThread script");
+	print("ÿc3Starting ToolsThread.js script");
 	D2Bot.init();
 	Config.init(false);
 	Pickit.init(false);
@@ -254,7 +254,7 @@ function main() {
 				try {
 					clickItem(2, potion);
 				} catch (e) {
-					print("Couldn't give the potion to merc.");
+					print("ÿc2Couldn't give the potion to merc.");
 				}
 			}
 
@@ -425,7 +425,7 @@ function main() {
 			var merc = me.getMerc();
 			print(this.getStatsString(me));
 			if (merc)
-				print("Merc stats:\n" + this.getStatsString(merc));
+				print("ÿc4Merc stats:\n" + this.getStatsString(merc));
 
 			break;
 		case 101: // numpad 5
@@ -534,7 +534,7 @@ function main() {
 				this.togglePause();
 				Town.goToTown();
 				showConsole();
-				print("ÿc4Diablo Walks the Earth");
+				print("ÿc4Diablo Walks the Earth!");
 
 				me.maxgametime = 0;
 
@@ -698,7 +698,7 @@ function main() {
 		}
 
 		if (quitFlag && canQuit && (typeof quitListDelayTime === "undefined" || getTickCount() >= quitListDelayTime)) {
-			print("ÿc8Run duration ÿc2" + ((getTickCount() - me.gamestarttime) / 1000));
+			print("ÿc8Run duration :ÿc2 " + ((getTickCount() - me.gamestarttime) / 1000));
 
 			if (Config.LogExperience) {
 				Experience.log();

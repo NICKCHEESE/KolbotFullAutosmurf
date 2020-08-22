@@ -562,7 +562,7 @@ MainLoop:
 
 			break;
 		case undefined: // Yes, it does happen
-			print("undefined item (!?)");
+			print("ÿc8Undefined item (!?)");
 
 			return false;
 		}

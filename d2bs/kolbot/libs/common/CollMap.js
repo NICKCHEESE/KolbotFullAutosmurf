@@ -178,7 +178,7 @@ var CollMap = new function () {
 
 		do {
 			if (retry > 30) {
-				print("failed to get valid coordinate");
+				print("ÿc1Failed to get valid coordinate...");
 				coordX = cX;
 				coordY = cY;
 

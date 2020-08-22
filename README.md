@@ -5,6 +5,8 @@ Credits go to: Kolton, Blizzhackers, GZer, Dark-f, JeanMax and anyone else that 
 Use at your own risk.
 
 
+
+
 ## Rules
 
 1. D2BS, D2Bot and kolbot # are educational tools with an open source developer community. These tools are meant to be used offline or on private servers that explicitly allow them. These tools are not meant to be abused on battle.net (a Blizzard Entertainment entity).

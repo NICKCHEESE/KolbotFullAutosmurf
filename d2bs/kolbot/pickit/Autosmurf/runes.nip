@@ -19,9 +19,9 @@
 //[name] == keyofterror
 //[name] == keyofhate
 //[name] == keyofdestruction
-//[name] == keyofterror # # [maxquantity] == 3
-//[name] == keyofhate # # [maxquantity] == 3
-//[name] == keyofdestruction # # [maxquantity] == 3
+//[name] == keyofterror # # [maxquantity] == 5
+//[name] == keyofhate # # [maxquantity] == 5
+//[name] == keyofdestruction # # [maxquantity] == 5
 
 //uber quest organs
 [name] == diablo'shorn
@@ -36,29 +36,29 @@
 //[name] == tokenofabsolution # # [maxquantity] == 5
 
 //runes
-//[name] == elrune # # [maxquantity] == 3
-//[name] == eldrune # # [maxquantity] == 3
-//[name] == tirrune # # [maxquantity] == 3
-//[name] == nefrune # # [maxquantity] == 3
-//[name] == ethrune # # [maxquantity] == 3
-//[name] == ithrune # # [maxquantity] == 3
-//[name] == talrune # # [maxquantity] == 3
-//[name] == ralrune # # [maxquantity] == 3
-//[name] == ortrune # # [maxquantity] == 3
-//[name] == thulrune # # [maxquantity] == 3
-//[name] == amnrune # # [maxquantity] == 3
-//[name] == solrune # # [maxquantity] == 3
-//[name] == shaelrune # # [maxquantity] == 3
-//[name] == dolrune # # [maxquantity] == 3
-//[name] == helrune # # [maxquantity] == 3
-//[name] == iorune # # [maxquantity] == 3
-//[name] == lumrune # # [maxquantity] == 3
-//[name] == korune # # [maxquantity] == 3
-//[name] == falrune # # [maxquantity] == 3
-//[name] == lemrune # # [maxquantity] == 3
-//[name] == pulrune # # [maxquantity] == 5
-//[name] == umrune # # [maxquantity] == 5
-//[name] == malrune # # [maxquantity] == 5
+[name] == elrune # # [maxquantity] == 5
+[name] == eldrune # # [maxquantity] == 5
+[name] == tirrune # # [maxquantity] == 5
+[name] == nefrune # # [maxquantity] == 5
+[name] == ethrune # # [maxquantity] == 5
+[name] == ithrune # # [maxquantity] == 5
+[name] == talrune # # [maxquantity] == 5
+[name] == ralrune # # [maxquantity] == 5
+[name] == ortrune # # [maxquantity] == 5
+[name] == thulrune # # [maxquantity] == 5
+[name] == amnrune # # [maxquantity] == 5
+[name] == solrune # # [maxquantity] == 5
+[name] == shaelrune # # [maxquantity] == 5
+[name] == dolrune # # [maxquantity] == 5
+[name] == helrune # # [maxquantity] == 5
+[name] == iorune # # [maxquantity] == 5
+[name] == lumrune # # [maxquantity] == 5
+[name] == korune # # [maxquantity] == 5
+[name] == falrune # # [maxquantity] == 5
+[name] == lemrune # # [maxquantity] == 5
+[name] == pulrune # # [maxquantity] == 5
+[name] == umrune # # [maxquantity] == 5
+[name] == malrune # # [maxquantity] == 5
 [name] >= pulrune && [name] <= zodrune
 
 //gems
@@ -90,13 +90,13 @@
 //[name] == flawlesssapphire # # [maxquantity] == 1
 //[name] == flawlessskull # # [maxquantity] == 1
 //[name] == flawlesstopaz # # [maxquantity] == 1
-[name] == perfectamethyst # # [maxquantity] == 3
-[name] == perfectdiamond # # [maxquantity] == 3
-[name] == perfectemerald # # [maxquantity] == 3
-[name] == perfectruby # # [maxquantity] == 3
-[name] == perfectsapphire # # [maxquantity] == 3
-[name] == perfectskull # # [maxquantity] == 3
-[name] == perfecttopaz # # [maxquantity] == 3
+[name] == perfectamethyst # # [maxquantity] == 5
+[name] == perfectdiamond # # [maxquantity] == 5
+[name] == perfectemerald # # [maxquantity] == 5
+[name] == perfectruby # # [maxquantity] == 5
+[name] == perfectsapphire # # [maxquantity] == 5
+[name] == perfectskull # # [maxquantity] == 5
+[name] == perfecttopaz # # [maxquantity] == 5
 
 //potions
 [name] == greaterhealingpotion

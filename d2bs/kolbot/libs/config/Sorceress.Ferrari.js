@@ -309,7 +309,7 @@ function LoadConfig() {
 
 	// Pickit config. Default folder is kolbot/pickit.
 	//-----usual-------- 
-	Config.PickitFiles.push("Autosmurf/charms.nip");
+	/*Config.PickitFiles.push("Autosmurf/charms.nip");
 	Config.PickitFiles.push("Autosmurf/magic.nip");
 	Config.PickitFiles.push("Autosmurf/rare.nip");
 	Config.PickitFiles.push("Autosmurf/runes.nip");
@@ -318,7 +318,16 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/unique.nip");	
 	Config.PickitFiles.push("Autosmurf/sell.nip");
 	Config.PickitFiles.push("Autosmurf/merc.nip");
+	*/
 	
+	
+	
+	Config.PickitFiles.push("Autoequip/sorceress.xpac.nip");
+	Config.PickitFiles.push("Autoequip/Blizzard.xpac.nip");
+	Config.PickitFiles.push("Autoequip/SorcSmurf.xpac.nip");
+	Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
+	Config.PickitFiles.push("Autoequip/Merc.xpac.nip");
+	Config.PickitFiles.push("Autosmurf/Runes.nip");
 	Config.PickitFiles.push("Autosmurf/Charms.nip");
 	Config.PickitFiles.push("Autosmurf/Crafting.nip");
 	Config.PickitFiles.push("Autosmurf/magic-rare.nip");
@@ -331,13 +340,8 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/White.nip");
 	Config.PickitFiles.push("Autosmurf/White1.nip");
 	Config.PickitFiles.push("Autosmurf/White2.nip");
-	
-	//-----special--------
-	Config.PickitFiles.push("Autosmurf/sorceress.xpac.nip");
-	//Config.PickitFiles.push("autosmurf/paladin.xpac.nip");
-	//Config.PickitFiles.push("autosmurf/barbarian.xpac.nip");
 	Config.PickitFiles.push("Autosmurf/white1.nip");
-	//Config.PickitFiles.push("autosmurf/white2.nip"); // advance white1.nip
+	
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = false; // Check and pick items between attacks
 	

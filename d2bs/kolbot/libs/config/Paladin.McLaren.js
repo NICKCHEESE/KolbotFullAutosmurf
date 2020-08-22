@@ -307,7 +307,7 @@ function LoadConfig() {
 	Config.MinColumn[3] = 0;
 
 	// Pickit config. Default folder is kolbot/pickit.
-	Config.PickitFiles.push("Autosmurf/charms.nip");
+	/*Config.PickitFiles.push("Autosmurf/charms.nip");
 	Config.PickitFiles.push("Autosmurf/magic.nip");
 	Config.PickitFiles.push("Autosmurf/rare.nip");
 	Config.PickitFiles.push("Autosmurf/runes.nip");
@@ -316,7 +316,12 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/unique.nip");	
 	Config.PickitFiles.push("Autosmurf/sell.nip");
 	Config.PickitFiles.push("Autosmurf/merc.nip");
+	*/
 	
+	Config.PickitFiles.push("Autoequip/Hammerdin.xpac.nip");
+	Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
+	Config.PickitFiles.push("Autoequip/Merc.xpac.nip");
+	Config.PickitFiles.push("Autosmurf/Runes.nip");
 	Config.PickitFiles.push("Autosmurf/Charms.nip");
 	Config.PickitFiles.push("Autosmurf/Crafting.nip");
 	Config.PickitFiles.push("Autosmurf/magic-rare.nip");
@@ -329,6 +334,7 @@ function LoadConfig() {
 	Config.PickitFiles.push("Autosmurf/White.nip");
 	Config.PickitFiles.push("Autosmurf/White1.nip");
 	Config.PickitFiles.push("Autosmurf/White2.nip");
+	
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = false; // Check and pick items between attacks
 	Config.ManualPlayPick = false; // If set to true and D2BotMap entry script is used, will enable picking in manual play.

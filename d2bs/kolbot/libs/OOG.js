@@ -421,7 +421,7 @@ var DataFile = {
 			return obj;
 		}
 
-		print("Error reading DataFile. Using null values.");
+		print("ÿc1Error reading DataFile. Using null values.");
 
 		return {runs: 0, experience: 0, lastArea: "", gold: 0, level: 0, name: "", gameName: "", ingameTick: 0, handle: 0, nextGame: ""};
 	},
@@ -675,7 +675,7 @@ MainLoop:
 
 		me.blockMouse = true;
 
-		print("Creating Game: " + name);
+		print("ÿc2Creating Game: " + name);
 		ControlAction.click(6, 594, 433, 172, 32);
 
 		me.blockMouse = false;

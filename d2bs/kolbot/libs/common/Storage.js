@@ -202,7 +202,7 @@ Loop:
 
 				while ((getTickCount() - nDelay) < Math.max(1000, me.ping * 3 + 500)) {
 					if (!me.itemoncursor) {
-						print("Successfully placed " + item.name + " at X: " + nPos.x + " Y: " + nPos.y);
+						print("ÿc2Successfully placed " + item.name + "ÿc4 at X: " + nPos.x + " ÿc4Y: " + nPos.y);
 						delay(200);
 
 						return true;
