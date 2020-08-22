@@ -29,695 +29,884 @@ if (!isIncluded("common/Runewords.js")) {
 var AutoBuildTemplate = {
 
     1: {
-			Update: function () {
-				Config.AutoEquip = true;
-				Config.TownCheck = false; // Don't go to town for more potions
-				Config.StashGold = 10000; // Minimum amount of gold to stash.
-				Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
-				Config.LowManaSkill = [0, 0];
-				Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Keep tons of health potions!
-				Config.MinColumn = [3, 3, 3, 3];
-				Config.OpenChests = true; // Might as well open em.
-				Config.Cubing = false; // Don't cube yet!
-				Config.Inventory[0] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-				Config.Inventory[1] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-				Config.Inventory[2] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-				Config.Inventory[3] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-				Config.OpenChests = true;
-				Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
-				Config.LogExperience = true; //Print experience statistics in the manager.
-				Config.StashGold = 200; //Minimum amount of gold to stash.
-				Config.UseMP = 15;
-				Config.UseRejuvHP = 35;
-				Config.Cubing=false;
-				Config.PickRange = 60;
-				Config.BossPriority = true;
-            
-            
+        Update: function () {
+            Config.AutoEquip = true;
+            Config.TownCheck = false; // Don't go to town for more potions
+            Config.StashGold = 10000; // Minimum amount of gold to stash.
+            Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
+            Config.LowManaSkill = [0, 0];
+            Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Keep tons of health potions!
+            Config.MinColumn = [3, 3, 3, 3];
+            Config.OpenChests = true; // Might as well open em.
+            Config.Cubing = false; // Don't cube yet!
+            Config.Inventory[0] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            Config.Inventory[1] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            Config.Inventory[2] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            Config.Inventory[3] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            Config.OpenChests = true;
+            Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
+            Config.LogExperience = true; //Print experience statistics in the manager.
+            Config.StashGold = 200; //Minimum amount of gold to stash.
+            Config.UseMP = 15;
+            Config.UseRejuvHP = 35;
+            Config.Cubing = false;
+            Config.PickRange = 60;
+            Config.BossPriority = true;
+
         }
     },
 
     2: {
-        SkillPoints: [221], // Might + 1 (level 1)
-        StatPoints: [0, 3, 3, 3, 3], // Strength + 1, Vitality + 4 (26) (29)
+        SkillPoints: [221], //Raven
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; // Use Might
-            Config.LowManaSkill = [0, 0]; // Use Might while hitting stuff.
-            Config.SummonRaven = true;
+            Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
+        }
+    },
+    3: {
+        SkillPoints: [222], //Poison Creeper
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.SummonVine = 1;
+        }
+    },
+    4: {
+        SkillPoints: [-1],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
         }
     },
 
-    3: {
-        SkillPoints: [-1], // Smite + 1 (level 1)
-        StatPoints: [0, 0, 3, 3, 3], // Strength + 2, Vitality + 3 (28) (32)
-        Update: function () {}
-    },
-
-    4: {
-        SkillPoints: [-1], // Prayer + 1 (level 1)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 3, Vitality + 2 (31) (34)
-        Update: function () {}
-    },
-
     5: {
-        SkillPoints: [-1], // Save Point + 1 (1 saved point remains)
-        StatPoints: [0, 0, 0, 0, 3], // Strength + 4, Vitality + 1 (35) (35)
+        SkillPoints: [-1],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.ScanShrines = [15, 13, 12];
-            Config.MinColumn = [1, 1, 1, 1];
+            Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
         }
     },
 
     6: {
-        SkillPoints: [230, 226, 227], // Holy Bolt + 1, Defiance + 1 (level 1) (level 2) (0 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Strength + 2, Vitality + 3 (37) (38)
+        SkillPoints: [226], //Oak Sage
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; // Holy Bolt and Might for Secondary Skill/Aura.
-            Config.SummonAnimal = "Spirit Wolf";
             Config.SummonSpirit = "Oak Sage";
         }
     },
 
     7: {
-        SkillPoints: [-1], // Save Point + 1 (1 saved point remains)
-        StatPoints: [0, 0, 3, 3, 3], // Strength + 2, Vitality + 3 (39) (41)
+        SkillPoints: [230, 226], //Arctic Blast
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            //Config.PickitFiles.splice(Config.PickitFiles.indexOf("belowlevelseven.nip"), 1);	// Will remove index "belowlevel7.nip" from Config.PickitFiles
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
         }
     },
 
     8: {
-        SkillPoints: [-1], // Save Point + 1 (2 saved points remain)
-        StatPoints: [0, 3, 3, 3, 3], // Strength + 1, Vitality + 4 (40) (45)
-        Update: function () {}
+        SkillPoints: [227],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.SummonAnimal = "Spirit Wolf";
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     9: {
-        SkillPoints: [-1], // Save Point + 1 (3 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (50)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     10: {
-        SkillPoints: [-1], // Save Point + 1 (4 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (55)
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.StashGold = 1000; // Minimum amount of gold to stash.
-            Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Start keeping rejuvs
-            Config.MinColumn = [1, 1, 1, 1];
-
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
         }
     },
 
     11: {
-        SkillPoints: [-1], // Save Point + 1 (5 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (60)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.MinColumn = [3, 3, 3, 3];
+        }
     },
 
     12: {
-        SkillPoints: [235, 226, 226, 226], // Charge + 1, Blessed Aim + 1, Cleansing + 1 (level 1) (level 1) (level 1) (3 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (65)
+        SkillPoints: [235, 226], //Cyclone Armor
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; // Use Blessed Aim
-            Config.LowManaSkill = [0, -1]; // Use Blessed Aim while hitting stuff.
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
         }
     },
 
     13: {
-        SkillPoints: [226], // Blessed Aim + 1 (level 2) Save Point + 1 (4 saved points remain) (Normal Den of Evil Used)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (70)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     14: {
-        SkillPoints: [-1], // Save Point + 1 (5 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (75)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     15: {
-        SkillPoints: [226], // Save Point + 1 (6 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (80)
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.OpenChests = false; // Eyes on the prize!
-            Config.LowGold = 9000;
+            Config.MakeRunewords = true;
+            Config.UseMerc = true;
+            //Weapon
+            Config.Runewords.push([Runeword.Spirit, "Crystal Sword"]);
+            Config.Runewords.push([Runeword.Spirit, "Broad Sword"]);
+            Config.Runewords.push([Runeword.HeartoftheOak, "Flail"]);
+            //Armor
+            Config.Runewords.push([Runeword.Stealth, "Quilted Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Leather Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Hard Leather Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Studded Leather"]);
+            Config.Runewords.push([Runeword.Stealth, "Ring Mail"]);
+            Config.Runewords.push([Runeword.Stealth, "Breast Plate"]);
+            Config.Runewords.push([Runeword.Stealth, "Light Plate"]);
+            Config.Runewords.push([Runeword.Enigma, "Mage Plate"]);
+            Config.Runewords.push([Runeword.Enigma, "Archon Plate"]);
+            //Helm
+            Config.Runewords.push([Runeword.Lore, "Wolf Head"]);
+            Config.Runewords.push([Runeword.Lore, "Hawk Helm"]);
+            Config.Runewords.push([Runeword.Lore, "Antlers"]);
+            Config.Runewords.push([Runeword.Lore, "Falcon Mask"]);
+            Config.Runewords.push([Runeword.Lore, "Spirit Mask"]);
+            Config.Runewords.push([Runeword.Lore, "Alpha Helm"]);
+            Config.Runewords.push([Runeword.Lore, "Griffon Headdress"]);
+            Config.Runewords.push([Runeword.Lore, "Hunter's Guise"]);
+            Config.Runewords.push([Runeword.Lore, "Sacred Feathers"]);
+            Config.Runewords.push([Runeword.Lore, "Totemic Mask"]);
+            Config.Runewords.push([Runeword.Lore, "Blood Spirit"]);
+            Config.Runewords.push([Runeword.Lore, "Sun Spirit"]);
+            Config.Runewords.push([Runeword.Lore, "Earth Spirit"]);
+            Config.Runewords.push([Runeword.Lore, "Sky Spirit"]);
+            Config.Runewords.push([Runeword.Lore, "Dream Spirit"]);
+            //Shield
+            Config.Runewords.push([Runeword.Splendor, "Round Shield"]);
+            Config.Runewords.push([Runeword.Splendor, "Grim Shield"]);
+            Config.Runewords.push([Runeword.Spirit, "Monarch"]);
+            //Merc Gear
+            Config.Runewords.push([Runeword.Insight, "Voulge"]);
+            Config.Runewords.push([Runeword.Insight, "Poleaxe"]);
+            Config.Runewords.push([Runeword.Insight, "Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Halberd"]);
+            Config.Runewords.push([Runeword.Insight, "War Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Bill"]);
+            Config.Runewords.push([Runeword.Insight, "Battle Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Partizan"]);
+            Config.Runewords.push([Runeword.Insight, "Bec De Corbin"]);
+            Config.Runewords.push([Runeword.Insight, "Grim Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Colossus Voulge"]);
+            Config.Runewords.push([Runeword.Insight, "Thresher"]);
+            Config.Runewords.push([Runeword.Insight, "Cryptic Axe"]);
+            Config.Runewords.push([Runeword.Insight, "Great Poleaxe"]);
+            Config.Runewords.push([Runeword.Insight, "Giant Thresher"]);
         }
     },
 
     16: {
-        SkillPoints: [226], // Save Point + 1 (7 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (85)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     17: {
-        SkillPoints: [226], // Save Point + 1 (8 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (90)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+        }
     },
 
     18: {
-        SkillPoints: [226, 240, 237], // Blessed Hammer + 1, Concentration + 1, Vigor + 1 (level 1) (level 1) (level 1) (6 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (95)
+        SkillPoints: [240, 226], //Twister
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; // Blessed Hammer and Concentration!
-            Config.LowManaSkill = [0, -1]; // Use Concentration while hitting stuff.
-            Config.TownCheck = true; // Do go to town for more potions
-            Config.MinColumn = [3, 3, 3, 3]; // Should have a decent belt by now
-            Config.Charge = false; // Don't waste mana on charging while walking
-            Config.Dodge = false; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
-            Config.DodgeRange = 7; // Distance to keep from monsters.
-            Config.MPBuffer = 8; // Need lots of mana for Blessed Hammer!
-            Config.SummonAnimal = "Dire Wolf";
+            Config.AttackSkill = [0, 240, 0, 240, 0, 0, 0];
         }
     },
 
     19: {
-        SkillPoints: [226, 226], // Blessed Hammer + 1, Concentration + 1 (level 2) (level 2) (5 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (100)
-        Update: function () {}
+        SkillPoints: [237],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.SummonAnimal = "Dire Wolf";
+            Config.AttackSkill = [0, 240, 0, 240, 0, 0, 0];
+        }
     },
 
     20: {
-        SkillPoints: [226, 226], // Blessed Hammer + 1, Concentration + 1 (level 3) (level 3) (4 saved points remain)
-        StatPoints: [0, 3, 3, 3, 3], // Vitality + 5 (105)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [0, 240, 0, 240, 0, 0, 0];
+        }
     },
 
     21: {
-        SkillPoints: [226], // Blessed Hammer + 1, Concentration + 1 (level 4) (level 4) (3 saved points remain)
-        StatPoints: [0, 3, 3, 3, 3], // Vitality + 5 (110)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.BeltColumn = ["hp", "hp", "hp", "rv"];
+        }
     },
 
     22: {
-        SkillPoints: [226, 226], // Blessed Hammer + 1, Concentration + 1 (level 5) (level 5) (2 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (115)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [0, 240, 0, 240, 0, 0, 0];
+        }
     },
 
     23: {
-        SkillPoints: [226], // Blessed Hammer + 1 (level 6) (2 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (120)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [0, 240, 0, 240, 0, 0, 0];
+        }
     },
 
     24: {
-        SkillPoints: [245], // Blessed Hammer + 1, Holy Shield + 1, Meditation + 1 (level 7) (level 1) (level 1) (0 saved points remain)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (125)
+        SkillPoints: [245], //Tornado
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 245, -1, 245, -1, -1, -1]; // Holy Bolt and Meditation for Secondary Skill/Aura.
-            Config.LowManaSkill = [0, 120]; // Use Meditation while hitting stuff.
-            Config.Cubing = true; // Will have a cube by now.
-            Config.Dodge = true; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
-            Config.DodgeRange = 5; // Distance to keep from monsters.
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     25: {
-        SkillPoints: [245], // Blessed Hammer + 1 (level 8)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (130)
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {}
     },
 
     26: {
-        SkillPoints: [245], // Blessed Hammer + 1 (level 9)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (135)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     27: {
-        SkillPoints: [245], // Blessed Hammer + 1, Blessed Aim + 1 (level 10) (level 3) (Norm Radament)
-        StatPoints: [0, 3, 3, 3, 3], // Vitality + 5 (140)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     28: {
-        SkillPoints: [245], // Blessed Hammer + 1 (level 11)
-        StatPoints: [0, 0, 3, 3, 3], // Vitality + 5 (145)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     29: {
-        SkillPoints: [245], // Blessed Hammer + 1 (level 12)
-        StatPoints: [0, 3, 3, 3, 3], // Vitality + 5 (150)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.MinColumn = [4, 4, 4, 4];
+        }
     },
 
     30: {
-        SkillPoints: [250], // Blessed Hammer + 1, Blessed Aim + 2 (level 13) (level 5) (Norm Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (160) (Norm Lam Esen's Tome)
+        SkillPoints: [250, 245], //Hurricane
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-
-            Config.SummonAnimal = "Grizzly";
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     31: {
-        SkillPoints: [247], // Blessed Hammer + 1 (level 14)
-        StatPoints: [0, 0, 0, 0, 0], // Vitality + 5 (165)
-        Update: function () {}
+        SkillPoints: [241],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.SummonAnimal = "Grizzly";
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     32: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (170)
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.DodgeRange = 6; // Distance to keep from monsters.
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     33: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 16)
-        StatPoints: [0, 0, 0, 0, 0], // Vitality + 5 (175)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     34: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (180)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     35: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (185)
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.LowManaSkill = [-1, -1]; // Stop trying to hit stuff.
-
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     36: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (190)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     37: {
-        SkillPoints: [250], // Blessed Hammer + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (195)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     38: {
-        SkillPoints: [250], // Concentration + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (200)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     39: {
-        SkillPoints: [250], // Concentration + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (205)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     40: {
-        SkillPoints: [250], // Concentration + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (210)
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {}
     },
 
     41: {
-        SkillPoints: [250], // Concentration + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (215)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     42: {
-        SkillPoints: [250], // Concentration + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (220)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     43: {
-        SkillPoints: [250], // Concentration + 1, Blessed Aim + 4 (level 11) (level 9) (NM Den of Evil, NM Radament, NM Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (230) (NM Lam Esen's Tome)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     44: {
-        SkillPoints: [250], // Concentration + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (235)
-        Update: function () {}
+        SkillPoints: [245],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     45: {
-        SkillPoints: [250], // Concentration + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (240)
-        Update: function () {}
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     46: {
-        SkillPoints: [250], // Concentration + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (245)
+        SkillPoints: [226],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.HPBuffer = 5;
-            Config.MPBuffer = 5;
-            Config.RejuvBuffer = 10;
-            Config.UseRejuvHP = 55;
-            Config.LifeChicken = 45;
-            Config.TownHP = 65;
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     47: {
-        SkillPoints: [250], // Concentration + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (250)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     48: {
-        SkillPoints: [250], // Concentration + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (255)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     49: {
-        SkillPoints: [250], // Concentration + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (260)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     50: {
-        SkillPoints: [250], // Concentration + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (265)
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.StashGold = 100000; // Minimum amount of gold to stash.
-            Config.Charge = false; // Should have enough mana to charge while walking now.
-            Config.MPBuffer = 4; // Nightmare has stronger potions.
-            Config.HPBuffer = 0; // Nightmare has stronger potions.
-            Config.BeltColumn = ["hp", "hp", "mp", "mp"]; // Regular potion settings
-            Config.MinColumn = [3, 3, 3, 0]; // Regular potion settings
-
+            Config.UseHP = 80;
+            Config.UseMP = 50;
         }
     },
 
     51: {
-        SkillPoints: [226, 226], // Concentration + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (270)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     52: {
-        SkillPoints: [245], // Concentration + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (275)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     53: {
-        SkillPoints: [245], // Vigor + 1 (level 2)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (280)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     54: {
-        SkillPoints: [245], // Vigor + 1 (level 3)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (285)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     55: {
-        SkillPoints: [245], // Vigor + 1 (level 4)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (290)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     56: {
-        SkillPoints: [245], // Vigor + 1 (level 5)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (295)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     57: {
-        SkillPoints: [245], // Vigor + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (300)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     58: {
-        SkillPoints: [245], // Vigor + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (305)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     59: {
-        SkillPoints: [245], // Vigor + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (310)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     60: {
-        SkillPoints: [245], // Vigor + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (315)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     61: {
-        SkillPoints: [245], // Vigor + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (320)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     62: {
-        SkillPoints: [245], // Vigor + 1 (level 11)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (325)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     63: {
-        SkillPoints: [245], // Vigor + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (330)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     64: {
-        SkillPoints: [245], // Vigor + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (335)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     65: {
-        SkillPoints: [245], // Vigor + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (340)
-        Update: function () {}
+        SkillPoints: [250],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     66: {
-        SkillPoints: [235], // Vigor + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (345)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     67: {
-        SkillPoints: [235], // Vigor + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (350)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     68: {
-        SkillPoints: [235], // Vigor + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (355)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     69: {
-        SkillPoints: [235], // Vigor + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (360)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.UseRejuvHP = 40;
+            Config.LifeChicken = 35;
+        }
     },
 
     70: {
-        SkillPoints: [235], // Vigor + 1, Blessed Aim + 4 (level 19) (level 13) (Hell Den of Evil, Hell Radament, Hell Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (370) (Hell Lam Esen's Tome)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.PickitFiles.splice(Config.PickitFiles.indexOf("MidGame.nip"), 1);
+            //Eth Merc Weapon
+            Config.Recipes.push([Recipe.Socket.Weapon, "Bill", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Partizan", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Battle Scythe", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Bec De Corbin", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Grim Scythe", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Colossus Voulge", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Thresher", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Cryptic Axe", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Great Poleaxe", Roll.Eth]);
+            Config.Recipes.push([Recipe.Socket.Weapon, "Giant Thresher", Roll.Eth]);
+            //Enlightenment or Chains of Honor
+            Config.Recipes.push([Recipe.Socket.Armor, "Mage Plate", Roll.NonEth]);
+            Config.Recipes.push([Recipe.Socket.Armor, "Archon Plate", Roll.NonEth]);
+            //Spirit base
+            Config.Recipes.push([Recipe.Socket.Armor, "Monarch", Roll.NonEth]);
+            //Misc
+            Config.Recipes.push([Recipe.Reroll.Magic, "Grand Charm"]);
+            Config.Recipes.push([Recipe.Caster.Amulet]);
+            Config.Recipes.push([Recipe.Caster.Ring]);
+        }
     },
 
     71: {
-        SkillPoints: [235], // Vigor + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (375)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     72: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (380)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     73: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (385)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     74: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (390)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     75: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (395)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     76: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (400)
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.HPBuffer = 0;
-            Config.MPBuffer = 0;
-            Config.RejuvBuffer = 20;
-            Config.UseRejuvHP = 70;
-            Config.LifeChicken = 60;
-            Config.TownHP = 60;
-
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     77: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (405)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     78: {
-        SkillPoints: [235], // Blessed Aim + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (410)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     79: {
-        SkillPoints: [235], // Holy Shield + 1 (level 2)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (415)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     80: {
-        SkillPoints: [235], // Holy Shield + 1 (level 3)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (420)
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.Gamble = true; // Time to spend dat ca$h!!
-            Config.ScanShrines = [];
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     81: {
-        SkillPoints: [235], // Holy Shield + 1 (level 4)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (425)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     82: {
-        SkillPoints: [235], // Holy Shield + 1 (level 5)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (430)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     83: {
-        SkillPoints: [235], // Holy Shield + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (435)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     84: {
-        SkillPoints: [235], // Holy Shield + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (440)
-        Update: function () {}
+        SkillPoints: [235],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     85: {
-        SkillPoints: [240], // Holy Shield + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (445)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     86: {
-        SkillPoints: [240], // Holy Shield + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (450)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     87: {
-        SkillPoints: [240], // Holy Shield + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (455)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     88: {
-        SkillPoints: [240], // Holy Shield + 1 (level 11)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (460)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     89: {
-        SkillPoints: [240], // Holy Shield + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (465)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     90: {
-        SkillPoints: [240], // Holy Shield + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (470)
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.MPBuffer = 0; // CS runs, no longer need buffer because of taxi rides!
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
         }
     },
 
     91: {
-        SkillPoints: [240], // Holy Shield + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (475)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     92: {
-        SkillPoints: [240], // Holy Shield + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (480)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     93: {
-        SkillPoints: [240], // Holy Shield + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (485)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     94: {
-        SkillPoints: [240], // Holy Shield + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (490)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     95: {
-        SkillPoints: [240], // Holy Shield + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (495)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     96: {
-        SkillPoints: [240], // Holy Shield + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (500)
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     97: {
-        SkillPoints: [240], // Holy Shield + 1 (level 20)
-        StatPoints: [-1, -1, -1, -1, -1], //
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     98: {
-        SkillPoints: [240], //
-        StatPoints: [-1, -1, -1, -1, -1], //
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     },
 
     99: {
-        SkillPoints: [240], //
-        StatPoints: [-1, -1, -1, -1, -1], //
-        Update: function () {}
+        SkillPoints: [240],
+        StatPoints: [0, 3, 3, 3, 3],
+        Update: function () {
+            Config.AttackSkill = [240, 245, 245, 245, 245, 230, 230];
+        }
     }
 };

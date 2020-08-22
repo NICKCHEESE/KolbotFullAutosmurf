@@ -29,10 +29,8 @@ if (!isIncluded("common/Runewords.js")) {
 var AutoBuildTemplate = {
 
     1: {
-        //SkillPoints: [-1],                                           // This doesn't matter. We don't have skill points to spend at lvl 1]
-        //StatPoints: [-1, -1, -1, -1, -1],                            // This doesn't matter. We don't have stat points to spend at lvl 1
         Update: function () {
-			Config.AutoEquip = true;
+            Config.AutoEquip = true;
             Config.TownCheck = false; // Don't go to town for more potions
             Config.StashGold = 10000; // Minimum amount of gold to stash.
             Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
@@ -53,36 +51,36 @@ var AutoBuildTemplate = {
             Config.UseHP = 50;
             Config.UseMP = 15;
             Config.UseRejuvHP = 35;
-			Config.Cubing=false;
+            Config.Cubing = false;
             Config.PickRange = 60;
             Config.BossPriority = true;
         }
     },
 
     2: {
-        SkillPoints: [9], // Might + 1 (level 1)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 1, Vitality + 4 (26) (29)
+        SkillPoints: [9], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {
-            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; // Use Might
-            Config.LowManaSkill = [0, -1]; // Use Might while hitting stuff.
+            Config.AttackSkill = [-1, 0, -1, 0, -1, -1, -1]; 
+            Config.LowManaSkill = [0, -1]; 
         }
     },
 
     3: {
-        SkillPoints: [10], // Smite + 1 (level 1)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 2, Vitality + 3 (28) (32)
+        SkillPoints: [10], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     4: {
-        SkillPoints: [-1], // Prayer + 1 (level 1)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 3, Vitality + 2 (31) (34)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     5: {
-        SkillPoints: [-1], // Save Point + 1 (1 saved point remains)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 4, Vitality + 1 (35) (35)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {
             Config.ScanShrines = [15, 13, 12];
             Config.MinColumn = [1, 1, 1, 1];
@@ -90,180 +88,225 @@ var AutoBuildTemplate = {
     },
 
     6: {
-        SkillPoints: [13, 14, 15], // Holy Bolt + 1, Defiance + 1 (level 1) (level 2) (0 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 2, Vitality + 3 (37) (38)
+        SkillPoints: [13, 14, 15],
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {
-            Config.AttackSkill = [-1, 14, -1, 14, -1, -1, -1]; // Holy Bolt and Might for Secondary Skill/Aura.
+            Config.AttackSkill = [-1, 14, -1, 14, -1, -1, -1]; 
         }
     },
 
     7: {
-        SkillPoints: [-1], // Save Point + 1 (1 saved point remains)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 2, Vitality + 3 (39) (41)
+        SkillPoints: [-1],
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {
-            //Config.PickitFiles.splice(Config.PickitFiles.indexOf("belowlevelseven.nip"), 1);	// Will remove index "belowlevel7.nip" from Config.PickitFiles
+           
         }
     },
 
     8: {
-        SkillPoints: [-1], // Save Point + 1 (2 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Strength + 1, Vitality + 4 (40) (45)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     9: {
-        SkillPoints: [-1], // Save Point + 1 (3 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (50)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {}
     },
 
     10: {
-        SkillPoints: [-1], // Save Point + 1 (4 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (55)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {
-            Config.StashGold = 1000; // Minimum amount of gold to stash.
-            Config.BeltColumn = ["hp", "hp", "mp", "mp"]; // Start keeping rejuvs
+            Config.StashGold = 1000;
+            Config.BeltColumn = ["hp", "hp", "mp", "mp"];
             Config.MinColumn = [1, 1, 1, 1];
 
         }
     },
 
     11: {
-        SkillPoints: [-1], // Save Point + 1 (5 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (60)
+        SkillPoints: [-1],
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {}
     },
 
     12: {
-        SkillPoints: [20, 18, 8, 17], // Charge + 1, Blessed Aim + 1, Cleansing + 1 (level 1) (level 1) (level 1) (3 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (65)
+        SkillPoints: [20, 18, 8, 17], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {
-            Config.AttackSkill = [-1, 14, -1, 14, -1, -1, 1]; // Use Blessed Aim
-            Config.LowManaSkill = [-1, -1]; // Use Blessed Aim while hitting stuff.
+            Config.AttackSkill = [-1, 14, -1, 14, -1, -1, 1]; 
+            Config.LowManaSkill = [-1, -1]; 
         }
     },
 
     13: {
-        SkillPoints: [14], // Blessed Aim + 1 (level 2) Save Point + 1 (4 saved points remain) (Normal Den of Evil Used)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (70)
+        SkillPoints: [14], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     14: {
-        SkillPoints: [-1], // Save Point + 1 (5 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (75)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3],
         Update: function () {}
     },
 
     15: {
-        SkillPoints: [-1], // Save Point + 1 (6 saved points remain)
-        StatPoints: [0, 3, 3, 3, 3], // Vitality + 5 (80)
+        SkillPoints: [-1], 
+        StatPoints: [0, 3, 3, 3, 3], 
         Update: function () {
-            Config.OpenChests = false; // Eyes on the prize!
-            Config.LowGold = 100000;
+            Config.MakeRunewords = true;
+            Config.UseMerc = true;
+            //Weapon
+            Config.Runewords.push([Runeword.Spirit, "Crystal Sword"]);
+            Config.Runewords.push([Runeword.Spirit, "Broad Sword"]);
+            //Armor
+            Config.Runewords.push([Runeword.Stealth, "Quilted Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Leather Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Hard Leather Armor"]);
+            Config.Runewords.push([Runeword.Stealth, "Studded Leather"]);
+            Config.Runewords.push([Runeword.Stealth, "Ring Mail"]);
+            Config.Runewords.push([Runeword.Stealth, "Breast Plate"]);
+            Config.Runewords.push([Runeword.Stealth, "Light Plate"]);
+            Config.Runewords.push([Runeword.Enlightenment, "Light Plate"]);
+            Config.Runewords.push([Runeword.Enlightenment, "Mage Plate"]);
+            Config.Runewords.push([Runeword.ChainsofHonor, "Archon Plate"]);
+            //Helm
+            Config.Runewords.push([Runeword.Lore, "Cap"]);
+            Config.Runewords.push([Runeword.Lore, "Skull Cap"]);
+            Config.Runewords.push([Runeword.Lore, "Helm"]);
+            Config.Runewords.push([Runeword.Lore, "Mask"]);
+            Config.Runewords.push([Runeword.Lore, "Bone Helm"]);
+            Config.Runewords.push([Runeword.Lore, "War Hat"]);
+            Config.Runewords.push([Runeword.Lore, "Sallet"]);
+            Config.Runewords.push([Runeword.Lore, "Casque"]);
+            Config.Runewords.push([Runeword.Lore, "Death Mask"]);
+            Config.Runewords.push([Runeword.Lore, "Grim Helm"]);
+            //Shield
+            Config.Runewords.push([Runeword.Splendor, "Round Shield"]);
+            Config.Runewords.push([Runeword.Splendor, "Grim Shield"]);
+            Config.Runewords.push([Runeword.Spirit, "Monarch"]);
+            //Merc Gear
+            Config.Runewords.push([Runeword.Insight, "Voulge"]);
+            Config.Runewords.push([Runeword.Insight, "Poleaxe"]);
+            Config.Runewords.push([Runeword.Insight, "Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Halberd"]);
+            Config.Runewords.push([Runeword.Insight, "War Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Bill"]);
+            Config.Runewords.push([Runeword.Insight, "Battle Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Partizan"]);
+            Config.Runewords.push([Runeword.Insight, "Bec De Corbin"]);
+            Config.Runewords.push([Runeword.Insight, "Grim Scythe"]);
+            Config.Runewords.push([Runeword.Insight, "Colossus Voulge"]);
+            Config.Runewords.push([Runeword.Insight, "Thresher"]);
+            Config.Runewords.push([Runeword.Insight, "Cryptic Axe"]);
+            Config.Runewords.push([Runeword.Insight, "Great Poleaxe"]);
+            Config.Runewords.push([Runeword.Insight, "Giant Thresher"]);
         }
     },
 
     16: {
-        SkillPoints: [-1], // Save Point + 1 (7 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (85)
+        SkillPoints: [-1],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     17: {
-        SkillPoints: [-1], // Save Point + 1 (8 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (90)
+        SkillPoints: [-1], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     18: {
-        SkillPoints: [24, 25, 23], // Blessed Hammer + 1, Concentration + 1, Vigor + 1 (level 1) (level 1) (level 1) (6 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (95)
+        SkillPoints: [24, 25, 23], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {
-            Config.AttackSkill = [-1, 24, -1, 24, -1, -1, -1]; // Blessed Hammer and Concentration!
-            Config.LowManaSkill = [-1, -1]; // Use Concentration while hitting stuff.
-            Config.TownCheck = true; // Do go to town for more potions
-            Config.MinColumn = [3, 3, 3, 3]; // Should have a decent belt by now
-            Config.Charge = false; // Don't waste mana on charging while walking
+            Config.AttackSkill = [-1, 24, -1, 24, -1, -1, -1]; 
+            Config.LowManaSkill = [-1, -1]; 
+            Config.TownCheck = true; 
+            Config.MinColumn = [3, 3, 3, 3]; 
+            Config.Charge = false; 
             Config.HPBuffer = 5;
             Config.MPBuffer = 5;
-            Config.RejuvBuffer = 10; // Need lots of mana for Blessed Hammer!
+            Config.RejuvBuffer = 10;
         }
     },
 
     19: {
-        SkillPoints: [24, 14], // Blessed Hammer + 1, Concentration + 1 (level 2) (level 2) (5 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (100)
+        SkillPoints: [24, 14], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     20: {
-        SkillPoints: [24, 14], // Blessed Hammer + 1, Concentration + 1 (level 3) (level 3) (4 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (105)
+        SkillPoints: [24, 14], 
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     21: {
-        SkillPoints: [24, 14], // Blessed Hammer + 1, Concentration + 1 (level 4) (level 4) (3 saved points remain)
-        StatPoints: [0, 0, 0, 3, 3], // Vitality + 5 (110)
+        SkillPoints: [24, 14],
+        StatPoints: [0, 0, 0, 3, 3], 
         Update: function () {}
     },
 
     22: {
-        SkillPoints: [24, 14], // Blessed Hammer + 1, Concentration + 1 (level 5) (level 5) (2 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (115)
+        SkillPoints: [24, 14],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     23: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 6) (2 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (120)
+        SkillPoints: [24],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     24: {
-        SkillPoints: [28, 29, 24], // Blessed Hammer + 1, Holy Shield + 1, Meditation + 1 (level 7) (level 1) (level 1) (0 saved points remain)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (125)
+        SkillPoints: [28, 29, 24], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [-1, 24, -1, 24, -1, -1, -1]; // Holy Bolt and Meditation for Secondary Skill/Aura.
-            Config.LowManaSkill = [-1, -1]; // Use Meditation while hitting stuff.
-            Config.Cubing = true; // Will have a cube by now.
+            Config.AttackSkill = [-1, 24, -1, 24, -1, -1, -1]; 
+            Config.LowManaSkill = [-1, -1];
+            Config.Cubing = true;
         }
     },
 
     25: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (130)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     26: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (135)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     27: {
-        SkillPoints: [24, 14], // Blessed Hammer + 1, Blessed Aim + 1 (level 10) (level 3) (Norm Radament)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (140)
+        SkillPoints: [24, 14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     28: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 11)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (145)
+        SkillPoints: [24],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     29: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (150)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     30: {
-        SkillPoints: [24, 34, 35], // Blessed Hammer + 1, Blessed Aim + 2 (level 13) (level 5) (Norm Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (160) (Norm Lam Esen's Tome)
+        SkillPoints: [24, 34, 35],
+        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 
         Update: function () {
             Config.AttackSkill = [-1, 24, -1, 24, -1, -1, -1];
             Config.LightningFuryDelay = 0.3;
@@ -271,170 +314,169 @@ var AutoBuildTemplate = {
     },
 
     31: {
-        SkillPoints: [32], // Blessed Hammer + 1 (level 14)
-        StatPoints: [0, 0, 0, 0, 0], // Vitality + 5 (165)
+        SkillPoints: [32],
+        StatPoints: [0, 0, 0, 0, 0],
         Update: function () {
             Config.SummonValkyrie = true;
         }
     },
 
     32: {
-        SkillPoints: [33], // Blessed Hammer + 1 (level 15)
-        StatPoints: [0, 0, 0, 0, 0], // Vitality + 5 (170)
+        SkillPoints: [33], 
+        StatPoints: [0, 0, 0, 0, 0], 
         Update: function () {}
     },
 
     33: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 16)
-        StatPoints: [0, 0, 0, 0, 0], // Vitality + 5 (175)
+        SkillPoints: [24], 
+        StatPoints: [0, 0, 0, 0, 0], 
         Update: function () {}
     },
 
     34: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (180)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     35: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (185)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {
-            Config.LowManaSkill = [-1, -1]; // Stop trying to hit stuff.
+            Config.LowManaSkill = [-1, -1];
 
         }
     },
 
     36: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (190)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {
-            Scripts.AutoBaal = true; // Baal leecher with auto leader assignment
-            Config.AutoBaal.FindShrine = false; // false = disabled, 1 = search after hot tp message, 2 = search as soon as leader is found
-            Config.AutoBaal.LeechSpot = [15115, 5050]; // X, Y coords of Throne Room leech spot
-            Config.AutoBaal.LongRangeSupport = true; // Cast long distance skills from a safe spot
+            Scripts.AutoBaal = false;
+            Config.AutoBaal.FindShrine = false; 
+            Config.AutoBaal.LeechSpot = [15115, 5050]; 
+            Config.AutoBaal.LongRangeSupport = true;
         }
     },
 
     37: {
-        SkillPoints: [24], // Blessed Hammer + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (195)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     38: {
-        SkillPoints: [24], // Concentration + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (200)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     39: {
-        SkillPoints: [24], // Concentration + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (205)
+        SkillPoints: [24], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     40: {
-        SkillPoints: [35], // Concentration + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (210)
+        SkillPoints: [35],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     41: {
-        SkillPoints: [35], // Concentration + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (215)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     42: {
-        SkillPoints: [35], // Concentration + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (220)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], /
         Update: function () {}
     },
 
     43: {
-        SkillPoints: [35, 35, 35, 35, 35], // Concentration + 1, Blessed Aim + 4 (level 11) (level 9) (NM Den of Evil, NM Radament, NM Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (230) (NM Lam Esen's Tome)
+        SkillPoints: [35, 35, 35, 35, 35], 
+        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     44: {
-        SkillPoints: [35], // Concentration + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (235)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     45: {
-        SkillPoints: [35], // Concentration + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (240)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     46: {
-        SkillPoints: [35], // Concentration + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (245)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     47: {
-        SkillPoints: [35], // Concentration + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (250)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     48: {
-        SkillPoints: [35], // Concentration + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (255)
+        SkillPoints: [35],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     49: {
-        SkillPoints: [35], // Concentration + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (260)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     50: {
-        SkillPoints: [35], // Concentration + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (265)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
-            Config.StashGold = 100000; // Minimum amount of gold to stash.
-            Config.Charge = false; // Should have enough mana to charge while walking now.
-            Config.MPBuffer = 4; // Nightmare has stronger potions.
-            Config.HPBuffer = 0; // Nightmare has stronger potions.
-            Config.BeltColumn = ["hp", "hp", "mp", "mp"]; // Regular potion settings
-            Config.MinColumn = [3, 3, 3, 0]; // Regular potion settings
+            Config.StashGold = 100000; 
+            Config.MPBuffer = 4; 
+            Config.HPBuffer = 0; 
+            Config.BeltColumn = ["hp", "hp", "mp", "mp"];
+            Config.MinColumn = [3, 3, 3, 0];
 
         }
     },
 
     51: {
-        SkillPoints: [35], // Concentration + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (270)
+        SkillPoints: [35],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     52: {
-        SkillPoints: [35], // Concentration + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (275)
+        SkillPoints: [35],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     53: {
-        SkillPoints: [35], // Vigor + 1 (level 2)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (280)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     54: {
-        SkillPoints: [35], // Vigor + 1 (level 3)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (285)
+        SkillPoints: [35], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     55: {
-        SkillPoints: [14], // Vigor + 1 (level 4)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (290)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
             Config.UseRejuvHP = 60;
             Config.LifeChicken = 45;
@@ -443,122 +485,122 @@ var AutoBuildTemplate = {
     },
 
     56: {
-        SkillPoints: [14], // Vigor + 1 (level 5)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (295)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     57: {
-        SkillPoints: [14], // Vigor + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (300)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     58: {
-        SkillPoints: [14], // Vigor + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (305)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     59: {
-        SkillPoints: [14], // Vigor + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (310)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     60: {
-        SkillPoints: [14], // Vigor + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (315)
+        SkillPoints: [14],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     61: {
-        SkillPoints: [14], // Vigor + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (320)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     62: {
-        SkillPoints: [14], // Vigor + 1 (level 11)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (325)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     63: {
-        SkillPoints: [14], // Vigor + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (330)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     64: {
-        SkillPoints: [14], // Vigor + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (335)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     65: {
-        SkillPoints: [14], // Vigor + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (340)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     66: {
-        SkillPoints: [14], // Vigor + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (345)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     67: {
-        SkillPoints: [14], // Vigor + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (350)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     68: {
-        SkillPoints: [14], // Vigor + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (355)
+        SkillPoints: [14], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     69: {
-        SkillPoints: [34], // Vigor + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (360)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     70: {
-        SkillPoints: [34, 34, 34, 34, 34], // Vigor + 1, Blessed Aim + 4 (level 19) (level 13) (Hell Den of Evil, Hell Radament, Hell Izual)
-        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], // Vitality + 10 (370) (Hell Lam Esen's Tome)
+        SkillPoints: [34, 34, 34, 34, 34],
+        StatPoints: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     71: {
-        SkillPoints: [34], // Vigor + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (375)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     72: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (380)
+        SkillPoints: [34],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     73: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (385)
+        SkillPoints: [34],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     74: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (390)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     75: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (395)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {
             Config.HPBuffer = 5;
             Config.MPBuffer = 5;
@@ -567,41 +609,40 @@ var AutoBuildTemplate = {
     },
 
     76: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (400)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     77: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (405)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     78: {
-        SkillPoints: [34], // Blessed Aim + 1 (level 20)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (410)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     79: {
-        SkillPoints: [34], // Holy Shield + 1 (level 2)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (415)
+        SkillPoints: [34],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     80: {
-        SkillPoints: [34], // Holy Shield + 1 (level 3)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (420)
+        SkillPoints: [34],
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {
-            Config.Gamble = true; // Time to spend dat ca$h!!
-            Config.ScanShrines = [];
+            Config.Gamble = true; 
         }
     },
 
     81: {
-        SkillPoints: [34], // Holy Shield + 1 (level 4)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (425)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
             Config.UseRejuvHP = 75;
             Config.LifeChicken = 65;
@@ -609,112 +650,111 @@ var AutoBuildTemplate = {
     },
 
     82: {
-        SkillPoints: [34], // Holy Shield + 1 (level 5)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (430)
+        SkillPoints: [34],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     83: {
-        SkillPoints: [34], // Holy Shield + 1 (level 6)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (435)
+        SkillPoints: [34], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     84: {
-        SkillPoints: [20], // Holy Shield + 1 (level 7)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (440)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     85: {
-        SkillPoints: [20], // Holy Shield + 1 (level 8)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (445)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     86: {
-        SkillPoints: [20], // Holy Shield + 1 (level 9)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (450)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     87: {
-        SkillPoints: [20], // Holy Shield + 1 (level 10)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (455)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     88: {
-        SkillPoints: [], // Holy Shield + 1 (level 11)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (460)
+        SkillPoints: [],
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     89: {
-        SkillPoints: [20], // Holy Shield + 1 (level 12)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (465)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     90: {
-        SkillPoints: [20], // Holy Shield + 1 (level 13)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (470)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
-            Config.MPBuffer = 0; // CS runs, no longer need buffer because of taxi rides!
         }
     },
 
     91: {
-        SkillPoints: [20], // Holy Shield + 1 (level 14)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (475)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     92: {
-        SkillPoints: [20], // Holy Shield + 1 (level 15)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (480)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     93: {
-        SkillPoints: [20], // Holy Shield + 1 (level 16)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (485)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     94: {
-        SkillPoints: [20], // Holy Shield + 1 (level 17)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (490)
+        SkillPoints: [20], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     95: {
-        SkillPoints: [-1], // Holy Shield + 1 (level 18)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (495)
+        SkillPoints: [-1], 
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 
     96: {
-        SkillPoints: [-1], // Holy Shield + 1 (level 19)
-        StatPoints: [3, 3, 3, 3, 3], // Vitality + 5 (500)
+        SkillPoints: [-1], 
+        StatPoints: [3, 3, 3, 3, 3],
         Update: function () {}
     },
 
     97: {
-        SkillPoints: [-1], // Holy Shield + 1 (level 20)
-        StatPoints: [-1, -1, -1, -1, -1], //
+        SkillPoints: [-1], 
+        StatPoints: [-1, -1, -1, -1, -1], 
         Update: function () {}
     },
 
     98: {
-        SkillPoints: [-1], //
-        StatPoints: [-1, -1, -1, -1, -1], //
+        SkillPoints: [-1], 
+        StatPoints: [-1, -1, -1, -1, -1], 
         Update: function () {}
     },
 
     99: {
-        SkillPoints: [-1], //
-        StatPoints: [-1, -1, -1, -1, -1], //
+        SkillPoints: [-1], 
+        StatPoints: [-1, -1, -1, -1, -1], 
         Update: function () {}
     }
 };
