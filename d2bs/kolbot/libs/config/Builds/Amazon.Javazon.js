@@ -391,7 +391,7 @@ var AutoBuildTemplate = {
 
     42: {
         SkillPoints: [35], 
-        StatPoints: [3, 3, 3, 3, 3], /
+        StatPoints: [3, 3, 3, 3, 3], 
         Update: function () {}
     },
 

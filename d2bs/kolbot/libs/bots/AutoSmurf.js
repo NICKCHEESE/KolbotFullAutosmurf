@@ -145,25 +145,25 @@ function AutoSmurf() {
 		if (Config.AutoSmurf.TeleportingSorc === me.name) {
 			teleportingSorc = true;
 
-			print("I am the Leader");
+			print("ÿc4I am the ÿc;Leader");
 
 		} else if (Config.AutoSmurf.BoBarb === me.name) {
 			boBarb = true;
 
-			print("I am the BOer");
+			print("ÿc4I am the ÿc;BOer");
 		} else {
 			for (var i = 0 ; i < Config.AutoSmurf.NonSorcChar.length ; i += 1) {
 				if (Config.AutoSmurf.NonSorcChar[i] === me.name) {
 					otherChar = true;
 
-					print("I am a Follower");
+					print("ÿc4I am a ÿc;Follower");
 
 					break;
 				}
 			}
 
 			if (!otherChar) {
-				print("I am not assigned a role in my Config file. Please rectify this omission and restart."); // SiC-666 TODO: Make this red text or throw an error instead.
+				print("ÿc1I am not assigned a role in my Config file ÿc0(ÿc8Check Autosmurf.js file as wellÿc0)ÿc1. Please rectify this omission and restart."); // SiC-666 TODO: Make this red text or throw an error instead.
 
 				while(true) {
 					delay(1000);
@@ -176,7 +176,7 @@ function AutoSmurf() {
 		var i, tpTome, item,
 			questStuff = [91, 92, 173, 174, 521, 524, 525, 553, 554, 555]; // SiC-666 TODO: Check to make sure this includes all quest items that need to be moved to Stash. (Don't need Horadric Cube in this list?)
 
-		print("starting");
+		print("ÿc<Starting! :D");
 
 		Town.doChores();
 
@@ -250,7 +250,7 @@ function AutoSmurf() {
 
 		iAmReady = true; // Prevents premature teamIsReady announcment.
 
-		print("I am ready : Act = " + me.act);
+		print("ÿc2I am ready! ÿc4Current Actÿc0 :: " + me.act);
 
 		//D2Bot.shoutGlobal(me.realm + " " + me.gamename + " ready", 69);
 
@@ -260,7 +260,7 @@ function AutoSmurf() {
 		if ( iAmReady && Config.AutoSmurf.TeamSize === 1 ) {
 			teamIsReady = true;
 
-			print("Team is ready! Telling others :)");
+			print("ÿc2Team is ready! Spreading the word!");
 
 			Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "team is ready");
 		}
@@ -270,9 +270,9 @@ function AutoSmurf() {
 			delay(500);
 			
 			if (getTickCount() - tick > maxWaitTimeMinutes * 60 * 1000) { // Leave the game after x minutes of waiting.
-				print("Team wasn't in game within x minutes.");
+				print("ÿc1Team wasn't in game within ÿc8" + maxWaitTimeMinutes + "ÿc1 minutes.");
 
-				D2Bot.printToConsole("AutoSmurf: Team wasn't ready within x minutes.", 9);
+				D2Bot.printToConsole("ÿc4AutoSmurfÿc0 :: ÿc1Team wasn't ready withinÿc0 :: ÿc8" + maxWaitTimeMinutes + "ÿc1 minutes.", 9);
 
 				quit();
 			}
@@ -290,7 +290,7 @@ function AutoSmurf() {
 			delay(250);
 		}
 
-		print("startSharing: " + startSharing + " lowestAct: " + lowestAct);
+		print("ÿc3Starting to shareÿc0 ::ÿc5 " + startSharing + "ÿc3 Lowest Actÿc0 ::ÿc5 " + lowestAct);
 
 		if (me.findItem(546) || me.findItem(547) || potion || me.getQuest(20, 1)) { // Have A Jade Figurine, The Golden Bird or the Potion of Life or need to Return to Alkor for Reward. Tell the Teleporting Sorc so she gets us to process it.
 			Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "team figurine");
@@ -424,13 +424,13 @@ function AutoSmurf() {
 			}
 		}
 	//---------------------Process Give/Receive Lists---------------------
-		print("Start sharing Waypoints.");
+		print("ÿc3Starting to share Waypoints.");
 
 		for (i in waypointsToShare) {
-			print("Current waypointsToShare element: " + i);
+			print("ÿc3Current waypoints to shareÿc0 ::ÿc8 " + waypointsToShare + "ÿc3 elementÿc0:ÿc8 " + i);
 
 			while (waypointsToReceive.length) {
-				print("waypointsToReceive: " + waypointsToReceive[0]);
+				print("ÿc3Waypoints to receiveÿc0 ::ÿc8 " + waypointsToReceive[0]);
 
 				if (Number(i) < waypointsToReceive[0]) { // Convert waypointsToShare element to a number (it is a string at this point) and compare it to the number in waypointsToReceive[0].
 					break; // Exit while loop because we need to share a Waypoint before receiving this one (waypointsToShare element is a lower waypointAreas index than the lowest waypointAreas index in the waypointsToReceive array).
@@ -468,9 +468,9 @@ function AutoSmurf() {
 					playerList = waypointsToShare[i],
 					finishedPlayerCount = Config.AutoSmurf.TeamSize - playerList.length;
 
-				print("Sharing a Waypoint in area: " + waypointAreas[i]);
+				print("ÿc3Sharing a Waypoint in areaÿc0 ::ÿc8 " + waypointAreas[i]);
 
-				print("playerList.length: " + playerList.length + " finishedPlayerCount: " + finishedPlayerCount);
+				print("ÿc3Player list lengthÿc0 ::ÿc8 " + playerList.length + "ÿc3 Finished list countÿc0 ::ÿc8 " + finishedPlayerCount);
 
 				if (me.findItem(518)) {
 					Pather.makePortal(); // SiC-666 TODO: Buy more scrolls if needed. Pather will throw an error if there are no scrolls in Tomb.
@@ -511,12 +511,12 @@ function AutoSmurf() {
 			}
 		}
 
-		print("Done sharing Waypoints. Start receiving Waypoints.");
+		print("ÿc2Done sharing Waypoints. ÿc3Start receiving Waypoints.");
 
-		print("waypointsToReceive.length: " + waypointsToReceive.length);
+		print("ÿc3Waypoint to receiveÿc0 ::ÿc8 " + waypointsToReceive.length);
 
 		while (waypointsToReceive.length) { // Receive any remaining Waypoints.
-			print("waypointsToReceive: " + waypointsToReceive[0]);
+			print("ÿc3Waypoints to receiveÿc0 ::ÿc8 " + waypointsToReceive[0]);
 
 			this.receiveWaypoint(waypointsToReceive.shift()); // Cut the lowest waypointAreas index from the waypointsToReceive array.
 		}
@@ -527,7 +527,7 @@ function AutoSmurf() {
 			delay(5000); // Allow the Waypointer Giver a moment to come back to Town.
 		}
 
-		print("Done receiving Waypoints.");
+		print("ÿc2Done receiving Waypoints.");
 	//---------------------End Waypoint Sharing---------------------
 		if (boing ===1 && !boBarb) { //being bo
 			this.beBo();
@@ -549,7 +549,7 @@ function AutoSmurf() {
 	};
 
 	this.giveTP = function (nick) {
-		print("giving TP");
+		print("ÿc3Giving TP");
 		//(<3 kolton)
 
 		if (!this.nickList) {
@@ -581,13 +581,13 @@ function AutoSmurf() {
 			case "ready":
 				readyCount += 1;
 
-				print("readyCount = " + readyCount);
+				print("ÿc4Ready countÿc0 ::ÿc8 " + readyCount);
 
 				if (iAmReady && readyCount === Config.AutoSmurf.TeamSize - 1) { // Doesn't count my ready because my messages are ignored. Subtract one from TeamSize to account for this.
 					if (!teamIsReady) { // Only need to change teamIsReady to true once.
 						teamIsReady = true;
 
-						print("Team is ready! Telling others :)");
+						print("ÿc2Team is ready! Spreading the word!");
 
 						Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "team is ready");
 					}
@@ -596,16 +596,16 @@ function AutoSmurf() {
 			case "team is ready":
 				if (!teamIsReady) { // Only need to change teamIsReady to true once.
 					teamIsReady = true;
-					print("Received team is ready!");
+					print("ÿc2Received team is ready!");
 				}
 				break;
 			case "at waypoint":
 				atWPCount += 1;
-				print("atWPCount = " + atWPCount);
+				print("ÿc3At waypointÿc0 ::ÿc8 " + atWPCount);
 				break;
 			case "ready to drink":
 				readyToDrink += 1;
-				print("readyToDrink = " + readyToDrink);
+				print("ÿc3Ready to drinkÿc0 ::ÿc8 " + readyToDrink);
 				break;
 			case "cube":
 				cube = true;
@@ -655,7 +655,7 @@ function AutoSmurf() {
 			case "ready to kill diablo":
 				readyToKillDiablo += 1;
 
-				print("readyToKillDiablo = " + readyToKillDiablo);
+				print("ÿc3Number ready to kill Diabloÿc0 ::ÿc8 " + readyToKillDiablo);
 
 				break;
 			case "master":
@@ -789,7 +789,7 @@ function AutoSmurf() {
 			orgx = me.x,
 			orgy = me.y;
 
-		print("Waiting for Party Members.");
+		print("ÿc9Waiting for Party Members.");
 
 		Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "waitingReady");
 		if (arguments.length < 1) {
@@ -822,7 +822,7 @@ function AutoSmurf() {
 			orgx = me.x,
 			orgy = me.y;
 
-		print("Waiting for Party Members.");
+		print("ÿc9Waiting for Party Members.");
 
 		if (arguments.length < 1) {
 			area = me.area;
@@ -854,7 +854,7 @@ function AutoSmurf() {
 			orgx = me.x,
 			orgy = me.y;
 
-		print("Waiting for Party Members by Waypoint.");
+		print("ÿc9Waiting for Party Members at Waypoint.");
 
 		while (atWPCount !== Config.AutoSmurf.TeamSize - 1) {
 			Attack.clear(15);
@@ -1067,7 +1067,7 @@ function AutoSmurf() {
 
 		dropAmmount = dropAmmount + me.getStat(14) > maxDropAmmount ? maxDropAmmount - me.getStat(14) : dropAmmount; // Handle residual Gold in Inventory screen (shouldn't ever be an issue, but let's be cautious).
 
-		print("Dropping " + Math.round(dropAmmount) + " Gold.");
+		print("ÿc3Dropping ÿc0:: ÿc8" + Math.round(dropAmmount) + "ÿc4 Gold.");
 
 		gold(Math.round(dropAmmount), 4); // Remove Gold from Stash (must be a round number).
 /*
@@ -1107,7 +1107,7 @@ function AutoSmurf() {
 	this.receiveWaypoint = function (index) {
 		var townArea;
 
-		print("Receiving Waypoint in area: " + waypointAreas[index]);
+		print("ÿc3Receiving Waypoint in areaÿc0 ::ÿc8 " + waypointAreas[index]);
 
 		if (!me.inTown) {
 			Pather.usePortal(null, null); // Attempt taking an existing Town Portal back before using the Waypoint (saves walking to the portal spot).
@@ -1190,7 +1190,7 @@ function AutoSmurf() {
 		var orgX, orgY;
 		var usingWaypoint = true;
 
-		print("Giving BO");
+		print("ÿc2Giving BO");
 
 		var i;
 
@@ -1297,7 +1297,7 @@ function AutoSmurf() {
 	this.beBo = function () {
 		var orgX, orgY;
 		var usingWaypoint = true;
-		print("Getting BO");
+		print("ÿc2Getting BO'd");
 
 		if (!Pather.accessToAct(2)) {
 			Town.goToTown(1);
@@ -1446,7 +1446,7 @@ function AutoSmurf() {
 	this.waitAndUsePortal = function(act, targetArea)
 	{
 		Town.goToTown(act);
-		//Town.repair();
+		Town.repair();
 		Town.move("portalspot");
 
 		var j = 0;
@@ -1468,7 +1468,7 @@ function AutoSmurf() {
 			try {
 				Pather.moveToExit(targetarea, true, cleartype);
 			} catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 
 				print(e);
 			}
@@ -1480,18 +1480,18 @@ function AutoSmurf() {
 	
 	//PATHING
 	this.clearToExit = function (currentarea, targetarea, cleartype) { // SiC-666 TODO: add moving to exit without clearing after XX minutes.
-		print("Start clearToExit");
+		print("ÿc4Start clearing to exit.");
 
-		print("Currently in: " + Pather.getAreaName(me.area));
-		print("Currentarea arg: " + Pather.getAreaName(me.area));
+		print("ÿc3Currently inÿc0 ::ÿc8 " + Pather.getAreaName(me.area));
+		print("ÿc3Current areaÿc0 ::ÿc8 " + Pather.getAreaName(me.area));
 
 		delay(250);
-		print("Clearing to: " + Pather.getAreaName(targetarea));
+		print("ÿc3Clearing toÿc0 ::ÿc8 " + Pather.getAreaName(targetarea));
 		while (me.area == currentarea) {
 			try {
 				Pather.moveToExit(targetarea, true, cleartype);
 			} catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 
 				print(e);
 			}
@@ -1501,13 +1501,13 @@ function AutoSmurf() {
 			delay(me.ping * 2 + 500);
 		}
 
-		print("End Clear To Exit");
+		print("ÿc4End Clear To Exit");
 	};
 	
 	this.areasLevelling = function(areas, targetLevel){
 		var i;
 		
-		print("Area Leveling");
+		print("ÿc4Area Leveling");
 		
 		if (areas.length == 0 || !enableAreaLevelling)
 		{
@@ -1541,7 +1541,7 @@ function AutoSmurf() {
 				//- 30 for almost completed run
 				if (getTickCount() - me.gamestarttime >= (Config.MinGameTime - 30)*1000)
 				{
-					print("quitting at duration" + (getTickCount() - me.gamestarttime));
+					print("ÿc1Quitting. ÿc3Game durationÿc0 ::ÿc8 " + (getTickCount() - me.gamestarttime));
 					quit();
 					return this.partyLevel(targetLevel);
 				}
@@ -1578,7 +1578,7 @@ function AutoSmurf() {
 		var wasTeleporting = Pather.teleport;
 		if (getWaypoint(1))
 		{
-			print("Raise skeleton army");
+			print("ÿc1Rÿc2aÿc3iÿc4sÿc5iÿc7nÿc8g ÿc9sÿc<kÿc;eÿc1lÿc2eÿc3tÿc4oÿc5n ÿc7aÿc8rÿc9mÿc0yÿc<!ÿc;!");
 			
 			Pather.useWaypoint(3);
 			
@@ -1711,7 +1711,7 @@ function AutoSmurf() {
 
 		target = Pather.plotCourse(destination, me.area); // Pather.plotCourse(destination area id, starting area id);
 		nextAreaIndex = areaIDs.indexOf(target.course[0])+1; // Index of next area
-		print("Travel course = " + target.course);
+		print("ÿc3Travel courseÿc0:ÿc8 " + target.course);
 
 		if (nextAreaIndex < areaIDs.length) { // If next area index is invalid, return true.
 			if (me.inTown && wpAreas.indexOf(target.course[0]) > -1 && // Use waypoint to first area if possible
@@ -1720,8 +1720,8 @@ function AutoSmurf() {
 			}
 
 			for (nextAreaIndex ; nextAreaIndex < areaIDs.length; nextAreaIndex += 1) {
-				print("nextAreaIndex = " + nextAreaIndex);
-				print("Next location name = " + getArea(areaIDs[nextAreaIndex]).name);
+				print("ÿc3Next area indexÿc0 ::ÿc8 " + nextAreaIndex);
+				print("ÿc3Next location nameÿc0 ::ÿc8 " + getArea(areaIDs[nextAreaIndex]).name);
 
 				if (Pather.teleport === true && me.charlvl >= 18) { // If allowed to teleport (determined by the switch above), skip killing monsters.
 					Config.ClearType = false;
@@ -1760,7 +1760,7 @@ function AutoSmurf() {
 
 						delay(10000);
 
-						print("Attempting to use any portal");
+						print("ÿc9Attempting to use any portal");
 
 						while (!Pather.usePortal(129, null)) {
 							delay(5000);
@@ -1809,7 +1809,7 @@ function AutoSmurf() {
 						try {
 							Pather.moveTo(10073, 8670, 3, false, false);
 						} catch (e) {
-							print("Caught Error.");
+							print("ÿc1Caught Error.");
 
 							print(e);
 						}
@@ -1899,7 +1899,7 @@ function AutoSmurf() {
 					this.clickWP();
 
 					if (me.diff === 0 && (goal === 0 || goal === 1 || goal === 2 || goal === 3) && areaIDs[nextAreaIndex] != destination) { // Don't wait for team if the destination has been reached. (all desinations have a waypoint)
-						print("start this.travel() waypoint wait");
+						print("ÿc3Starting ÿc0'ÿc8this.travel()ÿc0'ÿc3. ÿc9Waiting at waypoint.");
 
 						Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "at waypoint");
 
@@ -1919,7 +1919,7 @@ function AutoSmurf() {
 
 						this.waitForPartyMembers();
 
-						print("End 'this.travel()' Waiting at waypoint.");
+						print("ÿc3Ending ÿc0'ÿc8this.travel()ÿc0'ÿc3. ÿc9Waiting at waypoint.");
 					}
 				}
 			}
@@ -1935,7 +1935,7 @@ function AutoSmurf() {
 	};
 
 	this.changeAct = function (act) {
-		print("change Act " + act);
+		print("ÿc3Changing Act toÿc0 ::ÿc8 " + act);
 
 		var npc, time, tpTome,
 			preArea = me.area;
@@ -2042,7 +2042,7 @@ function AutoSmurf() {
 			if (me.area === preArea) {
 				me.cancel();
 				Town.move("portalspot");
-				print("Act change failed.");
+				print("ÿc2Act change failed!");
 
 				return false;
 			}
@@ -2071,13 +2071,13 @@ function AutoSmurf() {
 			presetUnit = getPresetUnit(me.area, 2, wpIDs[i]);
 
 			if (presetUnit) {
-				print("going to nearest WP");
+				print("ÿc3Going to nearest waypoint.");
 
 				while (getDistance(me.x, me.y, presetUnit.roomx * 5 + presetUnit.x, presetUnit.roomy * 5 + presetUnit.y) > 10) {
 					try {
 						Pather.moveToPreset(me.area, 2, wpIDs[i], 0, 0, Config.ClearType, false);
 					} catch (e) {
-						print("Caught Error.");
+						print("ÿc1Caught Error.");
 
 						print(e);
 					}
@@ -2123,7 +2123,7 @@ function AutoSmurf() {
 		if (item) {
 			do {
 				if (!Item.canEquip(item)) {
-					print("Removing an item I can no longer wear: " + item.name + ".");
+					print("ÿc9Removing an item I can no longer wearÿc0 ::ÿc8 " + item.name + ".");
 
 					if (Storage.Inventory.CanFit(item)) {
 						while (!Storage.Inventory.MoveTo(item)) { // Try to move the item more than once.
@@ -2202,11 +2202,11 @@ function AutoSmurf() {
 					delay(me.ping * 2 + 500);
 				} else {
 					if (Pickit.canMakeRoom()) {
-						print("ÿc7Trying to make room for " + Pickit.itemColor(item) + item.name);
+						print("ÿc9Trying to make room forÿc0 ::ÿc8 " + Pickit.itemColor(item) + item.name);
 
 						Town.visitTown(); // Go to Town and do chores. Will throw an error if it fails to return from Town.
 					} else {
-						print("ÿc7Not enough room for " + Pickit.itemColor(item) + item.name);
+						print("ÿc9Not enough room forÿc0 ::ÿc8 " + Pickit.itemColor(item) + item.name);
 
 						return false;
 					}
@@ -2222,7 +2222,7 @@ function AutoSmurf() {
 	this.prebuffPoisonResistance = function() { // Goes to Town, buys three Antidote potions from Akara, drinks them, and returns to Catacombs Level 4.
 		var i, akara, potions;
 
-		print("Buying Antidote Potions");
+		print("ÿc3Buying ÿc5Antidote ÿc3potions.");
 
 		Town.goToTown();
 
@@ -2271,7 +2271,7 @@ function AutoSmurf() {
 	};
 
 	this.toInventory = function () {
-		print("toInventory");
+		print("ÿc3to inventory.");
 
 		var i,
 		items = [],
@@ -2299,7 +2299,7 @@ function AutoSmurf() {
 	};
 
 	this.cubeStaff = function () {
-		print("cubing staff");
+		print("ÿc4Cubing Staff!");
 
 		var amulet = me.getItem("vip"),
 			staff = me.getItem("msf");
@@ -2324,7 +2324,7 @@ function AutoSmurf() {
 	};
 
 	this.placeStaff = function () {
-		print("place staff");
+		print("ÿc4Placing Staff!");
 
 		var staff, item, orifice,
 			tick = getTickCount(),
@@ -2375,14 +2375,14 @@ function AutoSmurf() {
 			brain = me.getItem(555),
 			flail = me.getItem(173);
 
-		print("cubing flail");
+		print("ÿc4Cubing Flail!");
 
 		if (me.getItem(174)) { // Already have the finished Flail.
 			return true;
 		}
 
 		if (!eye || !heart || !brain || !flail) {
-			print("cubeFlail failed: missing ingredient(s)");
+			print("ÿc2Failed to make Flail. Missing ingredient(s)?");
 
 			return false;
 		}
@@ -2421,12 +2421,12 @@ function AutoSmurf() {
 
 			if (cursorItem) {
 				if (Storage.Inventory.CanFit(cursorItem)) {
-					print("Keeping weapon by force.")
+					print("ÿc9Keeping weapon by force.")
 
 					Storage.Inventory.MoveTo(cursorItem);
 				} else {
 					me.cancel();
-					print("No room to keep weapon by force.");
+					print("ÿc2No room to keep weapon by force.");
 
 					cursorItem.drop();
 				}
@@ -2444,7 +2444,7 @@ function AutoSmurf() {
 		var i,
 			orb = getUnit(2, 404);
 
-		print("Smashing the Compelling Orb.");
+		print("ÿc4Smashing the Compelling Orb!");
 
 		if (!orb) {
 			throw new Error("AutoSmurf.placeFlail: Couldn't find Compelling Orb.")
@@ -2464,7 +2464,7 @@ function AutoSmurf() {
 	};
 		
 	this.hireMerc = function(another) {
-		print("hiring merc");
+		print("ÿc4Hiring Merc!");
 
 		if (another === undefined) {
 			another = 0;
@@ -2563,7 +2563,7 @@ function AutoSmurf() {
 				Misc.useMenu(0x0D45);
 				sendPacket(1,0x36,4,greiz.gid,4,mercid[Math.floor((Math.random() * mercid.length-1))]);
 			}else{
-				print("No mercs available");
+				print("ÿc9No mercs available!");
 			}
 			delay(1000+me.ping*2);
 			me.cancel();
@@ -2577,7 +2577,7 @@ function AutoSmurf() {
 	this.gamePacket = function (bytes) {
 		 switch(bytes[0]) {
 			case 0x4e:
-				print("Doing Merc things.");
+				print("ÿc3Doing Merc things.");
 				var id = (bytes[2] << 8) + bytes[1];
 				if (mercid.indexOf(id) !== -1) {
 						mercid.length = 0;
@@ -2595,14 +2595,14 @@ function AutoSmurf() {
 				moveSucceeded = Pather.moveToExit(targetArea, use, clearPath);
 			}
 			catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 				print(e);
 				moveSucceeded = false;
 			}
 			
 			if (!moveSucceeded)
 			{
-				print("move to exit failed. retry");
+				print("ÿc1Couldn't move to exit. ÿc9Retrying.");
 				coord = CollMap.getRandCoordinate(me.x, -5, 5, me.y, -5, 5);
 				Pather.moveTo(coord.x, coord.y);
 			}
@@ -2613,7 +2613,7 @@ function AutoSmurf() {
 	this.den = function () {
 		var i, akara;
 
-		print("den");
+		print("ÿc4Den");
 
 		if (!me.getQuest(1, 1)) { // Haven't cleared the Den yet.
 			this.teamInGame();
@@ -2654,7 +2654,7 @@ function AutoSmurf() {
 				this.Bo();
 				//Precast.doPrecast(true);
 				for (i = 0; i < 3; i += 1) {
-					print("Clearing: Try number " + i);
+					print("ÿc3Clearing. Attempt numberÿc0 ::ÿc8 " + i);
 
 					this.teamInGame();
 
@@ -2709,7 +2709,7 @@ function AutoSmurf() {
 					this.Bo();
 				}
 				for (i = 0; i < 3; i += 1) {
-					print("clearing - try number " + i);
+					print("ÿc3Clearing. Attempt numberÿc0 ::ÿc8 " + i);
 
 					this.teamInGame();
 
@@ -2759,7 +2759,7 @@ function AutoSmurf() {
 	};
 
 	this.cave = function () {
-		print("cave");
+		print("ÿc4Cave");
 		Town.repair();
 		Town.doChores();
 		Pather.useWaypoint(3);
@@ -2784,7 +2784,7 @@ function AutoSmurf() {
 	this.blood = function () {
 		var kashya;
 
-		print("BloodRaven");
+		print("ÿc4BloodRaven");
 		Town.repair();
 		this.teamInGame();
 
@@ -3031,7 +3031,7 @@ function AutoSmurf() {
 			xx = [ 25175, 25147, 25149, 25127, 25128, 25150, 25081],
 			yy = [ 5187,  5201,  5172,  5188,  5144,  5123,  5137];
 
-		print("trist");
+		print("ÿc4Tristram");
 		Town.repair();
 		Pather.useWaypoint(4);
 
@@ -3072,7 +3072,7 @@ function AutoSmurf() {
 	// add for Lvl up when the partyLevel is less than the tristLvl
 	this.tristAfter = function () {
 
-		print("tristAfter");
+		print("ÿc4After Tristram");
 		if (!me.inTown) { // this.trist(); doesn't end in town.
 			Town.goToTown();
 		}
@@ -3101,7 +3101,7 @@ function AutoSmurf() {
 	this.countess = function() {
 		var clearPath = me.diff === 0, poi;
 		
-		print("Countess");
+		print("ÿc4Countess");
 		
 		if (teleportingSorc || me.diff === 0)
 		{
@@ -3191,7 +3191,7 @@ function AutoSmurf() {
 	this.smith = function() {
 		var i, charsi, clearPath = me.diff === 0;
 		
-		print("Smith");
+		print("ÿc4Smith");
 		Town.goToTown();
 		
 		if (clearPath || teleportingSorc)
@@ -3219,7 +3219,7 @@ function AutoSmurf() {
 				}
 				else if (i === 4)
 				{
-					D2Bot.printToConsole("Failed to get to the Smith. Leaving. >.<", 9);
+					D2Bot.printToConsole("ÿc1Failed to get to the Smith. Leaving. >.<", 9);
 					quit();
 					return false;
 				}
@@ -3254,7 +3254,7 @@ function AutoSmurf() {
 				}
 				else if (i === 4)
 				{
-					D2Bot.printToConsole("Failed to get to the Smith. Leaving. >.<", 9);
+					D2Bot.printToConsole("ÿc1Failed to get to the Smith. Leaving. >.<", 9);
 					quit();
 					return false;
 				}
@@ -3297,7 +3297,7 @@ function AutoSmurf() {
 	this.andy = function () {
 		var oldPickRange = Config.PickRange;
 
-		print("killing andy");
+		print("ÿc4Killing Andariel!");
 		Town.repair();
 		this.teamInGame();
 
@@ -3421,7 +3421,7 @@ function AutoSmurf() {
 	this.mfAndy = function () {
 		var oldPickRange = Config.PickRange;
 
-		print("Farming Andariel");
+		print("ÿc4Farming Andariel");
 		Town.repair();
 		this.teamInGame();
 
@@ -3494,21 +3494,21 @@ function AutoSmurf() {
 	this.cube = function () { // Only called in Normal Difficulty.
 		var i, chest, cube;
 
-		print("getting cube");
+		print("ÿc4Getting Cube");
 		Town.repair();
 		this.teamInGame();
 
-		print("Travel to the Halls Of The Dead");
+		print("ÿc3Traveling to the Halls Of The Dead");
 		this.travel(2); // Halls Of The Dead Level 2
 
-		print("Travel to the Lost City");
+		print("ÿc3Traveling to the Lost City");
 		this.travel(3); // Lost City
 
 		if (!me.inTown) {
 			Town.goToTown();
 		}
 
-		print("Use waypoint to: Halls Of The Dead Level 2");
+		print("ÿc3Using waypoint toÿc0 ::ÿc8 Halls Of The Dead Level 2");
 		Pather.useWaypoint(57, true); // Halls Of The Dead Level 2
 
 		this.waitForPartyMembers();
@@ -3537,7 +3537,7 @@ function AutoSmurf() {
 			try {
 				Pather.moveToPreset(60, 2, 354, 0, 0, Config.ClearType, false);
 			} catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 
 				print(e);
 			}
@@ -3559,7 +3559,7 @@ function AutoSmurf() {
 	this.amulet = function () {
 		var i, drognan;
 
-		print("getting amulet");
+		print("ÿc4Getting Amulet");
 		Town.repair();
 		this.teamInGame();
 
@@ -3674,7 +3674,7 @@ function AutoSmurf() {
 	};
 
 	this.staff = function () { // Only the Teleporting Sorc does this. She will be at least level 18 as required by MAIN to reach this stage.
-		print("Getting Staff");
+		print("ÿc4Getting Staff");
 
 		this.teamInGame();
 
@@ -3743,7 +3743,7 @@ function AutoSmurf() {
 	this.summoner = function () { // Teleporting Sorc will be at least level 18 as required by MAIN to reach this stage.
 		var i, journal;
 
-		print("Killing Summoner. RIP");
+		print("ÿc4Killing Summoner! ÿc1RIP");
 		Town.repair();
 		Town.buyPotions();
 		this.teamInGame();
@@ -3775,7 +3775,7 @@ function AutoSmurf() {
 				try {
 					Pather.moveToPreset(74, 2, 357, -3, -3, false, false);
 				} catch (e) {
-					print("Caught Error.");
+					print("ÿc1Caught Error.");
 
 					print(e);
 				}
@@ -3842,7 +3842,7 @@ function AutoSmurf() {
 	this.mfSummoner = function () { // Teleporting Sorc will be at least level 18 as required by MAIN to reach this stage.
 		var i, journal;
 
-		print("Farming Summoner");
+		print("ÿc4Farming Summoner");
 
 		if (teleportingSorc) {
 			if (!me.inTown) {
@@ -3863,7 +3863,7 @@ function AutoSmurf() {
 				try {
 					Pather.moveToPreset(74, 2, 357, -3, -3, false, false);
 				} catch (e) {
-					print("Caught Error.");
+					print("ÿc1Caught Error.");
 
 					print(e);
 				}
@@ -3928,7 +3928,7 @@ function AutoSmurf() {
 	this.tombs = function() { // Teleporting Sorc shares Canyon of The Magi waypoint with the others and they each clear to the chest in all of the tombs.
 		var i, j, chest;
 
-		print("Clearing the Tombs");
+		print("ÿc4Clearing the Tombs");
 		Town.doChores();
 		Pather.teleport = false;
 
@@ -3963,7 +3963,7 @@ function AutoSmurf() {
 
 				Town.move("portalspot");
 
-				print("Waiting for Canyon Of The Magi TP.");
+				print("ÿc9Waiting for Canyon Of The Magi TP");
 
 				j = 0;
 
@@ -4020,7 +4020,7 @@ function AutoSmurf() {
 						try {
 							Pather.moveToPreset(me.area, 2, 397, 0, 0, Config.ClearType, false);
 						} catch (e) {
-							print("Caught Error.");
+							print("ÿc1Caught Error.");
 
 							print(e);
 						}
@@ -4071,7 +4071,7 @@ function AutoSmurf() {
 		}
 
 		if (!this.partyLevel(tombsLvl)) {
-			print("Not ready to start Duriel.");
+			print("ÿc9Not ready to kill Duriel");
 
 			delay(1000);
 
@@ -4086,7 +4086,7 @@ function AutoSmurf() {
 			pathX = [5106, 5205, 5205, 5214, 5222],
 			pathY = [5125, 5125, 5152, 5153, 5181];
 
-		print("Radament");
+		print("ÿc4Radament");
 		Town.doChores();
 		this.teamInGame();
 
@@ -4136,7 +4136,7 @@ function AutoSmurf() {
 					try {
 						Pather.moveToPreset(49, 2, 355, 0, 0, false, false);
 					} catch (e) {
-						print("Caught Error.");
+						print("ÿc1Caught Error.");
 						print(e);
 					}
 				}
@@ -4164,7 +4164,7 @@ function AutoSmurf() {
 			try {
 				Attack.kill(229); // Radament
 			} catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 				print(e);
 				Attack.clear(30);
 			}
@@ -4184,7 +4184,7 @@ function AutoSmurf() {
 	};
 
 	this.duriel = function () {
-		print("Killing Duriel");
+		print("ÿc4Killing Duriel!");
 
 		var i, cain, orifice, hole, npc;
 		Town.repair();
@@ -4220,7 +4220,7 @@ function AutoSmurf() {
 					try {
 						Pather.moveToPreset(getRoom().correcttomb, 2, 152, 0, 0, false, false);
 					} catch (e) {
-						print("Caught Error.");
+						print("ÿc1Caught Error.");
 
 						print(e);
 					}
@@ -4286,7 +4286,7 @@ function AutoSmurf() {
 
 				Town.move("portalspot");
 
-				print("Waiting for Orifice TP.");
+				print("ÿc9Waiting for Orifice TP.");
 
 				var j = 0;
 
@@ -4312,7 +4312,7 @@ function AutoSmurf() {
 
 				Town.goToTown(2);
 
-				print("Waiting for Duriel TP.");
+				print("ÿc9Waiting for Duriel TP.");
 
 				while (!Pather.usePortal(73, null)) {
 					delay(250);
@@ -4378,7 +4378,7 @@ function AutoSmurf() {
 	};
 	
 	this.mfDuriel = function () {
-		print("Farming Duriel");
+		print("ÿc4Farming Duriel");
 
 		var i, cain, orifice, hole, npc, unit;
 		Town.repair();
@@ -4477,7 +4477,7 @@ function AutoSmurf() {
 		me.getQuest(20, 5/12/13/16/19) = persists after drinking potion
 	----------------------------
 */
-		print("Processing the Figurine");
+		print("ÿc;Processing the Figurine");
 
 		Town.goToTown(3);
 
@@ -4560,7 +4560,7 @@ function AutoSmurf() {
 		potion = me.getItem(545); // Already declared var and checked once in this.start(). Now that Golden Bird is complete, check for the unit again.
 
 		if (potion) {
-			print("Drinking the Figurine potion!");
+			print("ÿcÿc4Drinking the Figurine potion!");
 
 			if (potion.location > 3) {
 				this.openStash();
@@ -4573,7 +4573,7 @@ function AutoSmurf() {
 
 		teamFigurine = false;
 
-		print("Drinking Potion of Life!");
+		print("ÿc4Drinking Potion of ÿc1Lÿc2iÿc3fÿc8eÿc;!");
 
 		return true;
 	};
@@ -4582,7 +4582,7 @@ function AutoSmurf() {
 	this.lamEsen = function () { // Teleporting Sorc walks over to Alkor and completes the quest for everyone via exploit.
 		var i, alkor, target;
 
-		print("Lam Essen's Tome");
+		print("ÿc4Lam Essen's Tome");
 
 		Town.goToTown(3);
 
@@ -4665,7 +4665,7 @@ function AutoSmurf() {
 	};
 
 	this.eye = function () {
-		print("Getting Eye");
+		print("ÿc4Getting Eye");
 
 		this.teamInGame();
 
@@ -4719,7 +4719,7 @@ function AutoSmurf() {
 	};
 
 	this.heart = function () {
-		print("Getting Heart");
+		print("ÿc4Getting Heart");
 
 		this.teamInGame();
 
@@ -4787,7 +4787,7 @@ function AutoSmurf() {
 	};
 
 	this.brain = function () {
-		print("getting brain");
+		print("ÿc4Getting Brain. ÿc;Kappa");
 
 		this.teamInGame();
 
@@ -4877,7 +4877,7 @@ function AutoSmurf() {
 			return monsterList;
 		};
 
-		print("travincal");
+		print("ÿc4Travincal");
 
 		this.teamInGame();
 
@@ -4989,7 +4989,7 @@ function AutoSmurf() {
 
 		this.waitForPartyMembers(); // Wait for everyone to finish Travincal and come to town so I don't miss someone announcing team figurine.
 
-		print("Travincal done.");
+		print("ÿc2Travincal done.");
 
 		return true;
 	};
@@ -5001,7 +5001,7 @@ function AutoSmurf() {
 
 		var cain;
 
-		print("Mephisto");
+		print("ÿc4Mephisto");
 		Town.repair();
 		Pather.teleport = true;
 
@@ -5070,7 +5070,7 @@ function AutoSmurf() {
 				try {
 					Pather.moveToPreset(102, 2, 342, 0, 0, false, false);
 				} catch (e) {
-					print("Caught Error.");
+					print("ÿc1Caught Error.");
 
 					print(e);
 				}
@@ -5110,7 +5110,7 @@ function AutoSmurf() {
 	this.mfMephisto = function () {
 		var cain, clearLvl3 = false, i, redPortal;
 
-		print("Farming Mephisto");
+		print("ÿc4Farming Mephisto");
 		Town.repair();
 		Pather.teleport = true;
 
@@ -5190,7 +5190,7 @@ function AutoSmurf() {
 			try {
 				Pather.moveToPreset(102, 2, 342, 0, 0, false, false);
 			} catch (e) {
-				print("Caught Error.");
+				print("ÿc1Caught Error.");
 
 				print(e);
 			}
@@ -5210,7 +5210,7 @@ function AutoSmurf() {
 	this.izual = function () {
 		var tyrael;
 
-		print("izual");
+		print("ÿc4Izual");
 		Town.repair();
 		Town.doChores(); // Need max amount of potions otherwise might prematurely TP in Plains Of Despair.
 
@@ -5442,7 +5442,7 @@ function AutoSmurf() {
 		};
 
 		this.vizierSeal = function () {
-			print("Viz layout " + this.vizLayout);
+			print("ÿc3Grand Vizier of Chaos layoutÿc0 ::ÿc8 " + this.vizLayout);
 
 			this.followPath(this.vizLayout === 1 ? this.starToVizA : this.starToVizB);
 
@@ -5465,7 +5465,7 @@ function AutoSmurf() {
 		};
 
 		this.seisSeal = function () {
-			print("Seis layout " + this.seisLayout);
+			print("ÿc3Lord De Seis layoutÿc0 ::ÿc8 " + this.seisLayout);
 
 			this.followPath(this.seisLayout === 1 ? this.starToSeisA : this.starToSeisB);
 
@@ -5497,7 +5497,7 @@ function AutoSmurf() {
 		};
 
 		this.infectorSeal = function () {
-			print("Inf layout " + this.infLayout);
+			print("ÿc3Infector of Souls layoutÿc0 ::ÿc8 " + this.infLayout);
 
 			this.followPath(this.infLayout === 1 ? this.starToInfA : this.starToInfB);
 
@@ -5672,7 +5672,7 @@ function AutoSmurf() {
 		this.starToInfB = [7809, 5268, 7834, 5306, 7852, 5280, 7852, 5310, 7869, 5294, 7895, 5274, 7927, 5275, 7932, 5297, 7923, 5313];
 */
 		// start
-		print("diablo");
+		print("ÿc1Diablo");
 		Town.doChores();
 		this.teamInGame();
 
@@ -5735,13 +5735,13 @@ function AutoSmurf() {
 		Precast.doPrecast(true);
 
 		if (me.y > 5400) {
-			print("Starting at Entrance.");
+			print("ÿc3Starting at Entrance.");
 
 			this.followPath(this.entranceToStar);
 
 			Attack.clear(30, 0, false, this.sort);
 		} else {
-			print("Starting at Star.");
+			print("ÿc3Starting at Star.");
 		}
 		this.Bo();
 		this.vizierSeal();
@@ -5756,7 +5756,7 @@ function AutoSmurf() {
 		this.infectorSeal();
 
 		if (me.gametype === 0 && (!this.partyLevel(diaLvl) || (me.diff === 1 && !this.partyLevel(diaLvlnm)) || me.diff === 2)) { // Don't kill Diablo in classic unless the difficulty specific level requirement is met.
-			print("Not ready to kill diablo!!"); // NOTE TO USERS: In classic, never kill Diablo in Hell difficulty with this script. It's better to switch to a CS Taxi script that will run faster and maintain Diablo virgin kills.
+			print("ÿc9Not ready to kill Diablo!!"); // NOTE TO USERS: In classic, never kill Diablo in Hell difficulty with this script. It's better to switch to a CS Taxi script that will run faster and maintain Diablo virgin kills.
 
 			Town.goToTown();
 
@@ -5849,7 +5849,7 @@ function AutoSmurf() {
 
 
 	this.shenk = function () { // SiC-666 TODO: Rewrite this.
-		print("Shenk");
+		print("ÿc4Shenk");
 		Town.doChores();
 		this.teamInGame();
 		if (me.getQuest(35, 1)) {
@@ -5880,7 +5880,7 @@ function AutoSmurf() {
 	};
 
 	this.mfShenk = function () { // SiC-666 TODO: Rewrite this.
-		print("Farming Shenk");
+		print("ÿc4Farming Shenk");
 		
 		if (teleportingSorc) {
 			if (!Pather.useWaypoint(111, false)) {
@@ -5911,7 +5911,7 @@ function AutoSmurf() {
 	};
 	
 	this.rescueBarbs = function() { // SiC-666 TODO: Rewrite this.
-		print("Saving the Barbarians!");
+		print("ÿc2Saving the Barbarians!");
 	//(<3 Larryw)
 		var i, k, qual, door, skill, completionTries,
 			coords =[],
@@ -5936,7 +5936,7 @@ function AutoSmurf() {
 			Config.PacketCasting = 1;
 
 			for ( k = 0  ; k < coords.length ; k += 1) {
-				print("going to barbspot "+(k+1)+"/"+barbSpots.length);
+				print("ÿc3Going to Barbarian cageÿc0 ::ÿc8 "+(k+1)+" ÿc0//ÿc8 "+barbSpots.length);
 				Pather.moveToUnit(coords[k], 2, 0);
 				door = getUnit(1, 434);
 				if (door) {
@@ -6132,7 +6132,7 @@ function AutoSmurf() {
 	
 	this.mfPindle = function() {
 	
-		print("Farming Pindleskin");
+		print("ÿc4Farming Pindleskin");
 		
 		Town.goToTown(5);
 		
@@ -6178,7 +6178,7 @@ function AutoSmurf() {
 	}
 
 	this.ancients = function () { // SiC-666 TODO: Rewrite this.
-		print("Ancients");
+		print("ÿc4Ancients");
 
 		var i, j, altar, time;
 		Town.doChores();
@@ -6283,7 +6283,7 @@ function AutoSmurf() {
 	};
 
 	this.baal = function () { // SiC-666 TODO: Rewrite this.
-		print("Baal");
+		print("ÿc4Baal");
 	//(<3 YGM)
 		this.teamInGame();
 		var portal, tick, baalfail, questTry, time, l, merc,
@@ -6464,7 +6464,7 @@ function AutoSmurf() {
 					}
 					delay(10000);
 					if (baalfail === 8) {
-						D2Bot.printToConsole("I'm broken :/");
+						D2Bot.printToConsole("ÿc1I'm broken :/");
 					}
 				}
 
@@ -6609,7 +6609,7 @@ function AutoSmurf() {
 		delay(me.ping*2);
 
 		if (!this.partyLevel(baalLvl) || (me.diff === 1 && !this.partyLevel(baalLvlnm)) || (me.diff === 2 && !this.partyLevel(mfLvlhell))) { // If the team hasn't met the level requirement in Normal or Nightmare, don't kill baal.
-			print("Not killing Baal. This time...");
+			print("ÿc9Not killing Baal. ÿc<This time...");
 			return true;
 		}
 
@@ -6736,7 +6736,7 @@ function AutoSmurf() {
 			return false;
 		}
 		
-		print("Magic Finding time!");
+		print("ÿc2Magic ÿc<Finding ÿc:time!");
 		
 		//Act 1 mf
 		if (me.getQuest(7, 0))
@@ -6829,7 +6829,7 @@ function AutoSmurf() {
 		if ( iAmReady && Config.AutoSmurf.TeamSize === 1 ) {
 			teamIsReady = true;
 
-			print("Team is ready! Telling others!");
+			print("ÿc2Team is ready! Spreading the word!");
 
 			Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "team is ready");
 		}
@@ -6839,13 +6839,13 @@ function AutoSmurf() {
 			case "ready":
 				readyCount += 1;
 
-				print("readyCount = " + readyCount);
+				print("ÿc3Ready countÿc0 ::ÿc8 " + readyCount);
 
 				if (iAmReady && readyCount === Config.AutoSmurf.TeamSize - 1) {  // Doesn't count my ready because my messages are ignored. Subtract one from TeamSize to account for this.
 					if (!teamIsReady) { // Only need to change teamIsReady to true once.
 						teamIsReady = true;
 
-						print("Team is ready! Telling others!");
+						print("ÿc2Team is ready! Spreading the word!");
 
 						Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "team is ready");
 					}
@@ -6855,18 +6855,18 @@ function AutoSmurf() {
 				if (!teamIsReady) { // Only need to change teamIsReady to true once.
 					teamIsReady = true;
 
-					print("I've heard that the team is ready!");
+					print("ÿc8Word on the street is that the team is ready!");
 				}
 				break;
 			case "at waypoint":
 				atWPCount += 1;
 
-				print("atWPCount = " + atWPCount);
+				print("ÿc3At waypointÿc0 ::ÿc8 " + atWPCount);
 
 				break;
 			case "ready to drink":
 				readyToDrink += 1;
-				print("readyToDrink = " + readyToDrink);
+				print("ÿc2Ready to drinkÿc0 ::ÿc8 " + readyToDrink);
 				break;
 			case "cube":
 				cube = true;
@@ -6916,7 +6916,7 @@ function AutoSmurf() {
 			case "ready to kill diablo":
 				readyToKillDiablo += 1;
 
-				print("readyToKillDiablo = " + readyToKillDiablo);
+				print("ÿc3Number ready to kill Diabloÿc0 ::ÿc8 " + readyToKillDiablo);
 
 				break;
 			case "master":
@@ -7007,9 +7007,9 @@ function AutoSmurf() {
 		delay(1000);
 
 		if (getTickCount() - tick > maxWaitTimeMinutes * 60 * 1000) { // Leave the game after x minutes of waiting.
-			print("Team wasn't in game within x minutes.");
+			print("ÿc1Team wasn't in game withinÿc0 ::ÿc8 " + maxWaitTimeMinutes + " ÿc1minutes.");
 
-			D2Bot.printToConsole("AutoSmurf: Team didn't join the game within x minutes.", 9);
+			D2Bot.printToConsole("ÿc4AutoSmurfÿc0 :: ÿc1Team didn't join the game withinÿc0 ::ÿc8 " + maxWaitTimeMinutes + "ÿc1 minutes.", 9);
 
 			quit();
 		}
@@ -7317,7 +7317,7 @@ function AutoSmurf() {
 			if (checkPartyAct === 3) { // If the lowest Town is Act 3.
 				Messaging.sendToList(Config.AutoSmurf.AllTeamProfiles, "red portal");
 
-				D2Bot.printToConsole("AutoSmurf: Helping straggler complete Act 3.", 5);
+				D2Bot.printToConsole("ÿc4AutoSmurfÿc0 :: ÿc9Helping straggler complete Act 3.", 5);
 
 				this.mephisto(true);
 			}
@@ -7448,7 +7448,7 @@ var OnOff = {
 				if (CustomConfig.hasOwnProperty(n)) {
 					if (CustomConfig[n].indexOf(me.profile) > -1) {
 						if (notify) {
-							print("ÿc2Loading custom config: ÿc9" + n + ".js");
+							print("ÿc2Loading custom config ÿc0:: ÿc9" + n + ".js");
 						}
 
 						 configFilename = n + ".js";
@@ -7482,7 +7482,7 @@ var OnOff = {
 				return true;
 			}
 		}
-		print("ÿc;ConfigChanger ÿc0:: Couldn't find config file.");
+		print("ÿc;Config changer ÿc0:: ÿc1Couldn't find config file!");
 		return false;
 	},
 
@@ -7503,7 +7503,7 @@ var OnOff = {
 		for (var i = 0; i < lines.length; i++) {
 			if (lines[i].match(line + " = ")) {
 				lines[i] = lines[i].replace(/true/gi, "false");
-				print("ÿc;ConfigChanger ÿc0:: Disabled: " + line);
+				print("ÿc;Config changer ÿc0:: ÿc1Disabledÿc0 ::ÿc8 " + line);
 				Misc.fileAction(this.file, 1, lines.join("\n"));
 				return true;
 			}
@@ -7530,7 +7530,7 @@ var OnOff = {
 		for (var i = 0; i < lines.length; i++) {
 			if (lines[i].match(line + " = ")) {
 				lines[i] = lines[i].replace(/false/gi, "true");
-				print("ÿc;ConfigChanger ÿc0:: Enabled: " + line);
+				print("ÿc;Config changer ÿc0:: ÿc2Enabledÿc0 ::ÿc8 " + line);
 				Misc.fileAction(this.file, 1, lines.join("\n"));
 
 				return true;
