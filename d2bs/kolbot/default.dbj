@@ -95,14 +95,14 @@ function main() {
 		if (mode === 0 && msg === "mule") { // "Mule Profile" option from D2Bot#
 			if (AutoMule.getInfo() && AutoMule.getInfo().hasOwnProperty("muleInfo")) {
 				if (AutoMule.getMuleItems().length > 0) {
-					D2Bot.printToConsole("Mule triggered");
+					D2Bot.printToConsole("ÿc2Mule triggered!");
 					scriptBroadcast("mule");
 					scriptBroadcast("quit");
 				} else {
-					D2Bot.printToConsole("No items to mule.");
+					D2Bot.printToConsole("ÿc9No items to mule!");
 				}
 			} else {
-				D2Bot.printToConsole("Profile not enabled for muling.");
+				D2Bot.printToConsole("ÿc9Profile not enabled for muling!");
 			}
 		}
 
@@ -160,8 +160,8 @@ function main() {
 
 	// Check for experience decrease -> log death. Skip report if life chicken is disabled.
 	if (stats.name === me.name && me.getStat(13) < stats.experience && Config.LifeChicken > 0) {
-		D2Bot.printToConsole("You died in last game", 9);
-		D2Bot.printToConsole("Experience decreased by " + (stats.experience - me.getStat(13)), 9);
+		D2Bot.printToConsole("ÿc4You died in last game...", 9);
+		D2Bot.printToConsole("ÿcExperience decreased by ÿc0:: ÿc8 " + (stats.experience - me.getStat(13)), 9);
 		DataFile.updateStats("deaths");
 		D2Bot.updateDeaths();
 	}
@@ -188,7 +188,7 @@ function main() {
 	}
 
 	if (Config.FastPick) {
-		print("ÿc2Fast pickit active.");
+		print("ÿc2Fast pickit active!");
 		addEventListener("itemaction", this.itemEvent);
 	}
 

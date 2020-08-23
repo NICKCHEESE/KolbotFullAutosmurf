@@ -38,7 +38,7 @@
                     throw error;
                 } // keep on throwing
 
-                print('[ÿc9Warningÿc0] Too much recursion');
+                print('[ÿc9Warningÿc0] ÿc5Too much recursion');
             }
         };
 

@@ -38,12 +38,12 @@ function main() {
 			delay(100);
 
 			if (mapThread.running) {
-				print("pause mapthread");
+				print("ÿc1Pausing ÿc0:: ÿc3Mapthread.");
 				mapThread.pause();
 			}
 		} else {
 			if (!mapThread.running) {
-				print("resume mapthread");
+				print("ÿc2Resuming ÿc0::  ÿc3Mapthread!");
 				mapThread.resume();
 			}
 		}

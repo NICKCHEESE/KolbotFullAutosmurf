@@ -60,7 +60,7 @@ var ClassAttack = {
 				break;
 			default:
 				Config.Curse[i] = 0;
-				print("Invalid curse id");
+				print("ÿc4Attacks ÿc0:: ÿc4Necromancer.js ÿc0:: ÿc1Invalid curse id");
 
 				break;
 			}
@@ -399,7 +399,7 @@ MainLoop:
 					}
 				} else if (me.getMinionCount(6) < maxRevives) {
 					if (this.checkCorpse(corpse, true)) {
-						print("Reviving " + corpse.name);
+						print("ÿc4Attacks ÿc0:: ÿc4Necromancer ÿc0:: ÿc<Reviving ÿc5 " + corpse.name);
 
 						if (!Skill.cast(95, 0, corpse)) {
 							return false;

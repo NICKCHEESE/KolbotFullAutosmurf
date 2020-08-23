@@ -192,7 +192,7 @@ var answer = false,
 	},
 
 	removeNames: function (quitter) {
-		print (quitter + " has left. updating..");
+		print ("ÿc4AutoAssign ÿc0:: ÿc8 " + quitter + " ÿc1has left. ÿc9Updating...");
 		var i, y, currentClass,
 			arrays = [this.Barbs, this.Pallys, this.Sorcs];
 
@@ -209,7 +209,7 @@ var answer = false,
 	},
 
 	getNames: function () {
-		print ("Updating names.");
+		print ("ÿc4AutoAssign ÿc0:: ÿc<Updating names...");
 
 		for (var i = 0; i < 3; i++) {
 			var party = getParty();

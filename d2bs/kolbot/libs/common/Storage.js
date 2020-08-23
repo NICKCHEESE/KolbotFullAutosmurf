@@ -202,7 +202,7 @@ Loop:
 
 				while ((getTickCount() - nDelay) < Math.max(1000, me.ping * 3 + 500)) {
 					if (!me.itemoncursor) {
-						print("ÿc2Successfully placed " + item.name + "ÿc4 at X: " + nPos.x + " ÿc4Y: " + nPos.y);
+						print("ÿc4Storage ÿc0:: ÿc2Successfully placed ÿc0:: ÿc5 " + item.name + "ÿc4 at ÿc5 X ÿc0:: ÿc5 " + nPos.x + " ÿc5Y ÿc0:: ÿc5 " + nPos.y);
 						delay(200);
 
 						return true;
@@ -224,8 +224,8 @@ Loop:
 	this.Dump = function () {
 		var x, y, string;
 
-		print(this.name + " has the width of " + this.width + " and the height of " + this.height);
-		print(this.name + " has " + this.itemList.length + " items inside, and has " + this.openPositions + " spots left.");
+		print("ÿc4Storage ÿc0:: ÿc5 " + this.name + " ÿc3has the width of ÿc5 " + this.width + " ÿc3and the height of ÿc5" + this.height);
+		print("ÿc4Storage ÿc0:: ÿc5 " + this.name + " ÿc3has ÿc5" + this.itemList.length + " ÿc3items inside. And has ÿc5" + this.openPositions + " ÿc3spots left.");
 
 		for (x = 0; x < this.height; x += 1) {
 			string = "";

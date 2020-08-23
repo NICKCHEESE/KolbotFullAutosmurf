@@ -72,7 +72,7 @@ NTIP.OpenFile = function (filepath, notify) {
 	}
 
 	if (notify) {
-		print("ÿc4Loaded NIP: ÿc2" + filename + "ÿc4. Lines: ÿc2" + lines.length + "ÿc4. Valid entries: ÿc2" + entries + ". ÿc4Time: ÿc2" + (getTickCount() - tick) + " ms");
+		print("ÿc4ItemParser ÿc0:: ÿc4Loaded NIP ÿc0:: ÿc2" + filename + "ÿc4. Lines ÿc0:: ÿc2" + lines.length + "ÿc4. Valid entries ÿc0:: ÿc2" + entries + ". ÿc4Time ÿc0:: ÿc2" + (getTickCount() - tick) + " ÿc4ms");
 	}
 
 	return true;
@@ -120,7 +120,7 @@ NTIP.CheckQuantityOwned = function (item_type, item_stats) {
 		items = me.getItems();
 
 	if (!items) {
-		print("I can't find my items!");
+		print("ÿc4ItemParser ÿc0:: ÿc1I can't find my items!");
 
 		return 0;
 	}

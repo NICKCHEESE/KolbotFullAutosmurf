@@ -32,7 +32,7 @@ var AutoBuild = new function AutoBuild () {
 	// By reapplying all of the changes to the Config object, we preserve
 	// the state of the Config file without altering the saved char config.
 	function applyConfigUpdates () {
-		if (debug) { this.print("ÿc2Updating Config from level "+configUpdateLevel+" ÿc2to "+me.charlvl)}
+		if (debug) { this.print("ÿc4AutoBuild ÿc0:: ÿc2Updating Config from level ÿc5 "+configUpdateLevel+" ÿc2to ÿc5 "+me.charlvl)}
 		while (configUpdateLevel < me.charlvl) {
 			configUpdateLevel += 1;
 			AutoBuildTemplate[configUpdateLevel].Update.apply(Config); // TODO: Make sure this works
@@ -43,7 +43,7 @@ var AutoBuild = new function AutoBuild () {
 	function getBuildType () {
 		var build = Config.AutoBuild.Template;
 		if (!build) {
-			this.print("ÿc1Config.AutoBuild.Template is either 'false', or invalid ("+build+")");
+			this.print("ÿc4AutoBuild ÿc0:: ÿc1Config.AutoBuild.Template is either 'false', or invalid ÿc0(ÿc1"+build+"ÿc0)");
 			throw new Error("Invalid build template, read libs/config/Builds/README.txt for information");
 		}
 		return build;
@@ -73,7 +73,7 @@ var AutoBuild = new function AutoBuild () {
 	function initialize () {
 		var currentScript = getCurrentScript();
 		var template = getTemplateFilename();
-		this.print("ÿc2Including build template "+template+" into "+currentScript);
+		this.print("ÿc4AutoBuild ÿc0:: ÿc2Including build template ÿc5"+template+" into ÿc5"+currentScript);
 		if (!include(template)) {
 			throw new Error("Failed to include template: "+template);
 		}

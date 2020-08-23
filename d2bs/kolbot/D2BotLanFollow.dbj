@@ -34,7 +34,7 @@ function ReceiveCopyData(mode, msg) {
 
 		break;
 	case 2: // Game info
-		print("Recieved Game Info");
+		print("ÿc2Recieved game info!");
 
 		gameInfo = JSON.parse(msg);
 
@@ -103,7 +103,7 @@ function main () {
 		
 		if (!!DataFile.getStats().debugInfo) {
 			gameInfo.crashInfo = DataFile.getStats().debugInfo;
-			D2Bot.printToConsole("Crash Info: Script: " + JSON.parse(gameInfo.crashInfo).currScript + " Area: " + JSON.parse(gameInfo.crashInfo).area, 10);
+			D2Bot.printToConsole("ÿc9Crash Info ÿc:: ÿc3Script ÿc0:: ÿc8 " + JSON.parse(gameInfo.crashInfo).currScript + " ÿc4Area ÿc0:: ÿc8 " + JSON.parse(gameInfo.crashInfo).area, 10);
 		}
 		ControlAction.timeoutDelay("Crash Delay", 3000);
 		D2Bot.updateRuns();
@@ -134,7 +134,7 @@ function joinCheck(leader) {
 	delay(500);
 	print(leader + " " + joinInfo.inGame + " " + lastGame.toSource() + " " + joinInfo.gameName);
 	if (!joinInfo.inGame || (lastGame.length && lastGame.indexOf(joinInfo.gameName) === -1)) {
-		D2Bot.printToConsole("Game is finished. Stopping join delay.");
+		D2Bot.printToConsole("ÿc<Game is finished. ÿc1Stopping ÿc<join delay.");
 
 		return true;
 	}
@@ -187,7 +187,7 @@ function locationAction() {
 		break;
 		default:
 			if (ScreenLocation !== undefined) {
-				D2Bot.printToConsole("Unhandled screen location " + ScreenLocation);
+				D2Bot.printToConsole("ÿc9Unhandled screen location ÿc0:: ÿc8 " + ScreenLocation);
 				delay(500);
 				D2Bot.restart();
 			}

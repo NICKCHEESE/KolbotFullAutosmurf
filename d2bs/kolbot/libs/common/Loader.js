@@ -121,21 +121,21 @@ var Loader = {
 					}
 
 					if (this.skipTown.indexOf(script) > -1 || Town.goToTown()) {
-						print("ÿc2Starting script: ÿc9" + script);
+						print("ÿc4Loader ÿc0:: ÿc2Starting script ÿc0:: ÿc9" + script);
 						//scriptBroadcast(JSON.stringify({currScript: script}));
 						Messaging.sendToScript("tools/toolsthread.js", JSON.stringify({currScript: script}));
 
 						reconfiguration = typeof Scripts[script] === 'object';
 
 						if (reconfiguration) {
-							print("ÿc2Copying Config properties from " + script + " object.");
+							print("ÿc4Loader ÿc0:: ÿc2Copying Config properties from ÿc9" + script + " ÿc2object.");
 							this.copy(Scripts[script], Config);
 						}
 
 						global[script]();
 
 						if (reconfiguration) {
-							print("ÿc2Reverting back unmodified config properties.");
+							print("ÿc4Loader ÿc0:: ÿc2Reverting back unmodified config properties.");
 							this.copy(unmodifiedConfig, Config);
 						}
 					}

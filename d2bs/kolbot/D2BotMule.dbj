@@ -108,7 +108,7 @@ function pickItems() {
 				try {
 					items[i].drop();
 				} catch (dropError) {
-					print("Failed to drop an item.");
+					print("ÿc1Failed to drop an item.");
 				}
 			}
 		}
@@ -152,21 +152,21 @@ function pickItems() {
 
 				// Torch handling
 				if (muleMode > 0 && item.classid === 604 && item.quality === 7 && !Pickit.canPick(item)) {
-					D2Bot.printToConsole("Mule already has a Torch.", 7);
+					D2Bot.printToConsole("ÿc9Mule already has a Torch...", 7);
 
 					rval = "next";
 				}
 
 				// Anni handling
 				if (muleMode > 0 && item.classid === 603 && item.quality === 7 && !Pickit.canPick(item)) {
-					D2Bot.printToConsole("Mule already has an Anni.", 7);
+					D2Bot.printToConsole("ÿc9Mule already has an Anni...", 7);
 
 					rval = "next";
 				}
 
 				// Gheed's Fortune handling
 				if (item.classid === 605 && item.quality === 7 && !Pickit.canPick(item)) {
-					D2Bot.printToConsole("Mule already has Gheed's.", 7);
+					D2Bot.printToConsole("ÿc9Mule already has Gheed's...", 7);
 					rval = "next";
 				}
 
@@ -217,7 +217,7 @@ function ReceiveCopyData(mode, msg) {
 
 		break;
 	case 2: // game info
-		print("Recieved Game Info");
+		print("ÿc1Recieved game info!");
 
 		gameInfo = JSON.parse(msg);
 
@@ -413,7 +413,7 @@ function main() {
 	}
 
 	if (gameInfo.rdBlocker) {
-		D2Bot.printToConsole("You must disable RD Blocker for Mule Logger to work properly. Stopping.");
+		D2Bot.printToConsole("ÿc4You must ÿc1disable ÿc3Realm Down Blocker ÿc4for ÿc3Mule Logger ÿc4to work properly. ÿc1Stopping.");
 		D2Bot.stop(me.profile, true);
 
 		return;
@@ -427,12 +427,12 @@ function main() {
 		delay(100);
 	}
 
-	print("Master found: " + master);
+	print("ÿc2Master found ÿc0:: ÿc8 " + master);
 
 	muleObj = AutoMule.getMuleObject(muleMode, master);
 	muleFilename = AutoMule.getMuleFilename(muleMode, master);
 
-	print("Mule filename: " + muleFilename);
+	print("ÿc4Mule filename ÿc0:: ÿc8 " + muleFilename);
 
 	var obj, tick,
 		inGame = false;
@@ -454,9 +454,9 @@ function main() {
 			MuleData.create();
 		}
 	} catch (e) {
-		print("Caught exception creating data files.");
+		print("ÿc9Caught exception creating data files.");
 		print(e);
-		D2Bot.printToConsole("DataFileException: " + e.message + " (" + e.fileName.substring(e.fileName.lastIndexOf("\\") + 1, e.fileName.length) + " #" + e.lineNumber + ")");
+		D2Bot.printToConsole("ÿc9DataFileException ÿc0:: ÿc8 " + e.message + " ÿc0( ÿc8 " + e.fileName.substring(e.fileName.lastIndexOf(" ÿc0\\ ÿc8") + 1, e.fileName.length) + " ÿc0#ÿc8 " + e.lineNumber + " ÿc0)");
 	}
 
 	while (true) {
@@ -468,7 +468,7 @@ function main() {
 					}
 
 					D2Bot.updateStatus("In " + (muleMode === 2 ? "anni" : muleMode === 1 ? "torch" : "") + " mule game.");
-					D2Bot.printToConsole("In " + (muleMode === 2 ? "anni" : muleMode === 1 ? "torch" : "") + " mule game.", 7);
+					D2Bot.printToConsole("ÿc4In ÿc8 " + (muleMode === 2 ? " ÿc4Anniÿc8 " : muleMode === 1 ? " ÿc4Torch ÿc8" : "") + " ÿc4mule game.", 7);
 					tick = getTickCount();
 
 					while (!me.area && getTickCount() - tick < 2000) {
@@ -495,7 +495,7 @@ function main() {
 				//print("Delay: " + (getTickCount() - tick));
 
 				if (status !== "begin") {
-					D2Bot.printToConsole("Nobody joined - stopping.", 9);
+					D2Bot.printToConsole("ÿc9Nobody joined. ÿc1Stopping.", 9);
 					D2Bot.stop(me.profile, true);
 				}
 
@@ -513,7 +513,7 @@ function main() {
 					}
 
 					MuleData.write(obj);
-					D2Bot.printToConsole("Done muling.", 7);
+					D2Bot.printToConsole("ÿc2Done muling!", 7);
 					sendCopyData(null, master, 10, JSON.stringify({status: "quit"}));
 					//delay(500);
 					D2Bot.stop(me.profile, true);
@@ -534,7 +534,7 @@ function main() {
 					obj.fullChars.push(me.name);
 					MuleData.write(obj);
 					nextChar();
-					D2Bot.printToConsole("Mule full, getting next character.", 7);
+					D2Bot.printToConsole("ÿc9Mule full. ÿc<Getting next character...", 7);
 
 					if (StarterConfig.MinGameTime && getTickCount() - tick < StarterConfig.MinGameTime * 1000) {
 						while (getTickCount() - tick < StarterConfig.MinGameTime * 1000) {
@@ -562,9 +562,9 @@ function main() {
 				locationAction(getLocation());
 			}
 		} catch (e2) {
-			print("Caught an exception in the main loop.");
+			print("ÿc9Caught an exception in the main loop.");
 			print(e2);
-			D2Bot.printToConsole("MainLoopException: " + e2.message + " (" + e2.fileName.substring(e2.fileName.lastIndexOf("\\") + 1, e2.fileName.length) + " #" + e2.lineNumber + ")");
+			D2Bot.printToConsole("ÿc9MainLoopException ÿc0:: ÿc8 " + e2.message + " ÿc0( ÿc8" + e2.fileName.substring(e2.fileName.lastIndexOf(" ÿc0\\ÿc8 ") + 1, e2.fileName.length) + " ÿc0# " + e2.lineNumber + " ÿc0)");
 		}
 
 		delay(100);
@@ -637,7 +637,7 @@ MainSwitch:
 		}
 
 		ingameTimeout(5000);
-		print("Ingame timeout done.");
+		print("ÿc9Ingame timeout ÿc0:: ÿc2Done.");
 
 		break;
 	case 6: // Ladder
@@ -694,7 +694,7 @@ MainSwitch:
 			switch (string) {
 			case getLocaleString(5207):
 				D2Bot.updateStatus("Invalid Password");
-				D2Bot.printToConsole("Invalid Password");
+				D2Bot.printToConsole("ÿc1Invalid Password");
 
 				break;
 			case getLocaleString(5208):
@@ -706,7 +706,7 @@ MainSwitch:
 			case getLocaleString(5202): // cd key intended for another product
 			case getLocaleString(10915): // lod key intended for another product
 				D2Bot.updateStatus("Invalid CDKey");
-				D2Bot.printToConsole("Invalid CDKey: " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("ÿc1Invalid CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -719,7 +719,7 @@ MainSwitch:
 				break;
 			case getLocaleString(5199):
 				D2Bot.updateStatus("Disabled CDKey");
-				D2Bot.printToConsole("Disabled CDKey: " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("ÿc1Disabled CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -732,7 +732,7 @@ MainSwitch:
 				break;
 			case getLocaleString(10913):
 				D2Bot.updateStatus("Disabled LoD CDKey");
-				D2Bot.printToConsole("Disabled LoD CDKey: " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("ÿc1Disabled LoD CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -745,13 +745,13 @@ MainSwitch:
 				break;
 			case getLocaleString(5347):
 				D2Bot.updateStatus("Disconnected");
-				D2Bot.printToConsole("Disconnected");
+				D2Bot.printToConsole("ÿc1Disconnected");
 				ControlAction.click(6, 335, 412, 128, 35);
 
 				break MainSwitch;
 			default:
 				D2Bot.updateStatus("Login Error");
-				D2Bot.printToConsole("Login Error - " + string);
+				D2Bot.printToConsole("ÿc1Login Error ÿc0:: ÿc8 " + string);
 
 				if (gameInfo.switchKeys) {
 					ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
@@ -798,7 +798,7 @@ MainSwitch:
 		D2Bot.CDKeyRD();
 
 		if (gameInfo.switchKeys) {
-			D2Bot.printToConsole("Realm Down - Changing CD-Key");
+			D2Bot.printToConsole("ÿc9Realm Down ÿc0:: ÿc<Changing CD-Key...");
 			ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
 			D2Bot.restart(true);
 		} else {
@@ -834,7 +834,7 @@ MainSwitch:
 
 			if (string === getLocaleString(11161)) { // CDKey disabled from realm play
 				D2Bot.updateStatus("Realm Disabled CDKey");
-				D2Bot.printToConsole("Realm Disabled CDKey: " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("ÿc1Realm Disabled CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -868,7 +868,7 @@ MainSwitch:
 			D2Bot.CDKeyRD();
 
 			if (gameInfo.switchKeys) {
-				D2Bot.printToConsole("Realm Down - Changing CD-Key");
+				D2Bot.printToConsole("ÿc9Realm Down ÿc0:: ÿc<Changing CD-Key...");
 				ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
 				D2Bot.restart(true);
 			} else {
@@ -928,7 +928,7 @@ MainSwitch:
 				break;
 			}
 
-			D2Bot.printToConsole("Made character: " + info.charName, 7);
+			D2Bot.printToConsole("ÿc2Made character ÿc:: ÿc8 " + info.charName, 7);
 		}
 
 		break;
@@ -944,7 +944,7 @@ MainSwitch:
 
 		break;
 	case 19: // Login - Cdkey In Use
-		D2Bot.printToConsole(gameInfo.mpq + " is in use by " + ControlAction.getText(4, 158, 310, 485, 40), 6);
+		D2Bot.printToConsole(gameInfo.mpq + " ÿc9CD-Key is in use by ÿc0:: ÿc; " + ControlAction.getText(4, 158, 310, 485, 40), 6);
 		D2Bot.CDKeyInUse();
 
 		if (gameInfo.switchKeys) {
@@ -980,7 +980,7 @@ MainSwitch:
 
 		switch (string) {
 		case getLocaleString(10914):
-			D2Bot.printToConsole(gameInfo.mpq + " LoD key in use by " + ControlAction.getText(4, 158, 310, 485, 40), 6);
+			D2Bot.printToConsole(gameInfo.mpq + " ÿc9LoD CD-Key in use by ÿc0:: ÿc; " + ControlAction.getText(4, 158, 310, 485, 40), 6);
 			D2Bot.CDKeyInUse();
 
 			if (gameInfo.switchKeys) {
@@ -994,7 +994,7 @@ MainSwitch:
 			break;
 		default:
 			if (gameInfo.switchKeys) {
-				D2Bot.printToConsole("Invalid CD-Key");
+				D2Bot.printToConsole("ÿc1Invalid CD-Key");
 				ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
 				D2Bot.restart(true);
 			} else {
@@ -1071,7 +1071,7 @@ MainSwitch:
 		break;
 	default:
 		if (location !== undefined) {
-			D2Bot.printToConsole("Unhandled location " + location);
+			D2Bot.printToConsole("ÿc9Unhandled location ÿc0:: ÿc8 " + location);
 			delay(500);
 			D2Bot.restart();
 		}

@@ -41,7 +41,7 @@ function main() {
 		canQuit = true,
 		timerLastDrink = [];
 
-	print("ÿc3Starting ToolsThread.js script");
+	print("ÿc4Starting ÿc3ToolsThread.js ÿc4script...");
 	D2Bot.init();
 	Config.init(false);
 	Pickit.init(false);
@@ -79,7 +79,7 @@ function main() {
 
 					if (getTickCount() - pingTimer[i] >= Config.PingQuit[i].Duration * 1000) {
 						if (print) {
-							D2Bot.printToConsole("High ping (" + me.ping + "/" + Config.PingQuit[i].Ping + ") - leaving game.", 9);
+							D2Bot.printToConsole("ÿc1High ping ÿc0( " + me.ping + " ÿc4/ " + Config.PingQuit[i].Ping + " ÿc0) ÿc4- ÿc1leaving game!", 9);
 						}
 
 						scriptBroadcast("pingquit");
@@ -131,7 +131,7 @@ function main() {
 
 		for (i = 0; i < items.length; i += 1) {
 			if (type < 3 && items[i].mode === 0 && items[i].location === 3 && items[i].itemType === pottype) {
-				print("ÿc2Drinking potion from inventory.");
+				print("ÿc2Drinking ÿc1pÿc3oÿc;tiÿc3oÿc1n from inventory.");
 
 				return copyUnit(items[i]);
 			}
@@ -254,7 +254,7 @@ function main() {
 				try {
 					clickItem(2, potion);
 				} catch (e) {
-					print("ÿc2Couldn't give the potion to merc.");
+					print("ÿc9Couldn't give potion to merc.");
 				}
 			}
 
@@ -410,7 +410,7 @@ function main() {
 		case 35: // End key
 			MuleLogger.logChar();
 			delay(rand(Config.QuitListDelay[0] * 1e3, Config.QuitListDelay[1] * 1e3));
-			D2Bot.printToConsole(me.profile + " - end run " + me.gamename);
+			D2Bot.printToConsole(me.profile + " ÿc4- end run " + me.gamename);
 			D2Bot.stop(me.profile, true);
 
 			break;
@@ -425,7 +425,7 @@ function main() {
 			var merc = me.getMerc();
 			print(this.getStatsString(me));
 			if (merc)
-				print("ÿc4Merc stats:\n" + this.getStatsString(merc));
+				print("ÿc4Merc stats ÿc0:: \nÿc4" + this.getStatsString(merc));
 
 			break;
 		case 101: // numpad 5
@@ -473,7 +473,7 @@ function main() {
 		case 0x03: // "%Name1(%Name2) left our world. Diablo's minions weaken."
 			if ((typeof Config.QuitList === "string" && Config.QuitList.toLowerCase() === "any") ||
 					(Config.QuitList instanceof Array && Config.QuitList.indexOf(name1) > -1)) {
-				print(name1 + (mode === 0 ? " timed out" : " left"));
+				print(name1 + (mode === 0 ? " ÿc1timed out " : " ÿc1left."));
 
 				if (typeof Config.QuitListDelay !== "undefined" && typeof quitListDelayTime === "undefined" && Config.QuitListDelay.length > 0) {
 					Config.QuitListDelay.sort(function(a, b){return a-b});
@@ -504,7 +504,7 @@ function main() {
 			break;
 		case 0x11: // "%Param1 Stones of Jordan Sold to Merchants"
 			if (Config.DCloneQuit === 2) {
-				D2Bot.printToConsole("SoJ sold in game. Leaving.");
+				D2Bot.printToConsole("ÿc4Stone of Jordan ÿc0sold in game... ÿc1Leaving!");
 
 				quitFlag = true;
 
@@ -512,14 +512,14 @@ function main() {
 			}
 
 			if (Config.SoJWaitTime && me.gametype === 1) { // only do this in expansion
-				D2Bot.printToConsole(param1 + " Stones of Jordan Sold to Merchants on IP " + me.gameserverip.split(".")[3], 7);
+				D2Bot.printToConsole(param1 + " ÿc4Stones of Jordan ÿc0sold to Merchants on IP ÿc0:: ÿc8 " + me.gameserverip.split(".")[3], 7);
 				Messaging.sendToScript("default.dbj", "soj");
 			}
 
 			break;
 		case 0x12: // "Diablo Walks the Earth"
 			if (Config.DCloneQuit > 0) {
-				D2Bot.printToConsole("Diablo walked in game. Leaving.");
+				D2Bot.printToConsole("ÿc1Diablo ÿc4walked in game... ÿc1Leaving!");
 
 				quitFlag = true;
 
@@ -527,14 +527,14 @@ function main() {
 			}
 
 			if (Config.StopOnDClone && me.gametype === 1) { // only do this in expansion
-				D2Bot.printToConsole("Diablo Walks the Earth", 7);
+				D2Bot.printToConsole("ÿc1Diablo ÿc4walks the Earth!", 7);
 
 				cloneWalked = true;
 
 				this.togglePause();
 				Town.goToTown();
 				showConsole();
-				print("ÿc4Diablo Walks the Earth!");
+				print("ÿc1Diablo ÿc4walks the Earth!");
 
 				me.maxgametime = 0;
 
@@ -615,7 +615,7 @@ function main() {
 				}
 
 				if (Config.LifeChicken > 0 && me.hp <= Math.floor(me.hpmax * Config.LifeChicken / 100)) {
-					D2Bot.printToConsole("Life Chicken (" + me.hp + "/" + me.hpmax + ")" + this.getNearestMonster() + " in " + Pather.getAreaName(me.area) + ". Ping: " + me.ping, 9);
+					D2Bot.printToConsole("ÿc1Life ÿc;Chicken ÿc0:: ( ÿc8 " + me.hp + " ÿc4/ " + me.hpmax + " ÿc0) " + this.getNearestMonster() + " ÿc4in ÿc0:: ÿc8 " + Pather.getAreaName(me.area) + " ÿc4. ÿc2Ping ÿc0:: ÿc8" + me.ping, 9);
 					D2Bot.updateChickens();
 					this.exit();
 
@@ -631,7 +631,7 @@ function main() {
 				}
 
 				if (Config.ManaChicken > 0 && me.mp <= Math.floor(me.mpmax * Config.ManaChicken / 100)) {
-					D2Bot.printToConsole("Mana Chicken: (" + me.mp + "/" + me.mpmax + ") in " + Pather.getAreaName(me.area), 9);
+					D2Bot.printToConsole("ÿc3Mana ÿc;Chicken ÿc0:: ( ÿc8 " + me.mp + " ÿc4/ " + me.mpmax + " ÿc0) :: ÿc4in ÿc0:: ÿc8 " + Pather.getAreaName(me.area), 9);
 					D2Bot.updateChickens();
 					this.exit();
 
@@ -645,7 +645,7 @@ function main() {
 
 					if (ironGolem) {
 						if (ironGolem.hp <= Math.floor(128 * Config.IronGolemChicken / 100)) { // ironGolem.hpmax is bugged with BO
-							D2Bot.printToConsole("Irom Golem Chicken in " + Pather.getAreaName(me.area), 9);
+							D2Bot.printToConsole("ÿc#Irom Golem ÿc;Chicken ÿc4in ÿc0:: ÿc8 " + Pather.getAreaName(me.area), 9);
 							D2Bot.updateChickens();
 							this.exit();
 
@@ -660,7 +660,7 @@ function main() {
 
 					if (mercHP > 0 && merc && merc.mode !== 12) {
 						if (mercHP < Config.MercChicken) {
-							D2Bot.printToConsole("Merc Chicken in " + Pather.getAreaName(me.area), 9);
+							D2Bot.printToConsole("ÿc9Merc ÿc;Chicken ÿc4in ÿc0:: ÿc8 " + Pather.getAreaName(me.area), 9);
 							D2Bot.updateChickens();
 							this.exit();
 
@@ -679,7 +679,7 @@ function main() {
 
 				if (Config.ViperCheck && getTickCount() - tick >= 250) {
 					if (this.checkVipers()) {
-						D2Bot.printToConsole("Revived Tomb Vipers found. Leaving game.", 9);
+						D2Bot.printToConsole("ÿc5Revived ÿc1Tomb Vipers ÿc4found. ÿc1Leaving game!", 9);
 
 						quitFlag = true;
 					}
@@ -698,7 +698,7 @@ function main() {
 		}
 
 		if (quitFlag && canQuit && (typeof quitListDelayTime === "undefined" || getTickCount() >= quitListDelayTime)) {
-			print("ÿc8Run duration :ÿc2 " + ((getTickCount() - me.gamestarttime) / 1000));
+			print("ÿc8Run duration ÿc0::ÿc2 " + ((getTickCount() - me.gamestarttime) / 1000));
 
 			if (Config.LogExperience) {
 				Experience.log();

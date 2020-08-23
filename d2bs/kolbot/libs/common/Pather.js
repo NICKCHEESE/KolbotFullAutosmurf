@@ -274,7 +274,7 @@ var Pather = {
 						path.pop();
 					}
 
-					print("ÿc9Move retry: " + fail);
+					print("ÿc4Pather ÿc0:: ÿc9Move retry ÿc0:: ÿc1 " + fail);
 
 					if (fail > 0) {
 						Packet.flash(me.gid);
@@ -970,7 +970,7 @@ ModeLoop:
 					}
 
 					if (!getUIFlag(0x14)) {
-						print("ÿc9Waypoint retry: " + (i + 1));
+						print("ÿc4Pather ÿc0:: ÿc9Waypoint retry ÿc0:: ÿc1 " + (i + 1));
 						retry = Math.min(i + 1, 5)
 						coord = CollMap.getRandCoordinate(me.x, -5 * retry, 5 * retry, me.y, -5 * retry, 5 * retry);
 						this.moveTo(coord.x, coord.y);

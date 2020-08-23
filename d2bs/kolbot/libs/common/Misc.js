@@ -386,7 +386,7 @@ MainLoop:
 
 		// Charged skills must be cast from right hand
 		if (hand === undefined || hand === 3 || item) {
-			item && hand !== 0 && print('[ÿc9Warningÿc0] charged skills must be cast from right hand');
+			item && hand !== 0 && print('ÿc4Misc ÿc0:: [ÿc9Warningÿc0] ÿc5charged skills must be cast from right hand.');
 			hand = 0;
 		}
 
@@ -1732,7 +1732,7 @@ var Misc = {
 							}
 
 							if (needhp) {
-								print("ÿc5We need healing potions!");
+								print("ÿc4Misc ÿc0:: ÿc5We need ÿc1Healing ÿc5potions!");
 
 								check = true;
 							}
@@ -1752,7 +1752,7 @@ var Misc = {
 							}
 
 							if (needmp) {
-								print("ÿc5We need mana potions");
+								print("ÿc4Misc ÿc0:: ÿc5We need ÿc3Mana potions!");
 
 								check = true;
 							}
@@ -1792,7 +1792,7 @@ var Misc = {
 			unit = getUnit(-1, name);
 
 		if (!unit) {
-			print("ÿc1Player not found!");
+			print("ÿc4Misc ÿc0:: ÿc1Player not found!");
 
 			return false;
 		}
@@ -2191,7 +2191,7 @@ var Experience = {
 			D2Bot.printToConsole(string, 4);
 
 			if (me.getStat(12) > DataFile.getStats().level) {
-				D2Bot.printToConsole("Congrats! You gained a level. Current level:" + me.getStat(12), 5);
+				D2Bot.printToConsole("ÿc4Misc ÿc0:: ÿc2Congrats! You gained a level. Current level ÿc0:: ÿc4 " + me.getStat(12), 5);
 			}
 		}
 	}
@@ -2613,7 +2613,7 @@ var LocalChat = new function () {
 		}
 
 		Config.LocalChat.Mode = (Config.LocalChat.Mode + cycle) % 3;
-		print("ÿc2LocalChat enabled. Mode: " + Config.LocalChat.Mode);
+		print("ÿc4Misc ÿc0:: ÿc5LocalChat ÿc2enabledÿc5. Mode ÿc0:: ÿc2 " + Config.LocalChat.Mode);
 
 		switch (Config.LocalChat.Mode) {
 		case 2:

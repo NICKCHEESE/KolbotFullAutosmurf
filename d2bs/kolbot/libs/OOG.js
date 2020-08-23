@@ -421,7 +421,7 @@ var DataFile = {
 			return obj;
 		}
 
-		print("ÿc1Error reading DataFile. Using null values.");
+		print("ÿc4OOG ÿc0:: ÿc1Error reading DataFile. ÿc9Using null values.");
 
 		return {runs: 0, experience: 0, lastArea: "", gold: 0, level: 0, name: "", gameName: "", ingameTick: 0, handle: 0, nextGame: ""};
 	},
@@ -525,7 +525,7 @@ var ControlAction = {
 		var control = getControl(type, x, y, xsize, ysize);
 
 		if (!control) {
-			print("control not found " + type + " " + x + " " + y + " location " + getLocation());
+			print("ÿc4OOG ÿc0:: ÿc9Control not found ÿc0:: ÿc8 " + type + " ÿc0:: ÿc2" + x + " ÿc0:: ÿc2" + y + " ÿc9location ÿc0:: ÿc8" + getLocation());
 
 			return false;
 		}
@@ -675,7 +675,7 @@ MainLoop:
 
 		me.blockMouse = true;
 
-		print("ÿc2Creating Game: " + name);
+		print("ÿc4OOG ÿc0:: ÿc2Creating Game ÿc0:: ÿc8 " + name);
 		ControlAction.click(6, 594, 433, 172, 32);
 
 		me.blockMouse = false;
@@ -1248,7 +1248,7 @@ var ShitList = {
 			return obj;
 		}
 
-		print("Failed to read ShitList. Using null values");
+		print("ÿc4OOG ÿc0:: ÿc1Failed to read ShitList. ÿc9Using null values.");
 
 		return {shitlist: []};
 	},

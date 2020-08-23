@@ -1071,7 +1071,7 @@ MainLoop:
 		if (rada) {
 			moveIntoPos(rada, 60);
 		} else {
-			print("radament unit not found");
+			print("ÿc9Radament not found!");
 		}
 
 		Attack.securePosition(me.x, me.y, 35, 3000);
@@ -1217,7 +1217,7 @@ MainLoop:
 		if (izual) {
 			moveIntoPos(izual, 60);
 		} else {
-			print("izual unit not found");
+			print("ÿc1Izual not found!");
 		}
 
 		returnSpot = {
@@ -1331,7 +1331,7 @@ MainLoop:
 		return true;
 	};
 
-	print("Loading RushThread");
+	print("ÿc3RushThread ÿc4load ÿc0:: ÿc2Succeeded");
 
 	var i, command,
 		current = 0,

@@ -111,14 +111,14 @@ var AutoMule = {
 			if (info.muleInfo.hasOwnProperty("usedStashTrigger") && info.muleInfo.hasOwnProperty("usedInventoryTrigger") &&
 					Storage.Inventory.UsedSpacePercent() >= info.muleInfo.usedInventoryTrigger && Storage.Stash.UsedSpacePercent() >= info.muleInfo.usedStashTrigger &&
 						items.length > 0) {
-				D2Bot.printToConsole("MuleCheck triggered!", 7);
+				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9MuleCheck triggered!", 7);
 
 				return true;
 			}
 
 			for (i = 0; i < items.length; i += 1) {
 				if (this.matchItem(items[i], Config.AutoMule.Trigger)) {
-					D2Bot.printToConsole("MuleCheck triggered!", 7);
+					D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9MuleCheck triggered!", 7);
 					return true;
 				}
 			}
@@ -168,7 +168,7 @@ var AutoMule = {
 		}
 
 		addEventListener("copydata", MuleCheckEvent);
-		D2Bot.printToConsole("Starting " + (this.torchAnniCheck === 2 ? "anni" : this.torchAnniCheck === 1 ? "torch" : "") + " mule profile: " + muleObj.muleProfile, 7);
+		D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Starting ÿc0:: ÿc8 " + (this.torchAnniCheck === 2 ? " ÿc4Anni ÿc8 " : this.torchAnniCheck === 1 ? " ÿc4Torch ÿc8 " : "") + " ÿc4mule profile ÿc0:: ÿc8 " + muleObj.muleProfile, 7);
 
 MainLoop:
 		while (true) {
@@ -201,7 +201,7 @@ MainLoop:
 				break;
 			case "busy":
 			case "begin":
-				D2Bot.printToConsole("Mule profile is busy.", 9);
+				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9Mule profile is busy.", 9);
 
 				break MainLoop;
 			case "ready":
@@ -242,7 +242,7 @@ MainLoop:
 			}
 
 			if (failCount >= 260) {
-				D2Bot.printToConsole("No response from mule profile.", 9);
+				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9No response from mule profile.", 9);
 
 				break;
 			}
@@ -332,7 +332,7 @@ MainLoop:
 		delay(500);
 
 		if (!this.check && !this.torchAnniCheck) {
-			print("Error - Unable to determine mule mode");
+			print("ÿc4AutoMule ÿc0:: ÿc1Error ÿc0:: ÿc9Unable to determine mule mode");
 			quit();
 
 			return false;
@@ -342,7 +342,7 @@ MainLoop:
 		me.maxgametime = 0;
 
 		if (!Town.goToTown(1)) {
-			print("Error - Failed to go to Act 1");
+			print("ÿc4AutoMule ÿc0:: ÿc1Error ÿc0:: ÿc9Failed to go to Act 1");
 			quit();
 
 			return false;
@@ -351,15 +351,15 @@ MainLoop:
 		sendCopyData(null, muleObj.muleProfile, 11, "begin");
 
 		if (this.torchAnniCheck === 2) {
-			print("ÿc4AutoMuleÿc0: In anni mule game.");
+			print("ÿc4AutoMule ÿc0:: ÿc2In Anni mule game.");
 			D2Bot.updateStatus("AutoMule: In game.");
 			this.dropCharm(true);
 		} else if (this.torchAnniCheck === 1) {
-			print("ÿc4AutoMuleÿc0: In torch mule game.");
+			print("ÿc4AutoMule ÿc0:: ÿc2In torch mule game.");
 			D2Bot.updateStatus("AutoMule: In game.");
 			this.dropCharm(false);
 		} else {
-			print("ÿc4AutoMuleÿc0: In mule game.");
+			print("ÿc4AutoMule ÿc0:: ÿc2In mule game.");
 			D2Bot.updateStatus("AutoMule: In game.");
 			this.dropStuff();
 		}
@@ -373,7 +373,7 @@ MainLoop:
 			}
 
 			if (getTickCount() - tick > timeout) {
-				D2Bot.printToConsole("Mule didn't rejoin. Picking up items.", 9);
+				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc1Mule didn't rejoin. ÿc2Picking up items.", 9);
 
 				Misc.useItemLog = false; // Don't log items picked back up in town.
 
@@ -416,7 +416,7 @@ MainLoop:
 			return false;
 		}
 
-		D2Bot.printToConsole("AutoMule: Transfering items.", 7);
+		D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering items.", 7);
 
 		for (i = 0; i < items.length; i += 1) {
 			items[i].drop();
@@ -539,7 +539,7 @@ MainLoop:
 			item = me.findItem(603, 0, -1, 7);
 
 			if (item && !Storage.Inventory.IsLocked(item, Config.Inventory)) {
-				D2Bot.printToConsole("AutoMule: Transfering Anni.", 7);
+				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering Anni.", 7);
 				item.drop();
 				delay(1000);
 				me.cancel();
@@ -553,7 +553,7 @@ MainLoop:
 		item = me.findItem(604, 0, -1, 7);
 
 		if (item) {
-			D2Bot.printToConsole("AutoMule: Transfering Torch.", 7);
+			D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering Torch.", 7);
 			item.drop();
 			delay(1000);
 			me.cancel();

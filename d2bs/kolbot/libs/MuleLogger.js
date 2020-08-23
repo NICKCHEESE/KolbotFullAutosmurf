@@ -76,8 +76,8 @@ var MuleLogger = {
 		var tick;
 
 		if (getScript("D2BotMuleLog.dbj") && this.LogGame[0] && me.gamename.match(this.LogGame[0], "i")) {
-			print("ÿc4MuleLoggerÿc0: Logging items on " + me.account + " - " + me.name + ".");
-			D2Bot.printToConsole("MuleLogger: Logging items on " + me.account + " - " + me.name + ".", 7);
+			print("ÿc4MuleLogger ÿc0:: ÿc2Logging items on ÿc0:: ÿc8 " + me.account + " ÿc4- ÿc8" + me.name + "ÿc4 .");
+			D2Bot.printToConsole("ÿc4MuleLogger ÿc0:: ÿc2Logging items on ÿc0:: ÿc8 " + me.account + " ÿc4- ÿc8" + me.name + "ÿc4 .", 7);
 			this.logChar();
 			tick = getTickCount() + rand(1500, 1750) * 1000; // trigger anti-idle every ~30 minutes
 
@@ -402,6 +402,6 @@ var MuleLogger = {
 		// hcl = hardcore class ladder
 		// sen = softcore expan nonladder
 		FileTools.writeText("mules/" + realm + "/" + me.account + "/" + me.name + "." + ( me.playertype ? "h" : "s" ) + (me.gametype ? "e" : "c" ) + ( me.ladder > 0 ? "l" : "n" ) + ".txt", finalString);
-		print("Item logging done.");
+		print("ÿc4MuleLogger ÿc0:: ÿc2Item logging done.");
 	}
 };

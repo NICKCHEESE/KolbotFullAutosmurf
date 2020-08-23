@@ -10,7 +10,7 @@ function main() {
 	include("common/misc.js");
 	include("common/util.js");
 	D2Bot.init();
-	print("Heartbeat loaded");
+	print("ÿc3Heartbeat ÿc4load ÿc0:: ÿc2Succeeded!");
 
 	function togglePause() {
 		var script = getScript();
@@ -19,10 +19,10 @@ function main() {
 			do {
 				if (script.name.indexOf(".dbj") > -1) {
 					if (script.running) {
-						print("ÿc1Pausing ÿc0" + script.name);
+						print("ÿc1Pausing ÿc0 :: ÿc8" + script.name);
 						script.pause();
 					} else {
-						print("ÿc2Resuming ÿc0" + script.name);
+						print("ÿc2Resuming ÿc0 :: ÿc8" + script.name);
 						script.resume();
 					}
 				}

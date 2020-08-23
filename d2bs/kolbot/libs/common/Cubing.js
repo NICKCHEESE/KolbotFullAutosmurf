@@ -949,7 +949,7 @@ IngredientLoop:
 
 				transmute();
 				delay(700 + me.ping);
-				print("ÿc4Cubing: " + string);
+				print("ÿc4Cubing ÿc0:: ÿc2 " + string);
 
 				if (Config.ShowCubingInfo) {
 					D2Bot.printToConsole(string, 5);

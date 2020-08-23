@@ -230,7 +230,7 @@ var GameAction = {
 			var unitY = info[4];
 
 			// for debug purposes
-			print("classid: " + classid + " location: " + loc + " X: " + unitX + " Y: " + unitY);
+			print("ÿcGameAction ÿc0:: ÿc4ClassID ÿc0:: ÿc8 " + classid + " ÿc4Location ÿc0:: ÿc8 " + loc + " ÿc4X ÿc0:: ÿc2 " + unitX + " ÿc4Y ÿc0:: ÿc2 " + unitY);
 
 			for (var j = 0; j < items.length; j += 1) {
 				if (items[j].classid.toString() === classid && items[j].location.toString() === loc && items[j].x.toString() === unitX && items[j].y.toString() === unitY) {
@@ -523,6 +523,6 @@ var GameAction = {
 		// hcl = hardcore class ladder
 		// sen = softcore expan nonladder
 		FileTools.writeText("mules/" + realm + "/" + me.account + "/" + me.name + "." + ( me.playertype ? "h" : "s" ) + (me.gametype ? "e" : "c" ) + ( me.ladder > 0 ? "l" : "n" ) + ".txt", finalString);
-		print("Item logging done.");
+		print("ÿc4GameAction ÿc0:: ÿc2Item logging done.");
 	}
 };

@@ -595,7 +595,7 @@ MainSwitch:
 
 		while (getTickCount() - tick < 3000) {
 			if (currStat > me.getStat(4)) {
-				print("ÿc2AutoStat: Using " + (currStat - me.getStat(4)) + " ÿc2stat points in " + statIDToString[type]);
+				print("ÿc4AutoStat ÿc0:: ÿc2Using ÿc4" + (currStat - me.getStat(4)) + " ÿc2stat points in ÿc4 " + statIDToString[type]);
 				return true;
 			}
 
@@ -716,7 +716,7 @@ MainSwitch:
 		this.bulkStat = bulkStat;
 
 		if (!this.statBuildOrder || !this.statBuildOrder.length) {
-			print("ÿc1AutoStat: No build array specified!");
+			print("ÿc4AutoStat ÿc0:: ÿc1No build array specified!");
 
 			return false;
 		}
@@ -735,7 +735,7 @@ MainSwitch:
 			}
 		}
 
-		print("ÿc4AutoStat: Finished allocating stat points!");
+		print("ÿc4AutoStat ÿc0:: ÿc2Finished allocating stat points!");
 
 		return true;
 	};

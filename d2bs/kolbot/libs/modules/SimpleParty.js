@@ -8,7 +8,7 @@
 	const BUTTON_LEAVE_PARTY = 3;
 	const BUTTON_HOSTILE = 4;
 
-	print('ÿc2Kolbotÿc0 :: Simple party running');
+	print('ÿc4Kolbotÿc0 :: ÿc2Simple party running');
 
 	const SimpleParty = {};
 

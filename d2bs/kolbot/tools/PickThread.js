@@ -23,7 +23,7 @@ include("common/Storage.js");
 include("common/Town.js");
 
 function main() {
-	print("ÿc9Pick Thread Loaded.");
+	print("ÿc3PickThread ÿc4load ÿc0:: ÿc2Succeeded!");
 	Config.init(false);
 	Pickit.init(false);
 	Storage.Init();

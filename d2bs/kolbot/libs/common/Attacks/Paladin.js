@@ -7,7 +7,7 @@
 var ClassAttack = {
 	doAttack: function (unit, preattack) {
 		if (Config.MercWatch && Town.needMerc()) {
-			print("mercwatch");
+			print("ÿc4Attacks ÿc0:: ÿc4Paladin.js ÿc5MercWatch");
 			Town.visitTown();
 		}
 

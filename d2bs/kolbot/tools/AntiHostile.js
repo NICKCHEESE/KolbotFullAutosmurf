@@ -42,7 +42,7 @@ function main() {
 
 			break;
 		case "mugshot": // Take a screenshot and log the kill
-			D2Bot.printToConsole(msg.split(" ")[1] + " has been neutralized.", 4);
+			D2Bot.printToConsole(msg.split(" ")[1] + " ÿc5has been neutralized.", 4);
 			hideConsole();
 			delay(500);
 			takeScreenshot();
@@ -58,7 +58,7 @@ function main() {
 		if (party) {
 			do {
 				if (party.name !== me.name && getPlayerFlag(me.gid, party.gid, 8) && hostiles.indexOf(party.name) === -1) {
-					D2Bot.printToConsole(party.name + " (Level " + party.level + " " + charClass[party.classid] + ")" + " has declared hostility.", 8);
+					D2Bot.printToConsole(party.name + " ÿc0( ÿc4Level ÿc8 " + party.level + "ÿc9 " + charClass[party.classid] + " ÿc0)" + " ÿc1has declared hostility.", 8);
 					hostiles.push(party.name);
 				}
 			} while (party.getNext());
@@ -205,7 +205,7 @@ function main() {
 					try {
 						Town.goToTown();
 					} catch (e) {
-						print(e + " Failed to go to town. Quitting.");
+						print(e + " ÿc1Failed to go to town. Quitting.");
 						scriptBroadcast("quit"); // quit if failed to go to town
 					}
 
@@ -317,7 +317,7 @@ function main() {
 						try {
 							Town.goToTown();
 						} catch (e) {
-							print(e + " Failed to go to town. Quitting.");
+							print(e + " ÿc1Failed to go to town. Quitting.");
 							scriptBroadcast("quit"); // quit if failed to go to town
 						}
 

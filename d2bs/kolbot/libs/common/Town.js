@@ -154,7 +154,7 @@ var Town = {
 
 	// Start a task and return the NPC Unit
 	initNPC: function (task, reason) {
-		print("initNPC: " + reason);
+		print("ÿc4Town ÿc0:: ÿc3initNPC ÿc0:: ÿc9 " + reason);
 
 		var npc = getInteractedNPC();
 
@@ -890,7 +890,7 @@ CursorLoop:
 			return false;
 		}
 
-		print("ÿc4MiniShopBotÿc0: Scanning " + npc.itemcount + " items.");
+		print("ÿc4Town ÿc0:: ÿc4MiniShopBot ÿc0:: ÿc9Scanning ÿc5 " + npc.itemcount + " ÿc9items.");
 
 		do {
 			if (this.ignoredItemTypes.indexOf(item.itemType) === -1) {
@@ -1265,8 +1265,8 @@ CursorLoop:
 						delay(me.ping * 2 + 500);
 
 						if (cubeItems[0].bodylocation === bodyLoc) {
-							print(cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " successfully repaired and equipped.");
-							D2Bot.printToConsole(cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " successfully repaired and equipped.", 5);
+							print("ÿc4Town ÿc0:: ÿc5 " + cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " ÿc2successfully repaired and equipped.");
+							D2Bot.printToConsole("ÿc4Town ÿc0:: ÿc5 " + cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " ÿc2successfully repaired and equipped.", 5);
 
 							return true;
 						}
@@ -1385,7 +1385,7 @@ CursorLoop:
 				repairAction.push("repair");
 			}
 		} else {
-			print("ÿc4Town: ÿc1Can't afford repairs.");
+			print("ÿc4Town ÿc0:: ÿc1Can't afford repairs.");
 			delay(10000);
 		}
 
@@ -1498,7 +1498,7 @@ MainLoop:
 
 		if (!!me.getMerc()) {
 			if (Config.MercWatch) { // Cast BO on merc so he doesn't just die again
-				print("MercWatch precast");
+				print("ÿc4Town ÿc0:: ÿc9MercWatch precast");
 				Pather.useWaypoint("random");
 				Precast.doPrecast(true);
 				Pather.useWaypoint(preArea);
@@ -1698,7 +1698,7 @@ MainLoop:
 			}
 
 			if (getTickCount() - timer > 30000) {
-				D2Bot.printToConsole("Failed to get corpse, stopping.", 9);
+				D2Bot.printToConsole("ÿc4Town ÿc0:: ÿc1Failed to get corpse. Stopping.", 9);
 				D2Bot.stop();
 			}
 
@@ -1814,7 +1814,7 @@ MainLoop:
 		for (i = 0; !!items && i < items.length; i += 1) {
 			if (items[i].location === 3 && items[i].mode === 0 && items[i].itemType === 22) {
 				if (getUIFlag(0xC) || (Config.PacketShopping && getInteractedNPC() && getInteractedNPC().itemcount > 0)) { // Might as well sell the item if already in shop
-					print("ÿc4Clearing inventory. ÿc:Selling: " + items[i].name);
+					print("ÿc4Town ÿc0:: ÿc4Clearing inventory ÿc0:: ÿc<Selling ÿc0:: ÿc5" + items[i].name);
 					Misc.itemLogger("Sold", items[i]);
 					items[i].sell();
 				} else {
@@ -1949,7 +1949,7 @@ MainLoop:
 					}
 
 					if (getUIFlag(0xC) || (Config.PacketShopping && getInteractedNPC() && getInteractedNPC().itemcount > 0)) { // Might as well sell the item if already in shop
-						print("ÿc4Clearing inventory. ÿc:Selling: " + items[i].name);
+						print("ÿc4Town ÿc0:: ÿc4Clearing inventory ÿc0:: ÿc<Selling ÿc0:: ÿc5 " + items[i].name);
 						Misc.itemLogger("Sold", items[i]);
 						items[i].sell();
 					} else {
@@ -1960,7 +1960,7 @@ MainLoop:
 					break;
 				case 4: // Sell item
 					try {
-						print("ÿc9Low on gold. Selling: " + items[i].name);
+						print("ÿc4Town ÿc0:: ÿc9Low on gold. ÿc<Selling ÿc0:: ÿc5 " + items[i].name);
 						this.initNPC("Shop", "clearInventory");
 						Misc.itemLogger("Sold", items[i]);
 						items[i].sell();

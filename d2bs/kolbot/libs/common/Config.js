@@ -23,7 +23,7 @@ var Config = {
 					if (CustomConfig.hasOwnProperty(n)) {
 						if (CustomConfig[n].indexOf(me.profile) > -1) {
 							if (notify) {
-								print("ÿc2Loading custom config: ÿc9" + n + ".js");
+								print("ÿc4Config ÿc:: ÿc2Loading custom config: ÿc4 " + n + "ÿc4.js");
 							}
 
 							configFilename = n + ".js";
@@ -67,14 +67,14 @@ var Config = {
 			}
 		} else {
 			if (notify) {
-				print("ÿc1" + classes[me.classid] + "." + me.charname + ".js not found!"); // Use the primary format
-				print("ÿc1Loading default config.");
+				print("ÿc4Config ÿc0:: ÿc1" + classes[me.classid] + "ÿc1." + me.charname + "ÿc1.js not found!"); // Use the primary format
+				print("ÿc4Config ÿc0:: ÿc1Loading default config...");
 			}
 
 			// Try to find default config
 			if (!FileTools.exists("libs/config/" + classes[me.classid] + ".js")) {
-				D2Bot.printToConsole("Not going well? Read the guides: https://github.com/blizzhackers/documentation");
-				throw new Error("ÿc1Default config not found. \nÿc9     Try reading the kolbot guides.");
+				D2Bot.printToConsole("ÿc4Config ÿc0:: ÿc;Not going well? Read the guides: https://github.com/blizzhackers/documentation");
+				throw new Error("ÿc4Config ÿc0:: ÿc1Default config not found... \nÿc9     Try reading the kolbot guides.");
 			}
 
 			try {
@@ -90,7 +90,7 @@ var Config = {
 			LoadConfig.call();
 		} catch (e2) {
 			if (notify) {
-				print("ÿc8Error in " + e2.fileName.substring(e2.fileName.lastIndexOf("\\") + 1, e2.fileName.length) + "(line " + e2.lineNumber + "): " + e2.message);
+				print("ÿc4Config ÿc0:: ÿc8Error in ÿc0:: ÿc8 " + e2.fileName.substring(e2.fileName.lastIndexOf("ÿc4\\ÿc8") + 1, e2.fileName.length) + " ÿc0(ÿc9line ÿc8" + e2.lineNumber + "ÿc0 ): " + e2.message);
 
 				throw new Error("Config.init: Error in character config.");
 			}
@@ -107,7 +107,7 @@ var Config = {
 				AutoBuild.initialize();
 			}
 		} catch (e3) {
-			print("ÿc8Error in libs/common/AutoBuild.js (AutoBuild system is not active!)");
+			print("ÿc4Config ÿc0:: ÿc9Error in libs/common/AutoBuild.js (AutoBuild system is not active!)");
 			print(e3.toSource());
 		}
 	},

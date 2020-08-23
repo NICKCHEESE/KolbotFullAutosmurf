@@ -1233,7 +1233,7 @@ Unit.prototype.equip = function (destLocation = undefined) {
 		destLocation = [destLocation]
 	}
 
-	print('equiping ' + this.name);
+	print('ÿc4Prototypes ÿc0:: ÿc2Equipping ÿc5 ' + this.name);
 
 
 	let currentEquiped = me.getItems(-1).filter(item =>
@@ -1258,7 +1258,7 @@ Unit.prototype.equip = function (destLocation = undefined) {
 
 			// Last item, so swap instead of putting off first
 			if (index === (currentEquiped.length - 1)) {
-				print('swap ' + this.name + ' for ' + item.name);
+				print('ÿc4Prototypes ÿc0:: ÿc9Swapping ÿc5 ' + this.name + ' ÿc9for ÿc5 ' + item.name);
 				let oldLoc = {x: this.x, y: this.y, location: this.location};
 				clickItemAndWait(0, this); // Pick up current item
 				clickItemAndWait(0, destLocation.first()); // the swap of items
@@ -1276,7 +1276,7 @@ Unit.prototype.equip = function (destLocation = undefined) {
 				return;
 			}
 
-			print('Unequip item first ' + item.name);
+			print('ÿc4Prototypes ÿc0:: ÿc9Unequip ÿc5 ' + item.name + 'ÿc9 first!');
 			// Incase multiple items are equipped
 			let spot = findspot(item); // Find a spot for the current item
 

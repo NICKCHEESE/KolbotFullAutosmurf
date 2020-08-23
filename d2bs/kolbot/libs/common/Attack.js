@@ -13,7 +13,7 @@ var Attack = {
 		if (Config.Wereform) {
 			include("common/Attacks/wereform.js");
 		} else if (Config.CustomClassAttack && FileTools.exists('libs/common/Attacks/'+Config.CustomClassAttack+'.js')) {
-			print('Loading custom attack file');
+			print('ÿc4Attack ÿc0:: ÿc2Loading custom attack file...');
 			include('common/Attacks/'+Config.CustomClassAttack+'.js')
 		} else {
 			include("common/Attacks/" + this.classes[me.classid] + ".js");
@@ -21,7 +21,7 @@ var Attack = {
 
 		if (Config.AttackSkill[1] < 0 || Config.AttackSkill[3] < 0) {
 			showConsole();
-			print("ÿc1Bad attack config. Don't expect your bot to attack.");
+			print("ÿc4Attack ÿc0:: ÿc1Bad attack config. Don't expect your bot to attack.");
 		}
 
 		if (me.gametype === 1) {
@@ -533,7 +533,7 @@ var Attack = {
 
 					// Skip non-unique monsters after 15 attacks, except in Throne of Destruction
 					if (me.area !== 131 && !(target.spectype & 0x7) && gidAttack[i].attacks > 15) {
-						print("ÿc1Skipping " + target.name + " " + target.gid + " " + gidAttack[i].attacks);
+						print("ÿc4Attack ÿc0:: ÿc1Skipping ÿc0:: ÿc8 " + target.name + " ÿc5" + target.gid + " ÿc5" + gidAttack[i].attacks);
 						monsterList.shift();
 					}
 
@@ -702,7 +702,7 @@ var Attack = {
 
 					// Skip non-unique monsters after 15 attacks, except in Throne of Destruction
 					if (me.area !== 131 && !(target.spectype & 0x7) && gidAttack[i].attacks > 15) {
-						print("ÿc1Skipping " + target.name + " " + target.gid + " " + gidAttack[i].attacks);
+						print("ÿc4Attack ÿc0:: ÿc1Skipping ÿc0:: ÿc8 " + target.name + " ÿc5" + target.gid + " ÿc5" + gidAttack[i].attacks);
 						monsterList.shift();
 					}
 
@@ -1267,7 +1267,7 @@ var Attack = {
 		}
 
 		if ((unit.spectype & 0x7) && Config.SkipException && Config.SkipException.indexOf(unit.name) > -1) {
-			print("ÿc1Skip Exception: " + unit.name);
+			print("ÿc4Attack ÿc0:: ÿc1Skip Exception ÿc0:: ÿc8 " + unit.name);
 			return true;
 		}
 
@@ -1632,7 +1632,7 @@ AuraLoop: // Skip monsters with auras
 		}
 
 		if (name) {
-			print("ÿc4Attackÿc0: No valid positions for: " + name);
+			print("ÿc4Attack ÿc0:: ÿc9No valid positions for ÿc0:: ÿc8 " + name);
 		}
 
 		return false;

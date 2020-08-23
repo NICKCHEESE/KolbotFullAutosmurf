@@ -56,7 +56,7 @@ function canSpendPoints () {
 	var haveUnusedStatpoints = unusedStatPoints >= 5;	// We spend 5 stat points per level up
 	var unusedSkillPoints = me.getStat(5);
 	var haveUnusedSkillpoints = unusedSkillPoints >= 1;	// We spend 1 skill point per level up
-	if (debug) { AutoBuild.print("Stat points:", unusedStatPoints, "     Skill points:", unusedSkillPoints); }
+	if (debug) { AutoBuild.print("ÿc4Stat pointsÿc0 ::ÿc8 ", unusedStatPoints, "     ÿc4Skill pointsÿc0 ::ÿc8 ", unusedSkillPoints); }
 	return haveUnusedStatpoints && haveUnusedSkillpoints;
 };
 
@@ -65,9 +65,9 @@ function spendStatPoint (id) {
 	var unusedStatPoints = me.getStat(4);
 	if (SPEND_POINTS) {
 		useStatPoint(id);
-		AutoBuild.print("useStatPoint("+id+"): "+STAT_ID_TO_NAME[id]);
+		AutoBuild.print("ÿc;Using stat point ÿc0:: ÿc8 ("+id+"ÿc8) ÿc0 :: "+STAT_ID_TO_NAME[id]);
 	} else {
-		AutoBuild.print("Fake useStatPoint("+id+"): "+STAT_ID_TO_NAME[id]);
+		AutoBuild.print("ÿc1Failed to use stat point ÿc0:: ÿc8 ("+id+"ÿc8) ÿc0 :: "+STAT_ID_TO_NAME[id]);
 	}
 	delay(100);											// TODO: How long should we wait... if at all?
 	return (unusedStatPoints - me.getStat(4) === 1);	// Check if we spent one point
@@ -88,8 +88,8 @@ function spendStatPoints () {
 
 	if (len > unusedStatPoints) {
 		len = unusedStatPoints;
-		AutoBuild.print("Warning: Number of stats specified in your build template at level "+me.charlvl+" exceeds the available unused stat points"+
-			"\nOnly the first "+len+" stats "+stats.slice(0, len).join(", ")+" will be added");
+		AutoBuild.print("ÿc1Warning: Number of stats specified in your build template at level ÿc0:: ÿc8 "+me.charlvl+" ÿc1exceeds the available unused stat points!"+
+			"\n ÿc1Only the first ÿc0:: ÿc8 "+len+" ÿc1 stats ÿc0:: ÿc8 "+stats.slice(0, len).join(" ÿc4, ")+" ÿc1 will be added.");
 	}
 
 	// We silently ignore stats set to -1
@@ -104,9 +104,9 @@ function spendStatPoints () {
 			if (SPEND_POINTS) {
 				if (!pointSpent) {
 					spentEveryPoint = false;
-					AutoBuild.print("Attempt to spend point "+(i+1)+" in "+STAT_ID_TO_NAME[id]+" may have failed!");
+					AutoBuild.print("ÿc9Attempt to spend point ÿc0:: ÿc8 "+(i+1)+" ÿc9 in ÿc0:: ÿc8 "+STAT_ID_TO_NAME[id]+" ÿc1 may have failed!");
 				} else if (debug) {
-					AutoBuild.print("Stat ("+(i+1)+"/"+len+") Increased "+STAT_ID_TO_NAME[id]+" from "+preStatValue+" to "+me.getStat(id));
+					AutoBuild.print("ÿc4Stat ÿc0:: ÿc8 ( " +(i+1)+"ÿc4 / "+len+" ÿc8) ÿc0:: ÿc2Increased ÿc0:: ÿc8 "+STAT_ID_TO_NAME[id]+" ÿc::ÿc4 from ÿc0:: ÿc1 "+preStatValue+" ÿc0::ÿc4 to ÿc0:: ÿc2 "+me.getStat(id));
 				}
 			}
 		} else {
@@ -163,9 +163,9 @@ function spendSkillPoint (id) {
 	var skillName = getSkillById(id)+" ("+id+")";		// TODO: Use let ?
 	if (SPEND_POINTS) {
 		useSkillPoint(id);
-		AutoBuild.print("useSkillPoint(): "+skillName);
+		AutoBuild.print("ÿc;Using Skill point ÿc0::ÿc8 "+skillName);
 	} else {
-		AutoBuild.print("Fake useSkillPoint(): "+skillName);
+		AutoBuild.print("ÿc1Failed to spend Skill point ÿc0:: ÿc8 "+skillName);
 	}
 	delay(200);											// TODO: How long should we wait... if at all?
 	return (unusedSkillPoints - me.getStat(5) === 1);	// Check if we spent one point
@@ -185,8 +185,8 @@ function spendSkillPoints () {
 
 	if (len > unusedSkillPoints) {
 		len = unusedSkillPoints;
-		AutoBuild.print("Warning: Number of skills specified in your build template at level "+me.charlvl+" exceeds the available unused skill points"+
-			"\nOnly the first "+len+" skills "+skills.slice(0, len).join(", ")+" will be added");
+		AutoBuild.print("ÿc1Warning: Number of skills specified in your build template at levelÿc0:: ÿc8 "+me.charlvl+" ÿc1 exceeds the available unused skill points!"+
+			"\n ÿc1Only the first ÿc0:: ÿc8 "+len+" ÿc1skills ÿc0:: ÿc8"+skills.slice(0, len).join("ÿc4, ")+" ÿc1will be added.");
 	}
 
 	// We silently ignore skills set to -1
@@ -214,10 +214,10 @@ function spendSkillPoints () {
 		if (SPEND_POINTS) {
 			if (!pointSpent) {
 				spentEveryPoint = false;
-				AutoBuild.print("Attempt to spend skill point "+(i+1)+" in "+skillName+" may have failed!");
+				AutoBuild.print("ÿc9Attempt to spend skill point ÿc0:: ÿc8 "+(i+1)+" ÿc9 in ÿc0:: ÿc8"+skillName+" ÿc1may have failed!");
 			} else if (debug) {
 				var actualSkillLevel = me.getSkill(id, 1);
-				AutoBuild.print("Skill ("+(i+1)+"/"+len+") Increased "+skillName+" by one (level: ", actualSkillLevel+")");
+				AutoBuild.print("ÿc4Skill ÿc0:: ÿc8 ("+(i+1)+" ÿc4/ "+len+" ÿc8) ÿc2Increased ÿc0:: "+skillName+" ÿc0:: ÿc2by one! ÿc0(ÿc2level ÿc0:: ÿc8 ", actualSkillLevel+" ÿc0)");
 			}
 		}
 
@@ -237,21 +237,21 @@ function spendSkillPoints () {
 
 function main () {
 	try {
-		AutoBuild.print("ÿc3Loaded helper thread");
+		AutoBuild.print("ÿc3Loaded helper thread ÿc:: ÿc2Succeeded!");
 
 		while (true) {
 			var levels = gainedLevels();
 
 			if (levels > 0 && (canSpendPoints() || Config.AutoSkill.Enabled || Config.AutoStat.Enabled)) {
 				scriptBroadcast("toggleQuitlist");
-				AutoBuild.print("Level up detected (", prevLevel, "-->", me.charlvl, ")");
+				AutoBuild.print("ÿc2Level up detected! ÿc0( ÿc8 ", prevLevel, " ÿc2 --> ÿc8 ", me.charlvl, " ÿc0)");
 				spendSkillPoints();
 				spendStatPoints();
 				scriptBroadcast({event: "level up"});
 				AutoBuild.applyConfigUpdates(); // scriptBroadcast() won't trigger listener on this thread.
 
 				if (debug) {
-					AutoBuild.print("Incrementing cached character level to", prevLevel + 1);
+					AutoBuild.print("ÿc<Incrementing cached character level to ÿc0:: ÿc8 ", prevLevel + 1);
 				}
 
 				if (Config.AutoSkill.Enabled) {

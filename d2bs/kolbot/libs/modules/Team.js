@@ -37,7 +37,7 @@
 	};
 
 	if (threadType === 'thread') {
-		print('ÿc2Kolbotÿc0 :: Team thread started');
+		print('ÿc4Kolbotÿc0 :: ÿc2Team thread started');
 
 		Messaging.on('Team', data => {
 			return typeof data === 'object' && data && data.hasOwnProperty('call') && Team[data.call].apply(Team, data.hasOwnProperty('args') && data.args || []);
@@ -56,7 +56,7 @@
 						newContent = FileTools.readText('data/' + filename);
 						if (!newContent) return; // no content
 					} catch (e) {
-						print('Can\'t read: `' + 'data/' + filename + '`');
+						print('ÿc1Can\'t read ÿc0:: ÿc2`' + 'ÿc4data/ÿc4' + filename + 'ÿc2`');
 					}
 
 
