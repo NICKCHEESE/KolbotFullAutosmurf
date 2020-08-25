@@ -52,7 +52,7 @@ function Pindleskin() {
 		Pather.moveToPreset(me.area, 2, 462, 10, 10);
 
 		if (Config.Pindleskin.ViperQuit && getUnit(1, 597)) {
-			print("Tomb Vipers found.");
+			print("ÿc4Pindleskin ÿc0:: ÿc1Tomb Vipers found.");
 
 			return true;
 		}

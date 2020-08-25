@@ -23,7 +23,7 @@ function Questing() {
 	};
 
 	this.clearDen = function () {
-		print("starting den");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Den");
 
 		var akara;
 
@@ -49,7 +49,7 @@ function Questing() {
 			return false;
 		}
 
-		print("starting radament");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Radament");
 
 		var book, atma;
 
@@ -89,7 +89,7 @@ function Questing() {
 			return false;
 		}
 
-		print("starting izual");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Izual");
 
 		var tyrael;
 
@@ -124,7 +124,7 @@ function Questing() {
 			return false;
 		}
 
-		print("starting lam essen");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Lam Essen");
 
 		var stand, book, alkor;
 
@@ -166,7 +166,7 @@ function Questing() {
 			return true;
 		}
 
-		print("starting shenk");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Shenk");
 
 		if (!Town.goToTown() || !Pather.useWaypoint(111, true)) {
 			throw new Error();
@@ -189,7 +189,7 @@ function Questing() {
 			return true;
 		}
 
-		print("starting anya");
+		print("ÿc4Questing ÿc0:: ÿc2Starting ÿc0:: ÿc5Anya");
 
 		var anya, malah, scroll;
 
@@ -259,11 +259,11 @@ function Questing() {
 		}
 
 		if (j === 3) {
-			D2Bot.printToConsole("Quest " + quests[i][1] + " failed.");
+			D2Bot.printToConsole("ÿc4Questing ÿc0:: ÿc1Quest ÿc0:: ÿc8 " + quests[i][1] + " ÿc1failed.");
 		}
 	}
 
-	D2Bot.printToConsole("All quests done. Stopping profile.");
+	D2Bot.printToConsole("ÿc4Questing ÿc0:: ÿc2All quests done. Stopping profile.");
 	D2Bot.stop();
 
 	return true;

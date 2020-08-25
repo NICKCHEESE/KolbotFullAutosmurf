@@ -7,7 +7,7 @@ function SealLeecher() {
 	Town.move("portalspot");
 
 	if (!Config.Leader) {
-		D2Bot.printToConsole("You have to set Config.Leader");
+		D2Bot.printToConsole("ÿc4SealLeader ÿc0:: ÿc1You have to set ÿc2Config.Leader");
 		D2Bot.stop();
 
 		return false;

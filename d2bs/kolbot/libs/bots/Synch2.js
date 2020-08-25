@@ -31,8 +31,8 @@ function Synch2() {
 		for (j = 0; j < Config.Synch.WaitFor.length; j += 1) {
 			party = getParty(Config.Synch.WaitFor[j]);
 			if (!party) {
-				D2Bot.printToConsole("WaitFor not in game: " +
-						Config.Synch.WaitFor[j] + " so quitting.");
+				D2Bot.printToConsole("ÿc4Synch ÿc0:: ÿc1Not in game ÿc0:: ÿc8 " +
+						Config.Synch.WaitFor[j] + " ÿc1so quitting.");
 
 				removeEventListener("chatmsg", messageHandler2);
 				quit();
@@ -44,7 +44,7 @@ function Synch2() {
 	}
 
 	if (!Synched) {
-		D2Bot.printToConsole("Failed to sync.");
+		D2Bot.printToConsole("ÿc4Synch ÿc0:: ÿc1Failed to sync.");
 		quit();
 	}
 

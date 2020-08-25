@@ -56,15 +56,15 @@ const BoBarbHelper = () => {
 
 	if (!Config.QuitList) {
 		showConsole();
-		print('set Config.QuitList in character settings');
-		print('if you don\'t I will idle indefinitely');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc9Set ÿc2Config.QuitList ÿc9in character settings.');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc9If you don\'t I will idle ÿc1indefinitely.');
 	}
 
 	if (me.playertype == 1 && Config.LifeChicken <= 0) {
 		showConsole();
-		print('on HARDCORE');
-		print('you should set Config.LifeChicken');
-		print('monsters can find their way to wps ...');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc9On ÿc1HARDCORE');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc9you should set ÿc2Config.LifeChicken');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc1Monsters can find their way to wps ...');
 		delay(2000);
 		hideConsole();
 		me.overhead('set LifeChiken to 40');
@@ -81,8 +81,8 @@ const BoBarbHelper = () => {
 		Pather.useWaypoint(Config.BoBarbHelper.Wp);
 	} catch (e) {
 		showConsole();
-		print('Failed to move to BO WP');
-		print('make sure I have ' + Pather.getAreaName(Config.BoBarbHelper.Wp) + ' waypoint');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc1Failed to move to BO WP');
+		print('ÿc4BoBarbHelper ÿc0:: ÿc9Make sure I have ÿc8 ' + Pather.getAreaName(Config.BoBarbHelper.Wp) + ' ÿc9waypoint');
 		delay(20000);
 
 		return true;

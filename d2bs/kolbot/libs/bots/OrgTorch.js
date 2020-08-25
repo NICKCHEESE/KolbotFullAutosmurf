@@ -98,7 +98,7 @@ function OrgTorch() {
 	this.getFade = function () {
 		if (Config.OrgTorch.GetFade && me.classid === 3) {
 			if (!me.getState(159)) {
-				print("Getting Fade");
+				print("ÿc4OrgTorch ÿc0:: ÿc2Getting ÿc5Fade");
 				Pather.useWaypoint(107);
 				Precast.doPrecast(true);
 				Pather.moveTo(7811, 5872);
@@ -111,7 +111,7 @@ function OrgTorch() {
 					delay(100);
 				}
 
-				print("Fade Achieved.");
+				print("ÿc4OrgTorch ÿc0:: ÿc5Fade ÿc2Achieved.");
 			}
 		}
 
@@ -275,7 +275,7 @@ function OrgTorch() {
 			}
 		}
 
-		print("Need " + needJuvs + " juvs.");
+		print("ÿc4OrgTorch ÿc0:: ÿc9Need ÿc8 " + needJuvs + " ÿc;Rejuvenation potions.");
 
 		return needJuvs;
 	};
@@ -311,7 +311,7 @@ function OrgTorch() {
 							}
 
 							if (farmer.KeyFinderProfiles.indexOf(obj.profile) > -1) {
-								print("Got game request from: " + obj.profile);
+								print("ÿc4OrgTorch ÿc0:: ÿc1Got game request from ÿc0;: ÿc8 " + obj.profile);
 								sendCopyData(null, obj.profile, 6, JSON.stringify({name: "gameName", value: {gameName: me.gamename, password: me.gamepassword}}));
 
 								busy = true;
@@ -321,7 +321,7 @@ function OrgTorch() {
 							break;
 						case "keyCheck":
 							if (farmer.KeyFinderProfiles.indexOf(obj.profile) > -1) {
-								print("Got key count request from: " + obj.profile);
+								print("ÿc4OrgTorch ÿc0:: ÿc2Got key count request from ÿc0:: ÿc8 " + obj.profile);
 
 								// Get the number of needed keys
 								neededItems = {pk1: 3 - tkeys, pk2: 3 - hkeys, pk3: 3 - dkeys, rv: this.juvCheck()};
@@ -410,8 +410,8 @@ function OrgTorch() {
 	// We have enough keys, do mini ubers
 	if (tkeys >= 3 && hkeys >= 3 && dkeys >= 3) {
 		this.getFade();
-		print("Making organs.");
-		D2Bot.printToConsole("OrgTorch: Making organs.", 7);
+		print("ÿc4OrgTorch ÿc0:: ÿc2Making organs!");
+		D2Bot.printToConsole("ÿc4OrgTorch ÿc0:: ÿc2Making organs!", 7);
 
 		for (i = 0; i < 3; i += 1) {
 			// Abort if we have a complete set of organs
@@ -427,7 +427,7 @@ function OrgTorch() {
 					Town.buyAntidotes(Config.OrgTorch.AntidotesToChug);
 					for (chugs = 0; chugs < Config.OrgTorch.AntidotesToChug; chugs++) {
 						delay(500);
-						print("glug glug");
+						print("ÿc4OrgTorch ÿc0:: ÿc;Bottoms up, Bitches!");
 						let antidote = me.getItem(514);
 						if (antidote) {
 							antidote.interact();
@@ -455,8 +455,8 @@ function OrgTorch() {
 	// We have enough organs, do Tristram
 	if (brains && eyes && horns) {
 		this.getFade();
-		print("Making torch");
-		D2Bot.printToConsole("OrgTorch: Making torch.", 7);
+		print("ÿc4OrgTorch ÿc0:: ÿc2Making torch!");
+		D2Bot.printToConsole("ÿc4OrgTorch ÿc0:: ÿc2Making torch!", 7);
 
 		portal = this.openPortal(1);
 

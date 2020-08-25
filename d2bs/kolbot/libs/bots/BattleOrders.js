@@ -20,7 +20,7 @@ function BattleOrders () {
 				this.checkForPlayers();
 			} catch (e) {
 				if (Config.BattleOrders.Wait) {
-					print("Waiting " + Config.BattleOrders.Wait + " seconds for other players...");
+					print("ÿc4BattleOrders ÿc0:: ÿc9Waiting ÿc8 " + Config.BattleOrders.Wait + " ÿc9seconds for other players...");
 
 					while (getTickCount() - tick < Config.BattleOrders.Wait * 1000) {
 						me.overhead("Waiting " + Math.round(((tick + (Config.BattleOrders.Wait * 1000)) - getTickCount()) / 1000) + " Seconds for other players");
@@ -44,7 +44,7 @@ function BattleOrders () {
 			do {
 				if (party.area === 131 || party.area === 132 || party.area === 108 || party.area === 39) {
 					// Player is in Throne of Destruction, Worldstone Chamber, Chaos Sanctuary, or Cows
-					print("ÿc1I'm late to BOs. Moving on...");
+					print("ÿc4BattleOrders ÿc0:: ÿc1I'm late to get BO'd. Moving on...");
 
 					return true;
 				}
@@ -67,7 +67,7 @@ function BattleOrders () {
 				while (!unit.getState(32) && copyUnit(unit).x) {
 					if (getTickCount() - tick >= failTimer * 1000) {
 						showConsole();
-						print("ÿc1BO timeout fail.");
+						print("ÿc4BattleOrders ÿc0:: ÿc1Timeout fail.");
 
 						if (Config.BattleOrders.QuitOnFailure) {
 							quit();
@@ -91,7 +91,7 @@ function BattleOrders () {
 		Pather.useWaypoint(35, true); // catacombs
 	} catch (wperror) {
 		showConsole();
-		print("ÿc1Failed to take waypoint.");
+		print("ÿc4BattleOrders ÿc0:: ÿc1Failed to take waypoint.");
 
 		if (Config.BattleOrders.QuitOnFailure) {
 			quit();
@@ -118,7 +118,7 @@ function BattleOrders () {
 				while (!Misc.inMyParty(Config.BattleOrders.Getters[i]) || !getUnit(0, Config.BattleOrders.Getters[i])) {
 					if (getTickCount() - tick >= failTimer * 1000) {
 						showConsole();
-						print("ÿc1BO timeout fail.");
+						print("ÿc4BattleOrders ÿc0:: ÿc1Timeout fail.");
 
 						if (Config.BattleOrders.QuitOnFailure) {
 							quit();
@@ -145,7 +145,7 @@ function BattleOrders () {
 
 			if (getTickCount() - tick >= failTimer * 1000) {
 				showConsole();
-				print("ÿc1BO timeout fail.");
+				print("ÿc4BattleOrders ÿc0:: ÿc1Timeout fail.");
 
 				if (Config.BattleOrders.QuitOnFailure) {
 					quit();

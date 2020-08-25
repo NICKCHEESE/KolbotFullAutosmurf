@@ -145,7 +145,7 @@ function Rushee() {
 		Storage.Cube.MoveTo(amulet);
 		Storage.Cube.MoveTo(staff);
 		Cubing.openCube();
-		print("making staff");
+		print("ÿc4Rushee ÿc0:: ÿc2Making Staff");
 		transmute();
 		delay(750 + me.ping);
 
@@ -373,7 +373,7 @@ function Rushee() {
 							delay(250);
 
 							if (me.getItem(552)) {
-								print("Using book of skill");
+								print("ÿc4Rushee ÿc0:: ÿc2Using Book of Skill");
 								clickItem(1, me.getItem(552));
 
 								break;
@@ -629,7 +629,7 @@ function Rushee() {
 								}
 
 								if (me.getItem(646)) {
-									print("Using scroll of resistance");
+									print("ÿc4Rushee ÿc0:: ÿc2Using Scroll of Resistance");
 									clickItem(1, me.getItem(646));
 								}
 							}
@@ -665,7 +665,7 @@ function Rushee() {
 						}
 
 						if (!this.checkQuest(6, 4)) {
-							D2Bot.printToConsole("Andariel quest failed", 9);
+							D2Bot.printToConsole("ÿc4Rushee ÿc0:: ÿc1Andariel quest failed", 9);
 							quit();
 						}
 
@@ -700,7 +700,7 @@ function Rushee() {
 						}
 
 						if (!this.checkQuest(13, 0)) {
-							D2Bot.printToConsole("Summoner quest failed", 9);
+							D2Bot.printToConsole("ÿc4Rushee ÿc0:: ÿc1Summoner quest failed", 9);
 							quit();
 						}
 
@@ -726,7 +726,7 @@ function Rushee() {
 						}
 
 						if (!this.checkQuest(21, 0)) {
-							D2Bot.printToConsole("Travincal quest failed", 9);
+							D2Bot.printToConsole("ÿc4Rushee ÿc0:: ÿc1Travincal quest failed", 9);
 							quit();
 						}
 
@@ -818,7 +818,7 @@ function Rushee() {
 						}
 
 						if (me.getItem(646)) {
-							print("Using Scroll of Resistance");
+							print("ÿc4Rushee ÿc0:: ÿc2Using Scroll of Resistance");
 							clickItem(1, me.getItem(646));
 						}
 

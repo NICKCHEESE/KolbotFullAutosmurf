@@ -19,7 +19,7 @@ function Gamble() {
 	addEventListener('copydata',
 		function (mode, msg) {
 			if (needGold && mode === 0 && info.goldFinders.indexOf(msg) > -1) {
-				print("Got game request from " + msg);
+				print("ÿc4Gamble ÿc0:: ÿc2Got game request from ÿc0:: ÿc8 " + msg);
 				sendCopyData(null, msg, 4, me.gamename + "/" + me.gamepassword);
 			}
 		});

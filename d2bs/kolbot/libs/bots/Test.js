@@ -1,5 +1,5 @@
 function Test() {
-	print("ÿc8TESTING");
+	print("ÿc4Test ÿc0:: ÿc8TESTING");
 
 	var c;
 
@@ -16,7 +16,7 @@ function Test() {
 			try {
 				test();
 			} catch (qq) {
-				print('faile');
+				print('ÿc4Test ÿc0:: ÿc1Failed');
 				print(qq + " " + qq.fileName + " " + qq.lineNumber);
 			}
 
@@ -28,7 +28,7 @@ function Test() {
 }
 
 function test() {
-	print("test");
+	print("ÿc4Test ÿc0:: ÿc2Test");
 
-	print("done");
+	print("ÿc4Test ÿc0:: ÿc2Done");
 }

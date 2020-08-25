@@ -128,7 +128,7 @@ MainLoop:
 			}
 
 			Town.move("portalspot");
-			print("revived!");
+			print("ÿc4MFHelper ÿc0:: ÿc2Revived!");
 		}
 
 		if (player) {
@@ -154,7 +154,7 @@ MainLoop:
 				if (command.indexOf("quit") > -1) {
 					break MainLoop;
 				} else if (command.indexOf("cows") > -1) {
-					print("ÿc4MFHelperÿc0: Clear Cows");
+					print("ÿc4MFHelper ÿc0:: ÿc2Clearing Cows");
 
 					for (i = 0; i < 5; i += 1) {
 						if (Town.goToTown(1) && Pather.usePortal(39)) {
@@ -173,7 +173,7 @@ MainLoop:
 							Town.goToTown();
 						}
 					} else {
-						print("Failed to use portal.");
+						print("ÿc4MFHelper ÿc0:: ÿc1Failed to use portal.");
 					}
 				} else {
 					for (i = 0; i < 5; i += 1) {
@@ -188,7 +188,7 @@ MainLoop:
 						Precast.doPrecast(true);
 
 						if (command.indexOf("kill") > -1) {
-							print("ÿc4MFHelperÿc0: Kill");
+							print("ÿc4MFHelper ÿc0:: ÿc1Kill");
 							split = command.split("kill ")[1];
 
 							try {
@@ -202,11 +202,11 @@ MainLoop:
 								print(killerror);
 							}
 						} else if (command.indexOf("clearlevel") > -1) {
-							print("ÿc4MFHelperÿc0: Clear Level " + getArea().name);
+							print("ÿc4MFHelper ÿc0:: ÿc3Clear Level ÿc0:: ÿc8 " + getArea().name);
 							Precast.doPrecast(true);
 							Attack.clearLevel(Config.ClearType);
 						} else if (command.indexOf("clear") > -1) {
-							print("ÿc4MFHelperÿc0: Clear");
+							print("ÿc4MFHelper ÿc0:: ÿc2Clear");
 							split = command.split("clear ")[1];
 
 							try {
@@ -219,7 +219,7 @@ MainLoop:
 								print(killerror2);
 							}
 						} else if (command.indexOf("council") > -1) {
-							print("ÿc4MFHelperÿc0: Kill Council");
+							print("ÿc4MFHelper ÿc0:: ÿc1Kill Council");
 							Attack.clearList(Attack.getMob([345, 346, 347], 0, 40));
 						}
 

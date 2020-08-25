@@ -38,7 +38,7 @@ function Crafting() {
 					switch (obj.name) {
 					case "GetGame":
 						if (info.Collectors.indexOf(obj.profile) > -1) {
-							print("GetGame: " + obj.profile);
+							print("ÿc4Crafting ÿc0:: ÿc2GetGame ÿc0:: ÿc8 " + obj.profile);
 							sendCopyData(null, obj.profile, 4, me.gamename + "/" + me.gamepassword);
 
 							gameRequest = true;
@@ -47,7 +47,7 @@ function Crafting() {
 						break;
 					case "GetSetInfo":
 						if (info.Collectors.indexOf(obj.profile) > -1) {
-							print("GetSetInfo: " + obj.profile);
+							print("ÿc4Crafting ÿc0:: ÿc2GetSetInfo ÿc0:: ÿc8 " + obj.profile);
 
 							rval = [];
 
@@ -204,7 +204,7 @@ MainSwitch:
 				for (j = 0; j < items.length; j += 1) {
 					if (info.Sets[i].BaseItems.indexOf(items[j].classid) > -1 && // Item is on the bases list
 							AutoMule.cubingIngredient(items[j])) { // Item is a valid Cubing ingredient
-						print("Base found: " + items[j].classid);
+						print("ÿc4Crafting ÿc0:: ÿc2Base found ÿc0:: ÿc8 " + items[j].classid);
 
 						info.Sets[i].Enabled = true;
 
@@ -227,7 +227,7 @@ MainSwitch:
 				for (j = 0; j < items.length; j += 1) {
 					if (info.Sets[i].BaseItems.indexOf(items[j].classid) > -1 && // Item is on the bases list
 							runewordIngredient(items[j])) { // Item is a valid Runeword ingredient
-						print("Base found: " + items[j].classid);
+						print("ÿc4Crafting ÿc0:: ÿc2Base found ÿc0:: ÿc8 " + items[j].classid);
 
 						info.Sets[i].Enabled = true;
 
@@ -338,7 +338,7 @@ function checkItem(item) {
 }
 
 function shopStuff(npcId, classids, amount) {
-	print("shopStuff: " + npcId + " " + amount);
+	print("ÿc4Crafting ÿc0:: ÿc5ShopStuff ÿc0:: ÿc8 " + npcId + " " + amount);
 
 	var wpArea, town, path, menuId, npc, tickCount,
 		leadTimeout = 30,

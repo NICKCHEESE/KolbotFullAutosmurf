@@ -193,7 +193,7 @@ function Diablo() {
 	};
 
 	this.vizierSeal = function () {
-		print("Viz layout " + this.vizLayout);
+		print("ÿc4Diablo ÿc0:: ÿc5Grand Vizier of Chaos ÿc9layout ÿc0:: ÿc2 " + this.vizLayout);
 		this.followPath(this.vizLayout === 1 ? this.starToVizA : this.starToVizB);
 
 		if (!this.openSeal(395) || !this.openSeal(396)) {
@@ -214,7 +214,7 @@ function Diablo() {
 	};
 
 	this.seisSeal = function () {
-		print("Seis layout " + this.seisLayout);
+		print("ÿc4Diablo ÿc0:: ÿc5Lord DeSeis ÿc9layout ÿc0:: ÿc2 " + this.seisLayout);
 		this.followPath(this.seisLayout === 1 ? this.starToSeisA : this.starToSeisB);
 
 		if (!this.openSeal(394)) {
@@ -236,7 +236,7 @@ function Diablo() {
 
 	this.infectorSeal = function () {
 		Precast.doPrecast(true);
-		print("Inf layout " + this.infLayout);
+		print("ÿc4Diablo ÿc0:: ÿc5Infector of Souls ÿc9layout ÿc0:: ÿc2 " + this.infLayout);
 		this.followPath(this.infLayout === 1 ? this.starToInfA : this.starToInfB);
 
 		if (!this.openSeal(392)) {
@@ -261,7 +261,7 @@ function Diablo() {
 	};
 
 	const openSeals = () => {
-		print("seal order: " + Config.Diablo.SealOrder);
+		print("ÿc4Diablo ÿc0:: ÿc3Seal order ÿc0:: ÿc2 " + Config.Diablo.SealOrder);
 		let seals = {
 			1: () => this.vizierSeal(),
 			2: () => this.seisSeal(),
@@ -497,10 +497,10 @@ function Diablo() {
 	}
 
 	try {
-		print("Attempting to find Diablo");
+		print("ÿc4Diablo ÿc0:: ÿc9Attempting to find Diablo.");
 		this.diabloPrep();
 	} catch (error) {
-		print("Diablo wasn't found. Checking seals.");
+		print("ÿc4Diablo ÿc0:: ÿc1Diablo wasn't found. ÿc9Checking seals...");
 		this.vizierSeal();
 		this.seisSeal();
 		this.infectorSeal();

@@ -99,7 +99,7 @@ function ShopBot() {
 		var i, item, items, bought;
 
 		if (!Storage.Inventory.CanFit({sizex: 2, sizey: 4}) && AutoMule.getMuleItems().length > 0) {
-			D2Bot.printToConsole("Mule triggered");
+			D2Bot.printToConsole("ÿc4ShopBot ÿc0:: ÿc2Mule triggered");
 			scriptBroadcast("mule");
 			scriptBroadcast("quit");
 			return true;
@@ -147,7 +147,7 @@ function ShopBot() {
 					NTIP.CheckItem(items[i], this.pickEntries)
 					) {
 				beep();
-				D2Bot.printToConsole("Match found!", 7);
+				D2Bot.printToConsole("ÿc4ShopBot ÿc0:: ÿc2Match found!", 7);
 				delay(1000);
 
 				if (npc.startTrade(menuId)) {
@@ -269,7 +269,7 @@ function ShopBot() {
 	}
 
 	this.buildPickList();
-	print("Shopbot: Pickit entries: " + this.pickEntries.length);
+	print("ÿc4ShopBot ÿc0:: ÿc2Pickit entries ÿc0:: ÿc8 " + this.pickEntries.length);
 	Town.doChores();
 
 	tickCount = getTickCount();

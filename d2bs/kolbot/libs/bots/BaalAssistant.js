@@ -312,7 +312,7 @@ function BaalAssistant() {
 	Town.doChores();
 
 	if (Leader || autoLeaderDetect(109) || autoLeaderDetect(130) || autoLeaderDetect(131)) {
-		print("ÿc<Leader: " + Leader);
+		print("ÿc4BaalAssistant ÿc0:: ÿc<Leader ÿc0:: ÿc; " + Leader);
 		while (Misc.inMyParty(Leader)) {
 			if (!secondAttempt && !safeCheck && !baalCheck && !ShrineStatus && GetShrine && me.area === 109 && me.area !== 131 && me.area !== 132) {
 
@@ -325,7 +325,7 @@ function BaalAssistant() {
 					}
 
 					if (!hotCheck) {
-						print("ÿc1" + "Leader didn't tell me to start hunting for an experience shrine.");
+						print("ÿc4BaalAssistant ÿc0:: ÿc1" + "Leader didn't tell me to start hunting for an experience shrine.");
 						ShrineStatus = true;
 					}
 
@@ -408,7 +408,7 @@ function BaalAssistant() {
 						Pather.moveTo(15095, 5029);
 
 						if ((SoulQuit && getUnit(1, 641)) || (DollQuit && getUnit(1, 691))) {
-							print("Burning Souls or Undead Soul Killers found, ending script.");
+							print("ÿc4 ÿc0:: ÿc1 Burning Souls or Undead Soul Killers found. Ending script.");
 							return true;
 						}
 
@@ -471,7 +471,7 @@ function BaalAssistant() {
 						}
 
 						if ((SoulQuit && getUnit(1, 641)) || (DollQuit && getUnit(1, 691))) {
-							print("Burning Souls or Undead Soul Killers found, ending script.");
+							print("ÿc4BaalAssistant ÿc0:: ÿc1Burning Souls or Undead Soul Killers found. Ending script.");
 							return true;
 						}
 

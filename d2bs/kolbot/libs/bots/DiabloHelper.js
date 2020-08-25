@@ -223,7 +223,7 @@ function DiabloHelper() {
 	};
 
 	const clearSeals = () => {
-		print("seal order: " + Config.DiabloHelper.SealOrder);
+		print("ÿc4DiabloHelper ÿc0:: ÿc3Seal order ÿc0:: ÿc2 " + Config.DiabloHelper.SealOrder);
 		let seals = {
 			1: () => this.vizierSeal(),
 			2: () => this.seisSeal(),
@@ -548,12 +548,12 @@ CSLoop:
 	clearSeals();
 
 	try {
-		print("Attempting to find Diablo");
+		print("ÿc4DiabloHelper ÿc0:: ÿc9Attempting to find Diablo.");
 		this.diabloPrep();
 	} catch (error) {
-		print("Diablo wasn't found");
+		print("ÿc4DiabloHelper ÿc0:: ÿc1Diablo wasn't found.");
 		if (Config.DiabloHelper.RecheckSeals) {
-			print("Rechecking seals");
+			print("ÿc4DiabloHelper ÿc0:: ÿc9Checking seals...");
 			this.vizierSeal();
 			this.seisSeal();
 			this.infectorSeal();

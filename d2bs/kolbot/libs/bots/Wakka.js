@@ -34,7 +34,7 @@ function Wakka() {
 						return false;
 					}
 
-					print("ÿc4Wakka: ÿc0Autodetected " + leader);
+					print("ÿc4Wakka ÿc0:: ÿ20Autodetected leader ÿc0::  ÿc8 " + leader);
 
 					return true;
 				}

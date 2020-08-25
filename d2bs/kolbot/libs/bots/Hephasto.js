@@ -16,7 +16,7 @@ function Hephasto() {
 	try {
 		Attack.kill(getLocaleString(1067)); // Hephasto The Armorer
 	} catch (e) {
-		print("Heph not found. Carry on");
+		print("ÿc4Hephasto ÿc0:: ÿc1Hephasto not found.");
 	}
 	Pickit.pickItems();
 
