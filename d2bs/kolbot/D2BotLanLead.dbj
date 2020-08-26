@@ -82,7 +82,7 @@ function main() {
 		delay(200);
 		if (!!DataFile.getStats().debugInfo) {
 			gameInfo.crashInfo = DataFile.getStats().debugInfo;
-			D2Bot.printToConsole("ÿc9Crash Info ÿc0:: ÿc3Script ÿc0:: ÿc8 " + JSON.parse(gameInfo.crashInfo).currScript + " ÿc4Area ÿc0:: ÿc8 " + JSON.parse(gameInfo.crashInfo).area, 10);
+			D2Bot.printToConsole("Crash Info :: Script :: " + JSON.parse(gameInfo.crashInfo).currScript + " Area :: " + JSON.parse(gameInfo.crashInfo).area, 10);
 		}
 		ControlAction.timeoutDelay("Crash Delay", 3000);
 		D2Bot.updateRuns();
@@ -158,7 +158,7 @@ function locationAction(location) {
 		break;
 		default:
 			if (location !== undefined) {
-				D2Bot.printToConsole("ÿc9Unhandled location ÿc0:: ÿc8 " + location);
+				D2Bot.printToConsole("Unhandled location :: " + location);
 				delay(500);
 				D2Bot.restart();
 			}

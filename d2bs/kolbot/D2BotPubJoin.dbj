@@ -319,7 +319,7 @@ function main() {
 		delay(200);
 
 		if (gameInfo.crashInfo) {
-			D2Bot.printToConsole("ÿc9Crash Info ÿc0:: ÿc3Script ÿc0:: ÿc8 " + gameInfo.crashInfo.currScript + " ÿc4Area ÿc0:: ÿc8 " + gameInfo.crashInfo.area, 10);
+			D2Bot.printToConsole("Crash Info :: Script :: " + JSON.parse(gameInfo.crashInfo).currScript + " Area :: " + JSON.parse(gameInfo.crashInfo).area, 10);
 		}
 
 		ControlAction.timeoutDelay("Crash Delay", StarterConfig.CrashDelay * 1e3);
@@ -577,7 +577,7 @@ MainSwitch:
 			switch (string) {
 			case getLocaleString(5207):
 				D2Bot.updateStatus("Invalid Password");
-				D2Bot.printToConsole("ÿc1Invalid Password");
+				D2Bot.printToConsole("Invalid Password");
 
 				break;
 			case getLocaleString(5208):
@@ -591,12 +591,12 @@ MainSwitch:
 				}
 
 				D2Bot.updateStatus("Invalid Account");
-				D2Bot.printToConsole("ÿc1Invalid Account");
+				D2Bot.printToConsole("Invalid Account");
 
 				break;
 			case getLocaleString(5199):
 				D2Bot.updateStatus("Disabled CDKey");
-				D2Bot.printToConsole("ÿc1Disabled CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("Disabled CD-Key :: " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -609,7 +609,7 @@ MainSwitch:
 				break;
 			case getLocaleString(10913):
 				D2Bot.updateStatus("Disabled LoD CDKey");
-				D2Bot.printToConsole("ÿc1Disabled LoD CD-Key ÿc0:: ÿc8 " + gameInfo.mpq, 6);
+				D2Bot.printToConsole("Disabled LoD CD-Key :: " + gameInfo.mpq, 6);
 				D2Bot.CDKeyDisabled();
 
 				if (gameInfo.switchKeys) {
@@ -622,13 +622,13 @@ MainSwitch:
 				break;
 			case getLocaleString(5347):
 				D2Bot.updateStatus("Disconnected");
-				D2Bot.printToConsole("ÿc1Disconnected");
+				D2Bot.printToConsole("Disconnected");
 				ControlAction.click(6, 335, 412, 128, 35);
 
 				break MainSwitch;
 			default:
 				D2Bot.updateStatus("Login Error");
-				D2Bot.printToConsole("ÿc1Login Error ÿc0:: ÿc8 " + string);
+				D2Bot.printToConsole("Login Error :: " + string);
 
 				break;
 			}
@@ -668,11 +668,11 @@ MainSwitch:
 		D2Bot.CDKeyRD();
 
 		if (gameInfo.switchKeys && !gameInfo.rdBlocker) {
-			D2Bot.printToConsole("ÿc9Realm Down ÿc0:: ÿc<Changing CD-Key...");
+			D2Bot.printToConsole("Realm Down :: Changing CD-Key...");
 			ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
 			D2Bot.restart(true);
 		} else {
-			D2Bot.printToConsole("ÿc9Realm Down ÿc0:: ÿc<Restaring...");
+			D2Bot.printToConsole("Realm Down :: Restaring...");
 			D2Bot.restart();
 		}
 
@@ -695,7 +695,7 @@ MainSwitch:
 
 		break;
 	case 19: // Login - Cdkey In Use
-		D2Bot.printToConsole(gameInfo.mpq + " ÿc9CD-Key is in use by ÿc0:: ÿc; " + ControlAction.getText(4, 158, 310, 485, 40), 6);
+		D2Bot.printToConsole(gameInfo.mpq + " CD-Key is in use by :: " + ControlAction.getText(4, 158, 310, 485, 40), 6);
 		D2Bot.CDKeyInUse();
 
 		if (gameInfo.switchKeys) {
@@ -731,7 +731,7 @@ MainSwitch:
 
 		switch (string) {
 		case getLocaleString(10914):
-			D2Bot.printToConsole(gameInfo.mpq + " LoD CD-Key in use by ÿc0:: ÿc; " + ControlAction.getText(4, 158, 310, 485, 40), 6);
+			D2Bot.printToConsole(gameInfo.mpq + " LoD CD-Key in use by :: " + ControlAction.getText(4, 158, 310, 485, 40), 6);
 			D2Bot.CDKeyInUse();
 
 			if (gameInfo.switchKeys) {
@@ -745,7 +745,7 @@ MainSwitch:
 			break;
 		default:
 			if (gameInfo.switchKeys) {
-				D2Bot.printToConsole("ÿc1Invalid CD-Key");
+				D2Bot.printToConsole("Invalid CD-Key");
 				ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
 				D2Bot.restart(true);
 			} else {
@@ -788,10 +788,10 @@ MainSwitch:
 
 		break;
 	case 28: // Lobby - Game Does Not Exist
-		D2Bot.printToConsole("ÿc1Game doesn't exist");
+		D2Bot.printToConsole("Game doesn't exist");
 
 		if (gameInfo.rdBlocker) {
-			D2Bot.printToConsole(gameInfo.mpq + " ÿc9is probably flagged...", 6);
+			D2Bot.printToConsole(gameInfo.mpq + " is probably flagged...", 6);
 
 			if (gameInfo.switchKeys) {
 				ControlAction.timeoutDelay("Key switch delay", StarterConfig.SwitchKeyDelay * 1000);
@@ -839,7 +839,7 @@ MainSwitch:
 		break;
 	default:
 		if (location !== undefined) {
-			D2Bot.printToConsole("ÿc9Unhandled location ÿc0:: ÿc8 " + location);
+			D2Bot.printToConsole("Unhandled location :: " + location);
 			delay(500);
 			D2Bot.restart();
 		}

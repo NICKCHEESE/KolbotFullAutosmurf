@@ -111,14 +111,14 @@ var AutoMule = {
 			if (info.muleInfo.hasOwnProperty("usedStashTrigger") && info.muleInfo.hasOwnProperty("usedInventoryTrigger") &&
 					Storage.Inventory.UsedSpacePercent() >= info.muleInfo.usedInventoryTrigger && Storage.Stash.UsedSpacePercent() >= info.muleInfo.usedStashTrigger &&
 						items.length > 0) {
-				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9MuleCheck triggered!", 7);
+				D2Bot.printToConsole("AutoMule :: MuleCheck triggered!", 7);
 
 				return true;
 			}
 
 			for (i = 0; i < items.length; i += 1) {
 				if (this.matchItem(items[i], Config.AutoMule.Trigger)) {
-					D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9MuleCheck triggered!", 7);
+					D2Bot.printToConsole("AutoMule :: MuleCheck triggered!", 7);
 					return true;
 				}
 			}
@@ -168,7 +168,7 @@ var AutoMule = {
 		}
 
 		addEventListener("copydata", MuleCheckEvent);
-		D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Starting ÿc0:: ÿc8 " + (this.torchAnniCheck === 2 ? " ÿc4Anni ÿc8 " : this.torchAnniCheck === 1 ? " ÿc4Torch ÿc8 " : "") + " ÿc4mule profile ÿc0:: ÿc8 " + muleObj.muleProfile, 7);
+		D2Bot.printToConsole("AutoMule :: Starting :: " + (this.torchAnniCheck === 2 ? " Anni " : this.torchAnniCheck === 1 ? " Torch " : "") + " mule profile :: " + muleObj.muleProfile, 7);
 
 MainLoop:
 		while (true) {
@@ -201,7 +201,7 @@ MainLoop:
 				break;
 			case "busy":
 			case "begin":
-				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9Mule profile is busy.", 9);
+				D2Bot.printToConsole("AutoMule :: Mule profile is busy.", 9);
 
 				break MainLoop;
 			case "ready":
@@ -242,7 +242,7 @@ MainLoop:
 			}
 
 			if (failCount >= 260) {
-				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc9No response from mule profile.", 9);
+				D2Bot.printToConsole("AutoMule :: No response from mule profile.", 9);
 
 				break;
 			}
@@ -373,7 +373,7 @@ MainLoop:
 			}
 
 			if (getTickCount() - tick > timeout) {
-				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc1Mule didn't rejoin. ÿc2Picking up items.", 9);
+				D2Bot.printToConsole("AutoMule :: Mule didn't rejoin. Picking up items.", 9);
 
 				Misc.useItemLog = false; // Don't log items picked back up in town.
 
@@ -416,7 +416,7 @@ MainLoop:
 			return false;
 		}
 
-		D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering items.", 7);
+		D2Bot.printToConsole("AutoMule :: Transfering items.", 7);
 
 		for (i = 0; i < items.length; i += 1) {
 			items[i].drop();
@@ -539,7 +539,7 @@ MainLoop:
 			item = me.findItem(603, 0, -1, 7);
 
 			if (item && !Storage.Inventory.IsLocked(item, Config.Inventory)) {
-				D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering Anni.", 7);
+				D2Bot.printToConsole("AutoMule :: Transfering Anni.", 7);
 				item.drop();
 				delay(1000);
 				me.cancel();
@@ -553,7 +553,7 @@ MainLoop:
 		item = me.findItem(604, 0, -1, 7);
 
 		if (item) {
-			D2Bot.printToConsole("ÿc4AutoMule ÿc0:: ÿc2Transfering Torch.", 7);
+			D2Bot.printToConsole("AutoMule :: Transfering Torch.", 7);
 			item.drop();
 			delay(1000);
 			me.cancel();

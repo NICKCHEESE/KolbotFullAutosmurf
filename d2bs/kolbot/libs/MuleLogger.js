@@ -77,7 +77,7 @@ var MuleLogger = {
 
 		if (getScript("D2BotMuleLog.dbj") && this.LogGame[0] && me.gamename.match(this.LogGame[0], "i")) {
 			print("ÿc4MuleLogger ÿc0:: ÿc2Logging items on ÿc0:: ÿc8 " + me.account + " ÿc4- ÿc8" + me.name + "ÿc4 .");
-			D2Bot.printToConsole("ÿc4MuleLogger ÿc0:: ÿc2Logging items on ÿc0:: ÿc8 " + me.account + " ÿc4- ÿc8" + me.name + "ÿc4 .", 7);
+			D2Bot.printToConsole("MuleLogger :: Logging items on :: " + me.account + " - " + me.name + " .", 7);
 			this.logChar();
 			tick = getTickCount() + rand(1500, 1750) * 1000; // trigger anti-idle every ~30 minutes
 

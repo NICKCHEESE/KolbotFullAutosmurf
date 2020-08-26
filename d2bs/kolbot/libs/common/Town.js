@@ -1266,7 +1266,7 @@ CursorLoop:
 
 						if (cubeItems[0].bodylocation === bodyLoc) {
 							print("ÿc4Town ÿc0:: ÿc5 " + cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " ÿc2successfully repaired and equipped.");
-							D2Bot.printToConsole("ÿc4Town ÿc0:: ÿc5 " + cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " ÿc2successfully repaired and equipped.", 5);
+							D2Bot.printToConsole("Town :: " + cubeItems[0].fname.split("\n").reverse().join(" ").replace(/ÿc[0-9!"+<;.*]/, "").trim() + " successfully repaired and equipped.", 5);
 
 							return true;
 						}
@@ -1697,7 +1697,7 @@ MainLoop:
 			}
 
 			if (getTickCount() - timer > 30000) {
-				D2Bot.printToConsole("ÿc4Town ÿc0:: ÿc1Failed to get corpse. Stopping.", 9);
+				D2Bot.printToConsole("Town :: Failed to get corpse. Stopping.", 9);
 				D2Bot.stop();
 			}
 

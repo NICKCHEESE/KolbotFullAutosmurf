@@ -73,8 +73,8 @@ var Config = {
 
 			// Try to find default config
 			if (!FileTools.exists("libs/config/" + classes[me.classid] + ".js")) {
-				D2Bot.printToConsole("ÿc4Config ÿc0:: ÿc;Not going well? Read the guides: https://github.com/blizzhackers/documentation");
-				throw new Error("ÿc4Config ÿc0:: ÿc1Default config not found... \nÿc9     Try reading the kolbot guides.");
+				D2Bot.printToConsole("Config :: Not going well? Read the guides: https://github.com/blizzhackers/documentation");
+				throw new Error("Config :: Default config not found... \n     Try reading the kolbot guides.");
 			}
 
 			try {

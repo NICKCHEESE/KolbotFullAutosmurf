@@ -146,8 +146,8 @@ var TorchSystem = {
 
 		for (i = 0; i < farmers.length; i += 1) {
 			if (farmers[i].FarmGame.length > 0 && me.gamename.toLowerCase().match(farmers[i].FarmGame.toLowerCase())) {
-				print("ÿc4Torch Systemÿc0 :: ÿc2In Farm game.");
-				D2Bot.printToConsole("ÿc4Torch System ÿc0:: ÿc2Transfering keys...", 7);
+				print("ÿc4TorchSystemÿc0 :: ÿc2In Farm game.");
+				D2Bot.printToConsole("TorchSystem :: Transfering keys...", 7);
 				D2Bot.updateStatus("Torch System: In game.");
 				Town.goToTown(1);
 

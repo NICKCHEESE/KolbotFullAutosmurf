@@ -2191,7 +2191,7 @@ var Experience = {
 			D2Bot.printToConsole(string, 4);
 
 			if (me.getStat(12) > DataFile.getStats().level) {
-				D2Bot.printToConsole("ÿc4Misc ÿc0:: ÿc2Congrats! You gained a level. Current level ÿc0:: ÿc4 " + me.getStat(12), 5);
+				D2Bot.printToConsole("Misc :: Congrats! You gained a level! Current level :: " + me.getStat(12), 5);
 			}
 		}
 	}
