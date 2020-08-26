@@ -25,16 +25,19 @@
 
 
 //Helm
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 || [MaxHP] > 10 # [tier] == 2
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20 # [tier] == 3
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 30 # [tier] == 4
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 40 # [tier] == 5
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 60 # [tier] == 6
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 80 # [tier] == 7
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 && [MaxHP] > 30 # [tier] == 8
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 && [MaxHP] > 60 # [tier] == 9
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [ItemAllSkills]+[AmazonSkills]+[JavelinAndSpearSkillTab] >=1 # # [tier] == 10
-[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [ItemAllSkills]+[AmazonSkills]+[JavelinAndSpearSkillTab] >= 1 && ([FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20) # # [tier] == 11
+[type] == helm && [quality] == rare # [maxhp] > 0 # [tier] == 1
+[type] == helm && [quality] == rare # [maxhp] > 0 && [fireresist]+[lightresist]+[coldresist] >= 30 # [tier] == 2
+[name] == warhat && [quality] == unique # # [tier] == 20
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 || [MaxHP] > 10 # [tier] == 3
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20 # [tier] == 4
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 30 # [tier] == 5
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 40 # [tier] == 6
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 60 # [tier] == 7
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 80 # [tier] == 8
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 && [MaxHP] > 30 # [tier] == 9
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 && [MaxHP] > 60 # [tier] == 10
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [ItemAllSkills]+[assassinskills]+[trapsskilltab] >=1 # # [tier] == 11
+[Type] == Circlet && [Flag] != Ethereal && [Quality] >= Magic # [ItemAllSkills]+[assassinskills]+[trapsskilltab] >= 1 && ([FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20) # # [tier] == 12
 [Name] == GrimHelm && [Flag] != Ethereal && [Quality] == Unique # # [tier] == 85
 [Name] == Shako && [Flag] != Ethereal && [Quality] == Unique # # [tier] == 90
 [name] == diadem && [quality] == unique # # [tier] == 95
