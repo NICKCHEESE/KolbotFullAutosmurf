@@ -180,6 +180,8 @@ var AutoBuildTemplate = {
         StatPoints: [0, 2, 3, 3, 3],
         Update: function () {
             Config.AttackSkill = [0, 97, 98, 97, 98, 0, 98];
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Hammerdin.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Hammerdin2.xpac.nip");
         }
     },
 

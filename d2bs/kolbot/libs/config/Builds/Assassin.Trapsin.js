@@ -117,6 +117,8 @@ var AutoBuildTemplate = {
         SkillPoints: [256],
         StatPoints: [3, 3, 3, 3, 1],
         Update: function () {}
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Trap.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Trap2.xpac.nip");
     },
 
     11: {

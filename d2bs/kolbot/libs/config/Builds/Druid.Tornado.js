@@ -124,6 +124,8 @@ var AutoBuildTemplate = {
         StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
             Config.AttackSkill = [230, 230, 0, 230, 0, 0, 0];
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Tornado.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Tornado2.xpac.nip");
         }
     },
 

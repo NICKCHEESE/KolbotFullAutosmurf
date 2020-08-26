@@ -181,6 +181,8 @@ var AutoBuildTemplate = {
 			Update: function(){
 				Config.DodgeRange=15;
 				Config.DodgeHP=40;
+				Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Meteor.xpac.nip"),1);
+				Config.PickitFiles.push("AutoEquip/Meteor2.xpac.nip");
 			}
 		},
 

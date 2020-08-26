@@ -122,6 +122,8 @@ var AutoBuildTemplate = {
             Config.StashGold = 1000;
             Config.BeltColumn = ["hp", "hp", "mp", "mp"];
             Config.MinColumn = [1, 1, 1, 1];
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Javazon.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Javazon2.xpac.nip");
 
         }
     },

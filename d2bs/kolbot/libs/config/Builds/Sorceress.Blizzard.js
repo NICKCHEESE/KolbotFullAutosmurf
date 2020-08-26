@@ -184,6 +184,8 @@ var AutoBuildTemplate = {
         Update: function () {
             Config.DodgeRange = 15;
             Config.DodgeHP = 40;
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Blizzard.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Blizzard2.xpac.nip");
         }
     },
 

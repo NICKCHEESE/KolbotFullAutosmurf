@@ -176,6 +176,8 @@ var AutoBuildTemplate = {
         StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
             Config.AttackSkill = [0, 132, 0, 0, 0, 0, 0];
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Singer.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Singer2.xpac.nip");
         }
     },
 

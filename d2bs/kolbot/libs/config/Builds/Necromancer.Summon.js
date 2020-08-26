@@ -129,6 +129,8 @@ var AutoBuildTemplate = {
         StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
             Config.AttackSkill = [70, 70, 70, 70, 70, 70, 70];
+			Config.PickitFiles.splice(Config.PickitFiles.indexOf("AutoEquip/Summoner.xpac.nip"),1);
+			Config.PickitFiles.push("AutoEquip/Summoner2.xpac.nip");
         }
     },
 

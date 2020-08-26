@@ -43,7 +43,7 @@
 [name] == diadem && [quality] == unique # # [tier] == 95
 
 //Armor
-[Type] == Armor && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
+//[Type] == Armor && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 || [MaxHP] > 10 # [tier] == 2
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20 # [tier] == 3
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 30 # [tier] == 4
@@ -58,7 +58,7 @@
 [Type] == Armor && [Flag] != Ethereal && [Flag] == Runeword # [ItemAllSkills] >= 2 && [PlusSkillTeleport] >= 1 # [tier] == 99
 
 //Boots
-[Type] == Boots && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
+//[Type] == Boots && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
 [Type] == Boots && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 # [tier] == 2
 [Type] == Boots && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 # [tier] == 3
 [Type] == Boots && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 # [tier] == 4
@@ -69,7 +69,7 @@
 [Name] == ScarabshellBoots && [Flag] == Ethereal && [Quality] == Unique # [PoisonResist] >= 70 && [Strength]+[Vitality] >= 30 # [tier] == 99
 
 //Gloves
-[Type] == Gloves && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
+//[Type] == Gloves && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
 [Type] == Gloves && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 5 # [tier] == 2
 [Type] == Gloves && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 # [tier] == 3
 [Type] == Gloves && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 # [tier] == 4
@@ -80,7 +80,7 @@
 [type] == gloves && [quality] >= magic # [trapsskilltab] >= 2 && [ias] == 20 # [tier] == 95
 
 //Belt
-[Type] == Belt && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
+//[Type] == Belt && [Flag] != Ethereal && [Quality] >= Superior && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
 [Type] == Belt && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 || [MaxHP] > 10 # [tier] == 2
 [Type] == Belt && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20 # [tier] == 3
 [Type] == Belt && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 30 # [tier] == 4
