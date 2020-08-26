@@ -1,5 +1,4 @@
 //Weapon
-([name] == javelin || [name] == pilum || [name] == shortspear || [name] == glaive || [name] == throwingspear) && [Flag] != Ethereal && [Quality] >= Normal && [Quality] <= Superior # [enhanceddamage] >= 10 # # [tier] == 1
 [type] == assassinclaw && [quality] >= magic # [enhanceddamage] >= 50 # # [tier] == 2
 [type] == assassinclaw && [quality] >= magic # [ItemAllSkills]+[assassinskills]+[trapsskilltab] >= 1 # # [tier] == 3
 [type] == assassinclaw && [quality] >= magic # [ItemAllSkills]+[assassinskills]+[trapsskilltab] >= 1 && [ias] >= 10 #  # [tier] == 4
@@ -42,7 +41,7 @@
 [name] == diadem && [quality] == unique # # [tier] == 95
 
 //Armor
-[Type] == Armor && [Flag] != Ethereal && [Quality] >= Normal && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
+//[Type] == Armor && [Flag] != Ethereal && [Quality] >= Normal && [Quality] <= Superior # # [tier] == 1 # # [MaxQuantity] == 1
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 10 || [MaxHP] > 10 # [tier] == 2
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 20 || [MaxHP] > 20 # [tier] == 3
 [Type] == Armor && [Flag] != Ethereal && [Quality] >= Magic # [FireResist]+[ColdResist]+[LightResist]+[PoisonResist] > 30 || [MaxHP] > 30 # [tier] == 4

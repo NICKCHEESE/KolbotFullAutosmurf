@@ -132,7 +132,7 @@ var Pickit = {
 					if (!canFit) {
 						// Check if any of the current inventory items can be stashed or need to be identified and eventually sold to make room
 						if (this.canMakeRoom()) {
-							print("ÿc4Pickit ÿc0:: ÿc7Trying to make room for " + this.itemColor(pickList[0]) + pickList[0].name);
+							print("ÿc4Pickit ÿc0:: ÿc9Trying to make room for " + this.itemColor(pickList[0]) + pickList[0].name);
 
 							// Go to town and do town chores
 							if (Town.visitTown()) {
@@ -143,14 +143,14 @@ var Pickit = {
 							}
 
 							// Town visit failed - abort
-							print("ÿc4Pickit ÿc0:: ÿc7Not enough room for " + this.itemColor(pickList[0]) + pickList[0].name);
+							print("ÿc4Pickit ÿc0:: ÿc1Not enough room for " + this.itemColor(pickList[0]) + pickList[0].name);
 
 							return false;
 						}
 
 						// Can't make room - trigger automule
 						Misc.itemLogger("No room for", pickList[0]);
-						print("ÿc4Pickit ÿc0:: ÿc7Not enough room for " + this.itemColor(pickList[0]) + pickList[0].name);
+						print("ÿc4Pickit ÿc0:: ÿc1Not enough room for " + this.itemColor(pickList[0]) + pickList[0].name);
 
 						needMule = true;
 					}
@@ -297,12 +297,12 @@ MainLoop:
 				if (item.mode !== 3 && item.mode !== 5) {
 					switch (stats.classid) {
 					case 543: // Key
-						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5" + Town.checkKeys() + "ÿc5/12ÿc0)");
+						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5 " + Town.checkKeys() + "ÿc5/12ÿc0)");
 
 						return true;
 					case 529: // Scroll of Town Portal
 					case 530: // Scroll of Identify
-						print("ÿc4Pickit ÿc0:: ÿc7Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5" + Town.checkScrolls(stats.classid === 529 ? "tbk" : "ibk") + "/20ÿc0)");
+						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5 " + Town.checkScrolls(stats.classid === 529 ? "tbk" : "ibk") + "/20ÿc0)");
 
 						return true;
 					}
@@ -326,7 +326,7 @@ MainLoop:
 
 			switch (status) {
 			case 1:
-				print("ÿc4Pickit ÿc0:: ÿc7Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
 
 				if (this.ignoreLog.indexOf(stats.type) === -1) {
 					Misc.itemLogger("Kept", item);
@@ -335,24 +335,24 @@ MainLoop:
 
 				break;
 			case 2:
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5Cubingÿc0)");
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5 Cubing ÿc0)");
 				Misc.itemLogger("Kept", item, "Cubing " + me.findItems(item.classid).length);
 				Cubing.update();
 
 				break;
 			case 3:
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5Runewordsÿc0)");
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5 Runewords ÿc0)");
 				Misc.itemLogger("Kept", item, "Runewords");
 				Runewords.update(stats.classid, gid);
 
 				break;
 			case 5: // Crafting System
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5Crafting Systemÿc0)");
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + "ÿc0 )" + " ÿc0(ÿc5 Crafting System ÿc0)");
 				CraftingSystem.update(item);
 
 				break;
 			default:
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
 
 				break;
 			}

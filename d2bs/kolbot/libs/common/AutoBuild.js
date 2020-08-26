@@ -32,7 +32,7 @@ var AutoBuild = new function AutoBuild () {
 	// By reapplying all of the changes to the Config object, we preserve
 	// the state of the Config file without altering the saved char config.
 	function applyConfigUpdates () {
-		if (debug) { this.print("ÿc4AutoBuild ÿc0:: ÿc2Updating Config from level ÿc5 "+configUpdateLevel+" ÿc2to ÿc5 "+me.charlvl)}
+		if (debug) { this.print("ÿc4AutoBuild ÿc0:: ÿc2Updating Config from level ÿc8 "+configUpdateLevel+" ÿc2to ÿc8"+me.charlvl)}
 		while (configUpdateLevel < me.charlvl) {
 			configUpdateLevel += 1;
 			AutoBuildTemplate[configUpdateLevel].Update.apply(Config); // TODO: Make sure this works
@@ -109,8 +109,8 @@ var AutoBuild = new function AutoBuild () {
 	// but log from all scripts
 	function myPrint () {
 		var args = Array.prototype.slice.call(arguments);
-		args.unshift("AutoBuild:");
-		var result = args.join(" ");
+		args.unshift("");
+		var result = args.join("");
 		if (verbose) { print.call(this, result); }
 		if (debug) { log.call(this, result); }
 	};

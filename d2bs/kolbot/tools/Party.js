@@ -72,7 +72,7 @@ function main() {
 			}
 		});
 
-	print("ÿc3PartyThread ÿc4load ÿc0:: ÿc2Succeeded! ÿc3Mode ÿc0:: ÿc8 " + (Config.PublicMode === 2 ? "Accept" : "Invite"));
+	print("ÿc4PartyThread ÿc0:: ÿc2Load ÿc2Succeeded! ÿc3Mode ÿc0:: ÿc8 " + (Config.PublicMode === 2 ? "Accept" : "Invite"));
 
 	if (Config.ShitList || Config.UnpartyShitlisted) {
 		shitList = ShitList.read();

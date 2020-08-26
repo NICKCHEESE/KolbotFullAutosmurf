@@ -1386,7 +1386,6 @@ CursorLoop:
 			}
 		} else {
 			print("ÿc4Town ÿc0:: ÿc1Can't afford repairs.");
-			delay(10000);
 		}
 
 		return repairAction;

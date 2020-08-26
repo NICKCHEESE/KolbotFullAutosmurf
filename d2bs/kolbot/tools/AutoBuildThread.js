@@ -106,7 +106,7 @@ function spendStatPoints () {
 					spentEveryPoint = false;
 					AutoBuild.print("ÿc9Attempt to spend point ÿc0:: ÿc8 "+(i+1)+" ÿc9 in ÿc0:: ÿc8 "+STAT_ID_TO_NAME[id]+" ÿc1 may have failed!");
 				} else if (debug) {
-					AutoBuild.print("ÿc4Stat ÿc0:: ÿc8 ( " +(i+1)+"ÿc4 / "+len+" ÿc8) ÿc0:: ÿc2Increased ÿc0:: ÿc8 "+STAT_ID_TO_NAME[id]+" ÿc::ÿc4 from ÿc0:: ÿc1 "+preStatValue+" ÿc0::ÿc4 to ÿc0:: ÿc2 "+me.getStat(id));
+					AutoBuild.print("ÿc4Stat ÿc0:: ÿc4 ( ÿc8" +(i+1)+"ÿc4 / ÿc8"+len+" ÿc4) ÿc0:: ÿc2Increased ÿc0:: ÿc8 "+STAT_ID_TO_NAME[id]+" ÿc0::ÿc4 from ÿc0:: ÿc1 "+preStatValue+" ÿc0::ÿc4 to ÿc0:: ÿc2 "+me.getStat(id));
 				}
 			}
 		} else {
@@ -273,7 +273,7 @@ function main () {
 		}
 	} catch (err) {
 		print("ÿc1Something broke!");
-		print("ÿc1Error:"+ err.toSource());
+		print("ÿc1Error: "+ err.toSource());
 		print("ÿc1Stack trace: \n"+ err.stack);
 		return false;
 	}
