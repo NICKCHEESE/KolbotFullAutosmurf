@@ -142,9 +142,9 @@ function LoadConfig() {
 	*/
 
 	Config.Leader = "Ferrari"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
-	Config.QuitList = ["Ferrari"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
+	Config.QuitList = ["Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
-	Config.QuitListDelay = []; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
+	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
 	Scripts.TristramLeech = true; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
 	Scripts.TravincalLeech = true; // Enters portal at back of Travincal.
@@ -319,9 +319,9 @@ function LoadConfig() {
 	*/
 	
 	
-	Config.PickitFiles.push("Autoequip/Meteor.xpac.nip");
+	Config.PickitFiles.push("Autoequip/Blizzard2.xpac.nip");
 	Config.PickitFiles.push("Autoequip/SorcSmurf.xpac.nip");
-	Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
+	//Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
 	Config.PickitFiles.push("Autoequip/Merc.xpac.nip");
 	Config.PickitFiles.push("Autosmurf/Runes.nip");
 	Config.PickitFiles.push("Autosmurf/Charms.nip");
@@ -625,7 +625,7 @@ function LoadConfig() {
 	// AutoBuild System ( See /d2bs/kolbot/libs/config/Builds/README.txt for instructions )
 	Config.AutoBuild.Enabled = true;			//	This will enable or disable the AutoBuild system
 
-	Config.AutoBuild.Template = "Meteor";	//	The name of the build associated with an existing
+	Config.AutoBuild.Template = "Blizzard";	//	The name of the build associated with an existing
 												//	template filename located in libs/config/Builds/
 
 	Config.AutoBuild.Verbose = true;			//	Allows script to print messages in console

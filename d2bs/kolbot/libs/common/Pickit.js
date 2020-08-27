@@ -297,12 +297,12 @@ MainLoop:
 				if (item.mode !== 3 && item.mode !== 5) {
 					switch (stats.classid) {
 					case 543: // Key
-						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5 " + Town.checkKeys() + "ÿc5/12ÿc0)");
+						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0 (ÿc5 " + Town.checkKeys() + "ÿc5 / 12ÿc0 )");
 
 						return true;
 					case 529: // Scroll of Town Portal
 					case 530: // Scroll of Identify
-						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0(ÿc5 " + Town.checkScrolls(stats.classid === 529 ? "tbk" : "ibk") + "/20ÿc0)");
+						print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0 (ÿc5 " + Town.checkScrolls(stats.classid === 529 ? "tbk" : "ibk") + " ÿc4/ÿc5 20 ÿc0 )");
 
 						return true;
 					}
@@ -326,7 +326,7 @@ MainLoop:
 
 			switch (status) {
 			case 1:
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : " ÿc0)"));
 
 				if (this.ignoreLog.indexOf(stats.type) === -1) {
 					Misc.itemLogger("Kept", item);
@@ -352,7 +352,7 @@ MainLoop:
 
 				break;
 			default:
-				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : ")"));
+				print("ÿc4Pickit ÿc0:: ÿc4Picked up ÿc0:: ÿc< " + stats.color + stats.name + " ÿc0( ÿc8ilvl " + stats.ilvl + (keptLine ? "ÿc0 ) ( ÿc5" + keptLine + "ÿc0 )" : " ÿc0)"));
 
 				break;
 			}

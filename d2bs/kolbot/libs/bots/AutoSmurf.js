@@ -27,11 +27,11 @@ function AutoSmurf() {
 
 		raiseTheDeads = true, //if using a necro, attemps to raise some skeletons in nightmare and hell
 		
-		maxWaitTimeMinutes = 3, //Max time to wait in case smurf synchronization fails
+		maxWaitTimeMinutes = 5, //Max time to wait in case smurf synchronization fails
 	
 	// -------- Extra quests -------------	
 		normalCountess = false, //for levelling a bit more in act 1 normal
-		smithQuest = true,
+		smithQuest = false,
 	
 	// -------- Difficulties MF -------------	
 		normalMf = true,
@@ -2613,7 +2613,7 @@ function AutoSmurf() {
 	this.den = function () {
 		var i, akara;
 
-		print("ÿc4Den");
+		print("ÿc4Pre-Den + Den");
 
 		if (!me.getQuest(1, 1)) { // Haven't cleared the Den yet.
 			this.teamInGame();
@@ -3065,7 +3065,7 @@ function AutoSmurf() {
 
 			Attack.clear(20);
 		}
-
+		delay(10000);
 		return true;
 	};
 
@@ -3095,6 +3095,7 @@ function AutoSmurf() {
 		Precast.doPrecast(true);
 		this.Bo();
 		Attack.clearLevel(0);
+		delay(10000);
 		return true;
 	};
 	
