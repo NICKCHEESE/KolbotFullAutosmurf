@@ -14,8 +14,8 @@ function LoadConfig() {
 	 */
 	Scripts.AutoSmurf = true;
 		Config.AutoSmurf.TeamSize = 8;
-		Config.AutoSmurf.TeleportingSorc = "Ferrari"; //your leader sor charname.
-		Config.AutoSmurf.NonSorcChar = ["Maserati", "McLaren", "Pagani", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
+		Config.AutoSmurf.TeleportingSorc = "Pagani"; //your leader sor charname.
+		Config.AutoSmurf.OtherChars = ["Maserati", "McLaren", "Ferrari", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
 		Config.AutoSmurf.BoBarb = "Saleen"; //boBar charname
 		Config.AutoSmurf.AllTeamProfiles = ["Ferrari", "Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; //  all team PROFILE Names
 
@@ -141,10 +141,10 @@ function LoadConfig() {
 	* Don't use more scripts of the same type! (Run AutoBaal OR BaalHelper, not both)
 	*/
 
-	Config.Leader = "Ferrari"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
-	Config.QuitList = ["Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
+	Config.Leader = "Pagani"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.QuitList = ["Maserati", "McLaren", "Ferrari", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
-	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
+	Config.QuitListDelay = [11,15]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
 	Scripts.TristramLeech = true; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
 	Scripts.TravincalLeech = true; // Enters portal at back of Travincal.
@@ -175,7 +175,7 @@ function LoadConfig() {
 	Scripts.Follower = false; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
 
 
-	Scripts.TCPIPClientExit = true; // Makes the leecher leave game before leader in TCP/IP games. Helps prevent EXP/Quest loss from leader insta-leaving
+	//Scripts.TCPIPHostExit = true; // Makes the leecher leave game before leader in TCP/IP games. Helps prevent EXP/Quest loss from leader insta-leaving
 
 
 	
@@ -474,7 +474,7 @@ function LoadConfig() {
 
 	// If Config.Leader is set, the bot will only accept invites from leader. If Config.PublicMode is not 0, Baal and Diablo script will open Town Portals.
 	// If set on true, it simply parties.
-	Config.PublicMode = 2; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable.
+	Config.PublicMode = 3; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable.
 
 	// Party message settings. Each setting represents an array of messages that will be randomly chosen.
 	// $name, $level, $class and $killer are replaced by the player's name, level, class and killer

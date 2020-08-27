@@ -15,8 +15,8 @@ function LoadConfig() {
 
 	Scripts.AutoSmurf = true;
 		Config.AutoSmurf.TeamSize = 8;
-		Config.AutoSmurf.TeleportingSorc = "Ferrari"; //your leader sor charname.
-		Config.AutoSmurf.NonSorcChar = ["Maserati", "McLaren", "Pagani", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
+		Config.AutoSmurf.TeleportingSorc = "Pagani"; //your leader sor charname.
+		Config.AutoSmurf.OtherChars = ["Maserati", "McLaren", "Ferrari", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
 		Config.AutoSmurf.BoBarb = "Saleen"; //boBar charname
 		Config.AutoSmurf.AllTeamProfiles = ["Ferrari", "Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; //  all team PROFILE Names
 
@@ -137,7 +137,7 @@ function LoadConfig() {
 		Config.Baal.KillBaal = true; // Kill Baal. Leaves game after wave 5 if false.
 
 
-	//Scripts.TCPIPHostExit = true;
+	
 
 
 
@@ -147,10 +147,10 @@ function LoadConfig() {
 	* Don't use more scripts of the same type! (Run AutoBaal OR BaalHelper, not both)
 	*/
 
-	Config.Leader = ""; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
-	Config.QuitList = ["Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
+	Config.Leader = "Pagani"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.QuitList = ["Maserati", "McLaren", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
-	Config.QuitListDelay = [11,15]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
+	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
 	Scripts.TristramLeech = false; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
 	Scripts.TravincalLeech = false; // Enters portal at back of Travincal.
@@ -179,6 +179,9 @@ function LoadConfig() {
 		Config.BaalHelper.KillBaal = true; // Kill Baal. If set to false, you must configure Config.QuitList or the bot will wait indefinitely.
 		Config.BaalHelper.SkipTP = false; // Don't wait for a TP, go to WSK3 and wait for someone to go to throne. Anti PK measure.
 	Scripts.Follower = false; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
+	
+	
+	Scripts.TCPIPClientExit = true;
 
 	// *** special scripts ***
 	Scripts.WPGetter = false; // Get missing waypoints
@@ -295,9 +298,9 @@ function LoadConfig() {
 	 * Supported potions - Healing ("hp"), Mana ("mp") and Rejuvenation ("rv")
 	 */
 	Config.BeltColumn[0] = "hp";
-	Config.BeltColumn[1] = "mp";
+	Config.BeltColumn[1] = "hp";
 	Config.BeltColumn[2] = "mp";
-	Config.BeltColumn[3] = "rv";
+	Config.BeltColumn[3] = "mp";
 
 	/* Minimum amount of potions. If we have less, go to vendor to purchase more.
 	 * Set rejuvenation columns to 0, because they can't be bought.
@@ -567,7 +570,7 @@ function LoadConfig() {
 	Config.LocalChat.Mode = 2; // 0 = disabled, 1 = chat from 'say' (recommended), 2 = all chat (for manual play)
 	// If Config.Leader is set, the bot will only accept invites from leader. If Config.PublicMode is not 0, Baal and Diablo script will open Town Portals.
 	// If set on true, it simply parties.
-	Config.PublicMode = 3; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable
+	Config.PublicMode = 2; // 1 = invite and accept, 2 = accept only, 3 = invite only, 0 = disable
 	// Party message settings. Each setting represents an array of messages that will be randomly chosen.
 	// $name, $level, $class and $killer are replaced by the player's name, level, class and killer
 	Config.Greetings = []; // Example: ["Hello, $name (level $level $class)"]

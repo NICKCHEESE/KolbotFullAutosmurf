@@ -10,7 +10,7 @@ function AutoSmurf() {
 	// USER SETTINGS
 	// -------- Normal Difficulty -------------
 	var caveLvl = 7,
-		tristLvl = 15,
+		tristLvl = 13,
 		tombsLvl = 24,
 		mephLvl = 24,
 		diaLvl = 27,
@@ -84,7 +84,7 @@ function AutoSmurf() {
 
 	//-------------------be-sure-of-what-you-edit-under-this-line--------------------------------------------//
 		placeToBe, teamBrain, nickTP,
-		nonSorcChar = false, // SiC-666 TODO: Change this to follower.
+		OtherChars = false, // SiC-666 TODO: Change this to follower.
 		teleportingSorc = false, // SiC-666 TODO: Change this to Leader (should be able to teleport).
 		boBarb = false, // SiC-666 TODO: Change this name?
 		otherChar = false,
@@ -152,8 +152,8 @@ function AutoSmurf() {
 
 			print("ÿc4I am the ÿc;BOer");
 		} else {
-			for (var i = 0 ; i < Config.AutoSmurf.NonSorcChar.length ; i += 1) {
-				if (Config.AutoSmurf.NonSorcChar[i] === me.name) {
+			for (var i = 0 ; i < Config.AutoSmurf.OtherChars.length ; i += 1) {
+				if (Config.AutoSmurf.OtherChars[i] === me.name) {
 					otherChar = true;
 
 					print("ÿc4I am a ÿc;Follower");
@@ -250,7 +250,7 @@ function AutoSmurf() {
 
 		iAmReady = true; // Prevents premature teamIsReady announcment.
 
-		print("ÿc2I am ready! ÿc4Current Actÿc0 :: " + me.act);
+		print("ÿc2I am ready! ÿc4Current Actÿc0 :: ÿc4" + me.act);
 
 		//D2Bot.shoutGlobal(me.realm + " " + me.gamename + " ready", 69);
 

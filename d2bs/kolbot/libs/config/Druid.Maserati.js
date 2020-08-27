@@ -15,8 +15,8 @@ function LoadConfig() {
 	 
 	Scripts.AutoSmurf = true;
 		Config.AutoSmurf.TeamSize = 8;
-		Config.AutoSmurf.TeleportingSorc = "Ferrari"; //your leader sor charname.
-		Config.AutoSmurf.NonSorcChar = ["Maserati", "McLaren", "Pagani", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
+		Config.AutoSmurf.TeleportingSorc = "Pagani"; //your leader sor charname.
+		Config.AutoSmurf.OtherChars = ["Maserati", "McLaren", "Ferrari", "Jaguar", "Ascari", "Lotus"]; //all team charname except from leader and boBar
 		Config.AutoSmurf.BoBarb = "Saleen"; //boBar charname
 		Config.AutoSmurf.AllTeamProfiles = ["Ferrari", "Maserati", "McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; //  all team PROFILE Names
 
@@ -142,8 +142,8 @@ function LoadConfig() {
 	* Don't use more scripts of the same type! (Run AutoBaal OR BaalHelper, not both)
 	*/
 
-	Config.Leader = "Ferrari"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
-	Config.QuitList = ["McLaren", "Pagani", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
+	Config.Leader = "Pagani"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
+	Config.QuitList = ["McLaren", "Ferrari", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 

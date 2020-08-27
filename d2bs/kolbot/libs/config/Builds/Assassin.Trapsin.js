@@ -33,7 +33,8 @@ var AutoBuildTemplate = {
             Config.StashGold = 10000; // Minimum amount of gold to stash.
             Config.AttackSkill = [0, 0, 0, 0, 0, 0, 0];
             Config.LowManaSkill = [0, 0];
-            Config.BeltColumn = ["hp", "hp", "hp", "mp"]; // Keep tons of health potions!
+            Config.BeltColumn = ["hp", "hp", "mp", "mp"]; // Keep tons of health potions!
+            Config.MinColumn = [3, 3, 3, 3];
             Config.OpenChests = true; // Might as well open em.
             Config.Cubing = false; // Don't cube yet!
             Config.Inventory[0] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
@@ -44,14 +45,13 @@ var AutoBuildTemplate = {
             Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
             Config.LogExperience = true; //Print experience statistics in the manager.
             Config.StashGold = 200; //Minimum amount of gold to stash.
-            Config.UseHP = 50;
+			Config.ScanShrines = [17, 1, 2, 3, 15, 13, 12, 8, 9, 10, 11];
+            Config.UseHP = 75;
             Config.UseMP = 15;
             Config.UseRejuvHP = 35;
             Config.Cubing = false;
             Config.PickRange = 60;
             Config.BossPriority = true;
-            Config.OpenChests = true; // Might as well open em.
-            Config.Cubing = false; // Don't cube yet!
             Config.UseFade = false;
             Config.UseBoS = false;
 
@@ -599,7 +599,12 @@ var AutoBuildTemplate = {
     75: {
         SkillPoints: [256],
         StatPoints: [3, 3, 3, 3, 3],
-        Update: function () {}
+        Update: function () {
+			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
+            Config.HPBuffer = 5;
+            Config.MPBuffer = 5;
+            Config.RejuvBuffer = 10;
+		}
     },
 
     76: {

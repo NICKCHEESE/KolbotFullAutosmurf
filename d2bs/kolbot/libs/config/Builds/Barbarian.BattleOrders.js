@@ -78,8 +78,6 @@ if (!isIncluded("common/Runewords.js")) {
 var AutoBuildTemplate = {
 
     1: {
-        //SkillPoints: [-1],										// This doesn't matter. We don't have skill points to spend at lvl 1
-        //StatPoints: [-1,-1,-1,-1,-1],								// This doesn't matter. We don't have stat points to spend at lvl 1
         Update: function () {
             Config.AutoEquip = true;
             Config.TownCheck = false; // Don't go to town for more potions
@@ -98,7 +96,8 @@ var AutoBuildTemplate = {
             Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
             Config.LogExperience = true; //Print experience statistics in the manager.
             Config.StashGold = 200; //Minimum amount of gold to stash.
-            Config.UseHP = 50;
+			Config.ScanShrines = [17, 1, 2, 3, 15, 13, 12, 8, 9, 10, 11];
+            Config.UseHP = 75;
             Config.UseMP = 15;
             Config.UseRejuvHP = 35;
             Config.Cubing = false;
@@ -167,7 +166,7 @@ var AutoBuildTemplate = {
         SkillPoints: [138],
         StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.BeltColumn = ["hp", "hp", "hp", "rv"];
+            Config.BeltColumn = ["hp", "hp", "hp", "mp"];
         }
     },
 
@@ -746,8 +745,12 @@ var AutoBuildTemplate = {
         SkillPoints: [130],
         StatPoints: [0, 3, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [130, 154, 0, 154, 0, 154, 0];
-        }
+			Config.AttackSkill = [130, 154, 0, 154, 0, 154, 0];
+			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
+            Config.HPBuffer = 5;
+            Config.MPBuffer = 5;
+            Config.RejuvBuffer = 10;
+		}
     },
 
     76: {

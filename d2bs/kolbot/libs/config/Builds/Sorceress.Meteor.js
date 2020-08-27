@@ -100,7 +100,9 @@ var AutoBuildTemplate = {
             Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
             Config.LogExperience = true; //Print experience statistics in the manager.
             Config.StashGold = 200; //Minimum amount of gold to stash.
-            Config.UseMP = 15;
+			Config.ScanShrines = [17, 1, 2, 3, 15, 13, 12, 8, 9, 10, 11];
+            Config.UseHP = 75;
+            Config.UseMP = 45;
             Config.UseRejuvHP = 35;
             Config.Cubing = false;
             Config.PickRange = 60;
@@ -307,7 +309,7 @@ var AutoBuildTemplate = {
 			SkillPoints: [52],//Enchant
 			StatPoints: [0,1,1,3,3],	
 			Update: function(){
-				Config.BeltColumn=["hp","rv","rv","mp"];
+				Config.BeltColumn=["hp","hp","mp","mp"];
 			}
 		},
 
@@ -776,9 +778,13 @@ var AutoBuildTemplate = {
 	75: 	{
 			SkillPoints: [47],
 			StatPoints: [0,1,1,3,3],
-			Update: function(){
-				Config.AttackSkill=[62,56,47,56,47,53,49];
-			}
+			Update: function () {
+			Config.AttackSkill=[62,56,47,56,47,53,49];
+			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
+            Config.HPBuffer = 5;
+            Config.MPBuffer = 5;
+            Config.RejuvBuffer = 10;
+		}
 		},
 
 	76: 	{

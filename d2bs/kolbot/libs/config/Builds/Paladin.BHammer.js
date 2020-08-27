@@ -102,8 +102,9 @@ var AutoBuildTemplate = {
             Config.ClearType = 0; //Monster spectype to kill in level clear scripts(0=all)
             Config.LogExperience = true; //Print experience statistics in the manager.
             Config.StashGold = 200; //Minimum amount of gold to stash.
-            Config.UseHP = 50;
-            Config.UseMP = 15;
+			Config.ScanShrines = [17, 1, 2, 3, 15, 13, 12, 8, 9, 10, 11];
+            Config.UseHP = 75;
+            Config.UseMP = 30;
             Config.UseRejuvHP = 35;
             Config.Cubing = false;
             Config.PickRange = 60;
@@ -328,7 +329,7 @@ var AutoBuildTemplate = {
         SkillPoints: [112, 113],
         StatPoints: [0, 2, 3, 3, 3],
         Update: function () {
-            Config.BeltColumn = ["hp", "hp", "hp", "rv"];
+            Config.BeltColumn = ["hp", "hp", "mp", "mp"];
         }
     },
 
@@ -776,8 +777,12 @@ var AutoBuildTemplate = {
         SkillPoints: [108],
         StatPoints: [0, 2, 3, 3, 3],
         Update: function () {
-            Config.AttackSkill = [112, 112, 113, 112, 113, 97, 113];
-        }
+			Config.AttackSkill = [112, 112, 113, 112, 113, 97, 113];
+			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
+            Config.HPBuffer = 5;
+            Config.MPBuffer = 5;
+            Config.RejuvBuffer = 10;
+		}
     },
 
     76: {
