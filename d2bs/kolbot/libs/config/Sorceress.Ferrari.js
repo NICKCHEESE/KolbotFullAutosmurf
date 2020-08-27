@@ -152,13 +152,13 @@ function LoadConfig() {
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
-	Scripts.TristramLeech = false; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
-	Scripts.TravincalLeech = false; // Enters portal at back of Travincal.
+	Scripts.TristramLeech = true; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
+	Scripts.TravincalLeech = true; // Enters portal at back of Travincal.
 		Config.TravincalLeech.Helper = true; // If set to true the character will teleport to the stairs and help attack.
-	Scripts.MFHelper = false; // Run the same MF run as the MFLeader. Leader must have Config.MFLeader = true
+	Scripts.MFHelper = true; // Run the same MF run as the MFLeader. Leader must have Config.MFLeader = true
 	Scripts.Wakka = false; // Walking chaos leecher with auto leader assignment, stays at safe distance from the leader
 	Scripts.SealLeecher = false; // Enter safe portals to Chaos. Leader should run SealLeader.
-	Scripts.DiabloHelper = false; // Chaos helper, kills monsters and doesn't open seals on its own.
+	Scripts.DiabloHelper = true; // Chaos helper, kills monsters and doesn't open seals on its own.
 		Config.DiabloHelper.Wait = 120; // Seconds to wait for a runner to be in Chaos. If Config.Leader is set, it will wait only for the leader.
 		Config.DiabloHelper.Entrance = true; // Start from entrance. Set to false to start from star.
 		Config.DiabloHelper.SkipTP = false; // Don't wait for town portal and directly head to chaos. It will clear monsters around chaos entrance and wait for the runner.
@@ -171,7 +171,7 @@ function LoadConfig() {
 		Config.AutoBaal.FindShrine = false; // false = disabled, 1 = search after hot tp message, 2 = search as soon as leader is found
 		Config.AutoBaal.LeechSpot = [15115, 5050]; // X, Y coords of Throne Room leech spot
 		Config.AutoBaal.LongRangeSupport = false; // Cast long distance skills from a safe spot
-	Scripts.BaalHelper = false;
+	Scripts.BaalHelper = true;
 		Config.BaalHelper.Wait = 120; // Seconds to wait for a runner to be in Throne
 		Config.BaalHelper.KillNihlathak = false; // Kill Nihlathak before going to Throne
 		Config.BaalHelper.FastChaos = false; // Kill Diablo before going to Throne
@@ -258,7 +258,7 @@ function LoadConfig() {
 	// Town settings
 	Config.HealHP = 90; // Go to a healer if under designated percent of life.
 	Config.HealMP = 70; // Go to a healer if under designated percent of mana.
-	Config.HealStatus = true; // Go to a healer if poisoned or cursed
+	Config.HealStatus = false; // Go to a healer if poisoned or cursed
 	Config.UseMerc = true; // Use merc. This is ignored and always false in d2classic.
 	Config.MercWatch = false; // Instant merc revive during battle.
 
@@ -347,7 +347,7 @@ function LoadConfig() {
 	
 	Config.PickRange = 40; // Pick radius
 	Config.FastPick = false; // Check and pick items between attacks
-	
+	Config.ManualPlayPick = false; // If set to true and D2BotMap entry script is used, will enable picking in manual play.	
 	
 	
 	
@@ -456,14 +456,14 @@ function LoadConfig() {
 	/* Base item for the following recipes must be in pickit. The rest of the ingredients will be auto-picked.
 	 * Use Roll.Eth, Roll.NonEth or Roll.All to determine what kind of base item to roll - ethereal, non-ethereal or all.
 	 */
-	Config.Recipes.push([Recipe.Socket.Weapon, "thresher", Roll.Eth]); // Socket ethereal Thresher
-	Config.Recipes.push([Recipe.Socket.Weapon, "crypticaxe", Roll.Eth]); // Socket ethereal Cryptic Axe
-	Config.Recipes.push([Recipe.Socket.Weapon, "greatpoleaxe", Roll.Eth]); // Socket ethereal GP
-	Config.Recipes.push([Recipe.Socket.Weapon, "giantthresher", Roll.Eth]); // Socket ethereal GT
-	Config.Recipes.push([Recipe.Socket.Weapon, "colossusvoulge", Roll.Eth]); // Socket ethereal CS
-	Config.Recipes.push([Recipe.Socket.Armor, "duskShroud", Roll.Eth]); 
-	Config.Recipes.push([Recipe.Socket.Armor, "greathauberk", Roll.Eth]); 
-	Config.Recipes.push([Recipe.Socket.Armor, "archonPlate", Roll.Eth]); 
+	//Config.Recipes.push([Recipe.Socket.Weapon, "thresher", Roll.Eth]); // Socket ethereal Thresher
+	//Config.Recipes.push([Recipe.Socket.Weapon, "crypticaxe", Roll.Eth]); // Socket ethereal Cryptic Axe
+	//Config.Recipes.push([Recipe.Socket.Weapon, "greatpoleaxe", Roll.Eth]); // Socket ethereal GP
+	//Config.Recipes.push([Recipe.Socket.Weapon, "giantthresher", Roll.Eth]); // Socket ethereal GT
+	//Config.Recipes.push([Recipe.Socket.Weapon, "colossusvoulge", Roll.Eth]); // Socket ethereal CS
+	//Config.Recipes.push([Recipe.Socket.Armor, "duskShroud", Roll.Eth]); 
+	//Config.Recipes.push([Recipe.Socket.Armor, "greathauberk", Roll.Eth]); 
+	//Config.Recipes.push([Recipe.Socket.Armor, "archonPlate", Roll.Eth]); 
 
 	//Config.Recipes.push([Recipe.Unique.Armor.ToExceptional, 335, Roll.NonEth]); // Upgrade Bloodfist to Exceptional
 	//Config.Recipes.push([Recipe.Unique.Armor.ToExceptional, 337, Roll.NonEth]); // Upgrade Magefist to Exceptional
@@ -580,13 +580,13 @@ function LoadConfig() {
 	Config.UnpartyShitlisted = false; // Leave party if someone invited a blacklisted player.
 
 	// General config
-	Config.AutoMap = true; // Set to true to open automap at the beginning of the game.
+	Config.AutoMap = false; // Set to true to open automap at the beginning of the game.
 	Config.LastMessage = ""; // Message or array of messages to say at the end of the run. Use $nextgame to say next game - "Next game: $nextgame" (works with lead entry point)
 	Config.MinGameTime = 120; // Min game time in seconds. Bot will TP to town and stay in game if the run is completed before.
 	Config.MaxGameTime = 2400; // Maximum game time in seconds. Quit game when limit is reached.
 	Config.TeleSwitch = false; // Switch to secondary (non-primary) slot when teleporting more than 5 nodes.
 	Config.OpenChests = true; // Open chests. Controls key buying.
-	Config.MiniShopBot = false; // Scan items in NPC shops.
+	Config.MiniShopBot = true; // Scan items in NPC shops.
 	Config.PacketShopping = true; // Use packets to shop. Improves shopping speed.
 	Config.TownCheck = true; // Go to town if out of potions
 	Config.LogExperience = true; // Print experience statistics in the manager.
@@ -661,7 +661,7 @@ function LoadConfig() {
 		//"Monster Name": [-1, -1]
 	};
 
-	Config.NoTele = false; // Restrict char from teleporting. Useful for low level/low mana chars
+	Config.NoTele = true; // Restrict char from teleporting. Useful for low level/low mana chars
 	Config.Dodge = true; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
 	Config.DodgeRange = 10; // Distance to keep from monsters.
 	Config.DodgeHP = 100; // Dodge only if HP percent is less than or equal to Config.DodgeHP. 100 = always dodge.

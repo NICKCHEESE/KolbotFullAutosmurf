@@ -146,13 +146,13 @@ function LoadConfig() {
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.QuitListDelay = [11,15]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
-	Scripts.TristramLeech = true; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
-	Scripts.TravincalLeech = true; // Enters portal at back of Travincal.
+	Scripts.TristramLeech = false; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
+	Scripts.TravincalLeech = false; // Enters portal at back of Travincal.
 		Config.TravincalLeech.Helper = true; // If set to true the character will teleport to the stairs and help attack.
-	Scripts.MFHelper = true; // Run the same MF run as the MFLeader. Leader must have Config.MFLeader = true
+	Scripts.MFHelper = false; // Run the same MF run as the MFLeader. Leader must have Config.MFLeader = true
 	Scripts.Wakka = false; // Walking chaos leecher with auto leader assignment, stays at safe distance from the leader
 	Scripts.SealLeecher = false; // Enter safe portals to Chaos. Leader should run SealLeader.
-	Scripts.DiabloHelper = true; // Chaos helper, kills monsters and doesn't open seals on its own.
+	Scripts.DiabloHelper = false; // Chaos helper, kills monsters and doesn't open seals on its own.
 		Config.DiabloHelper.Wait = 120; // Seconds to wait for a runner to be in Chaos. If Config.Leader is set, it will wait only for the leader.
 		Config.DiabloHelper.Entrance = true; // Start from entrance. Set to false to start from star.
 		Config.DiabloHelper.SkipTP = false; // Don't wait for town portal and directly head to chaos. It will clear monsters around chaos entrance and wait for the runner.
@@ -165,7 +165,7 @@ function LoadConfig() {
 		Config.AutoBaal.FindShrine = false; // false = disabled, 1 = search after hot tp message, 2 = search as soon as leader is found
 		Config.AutoBaal.LeechSpot = [15115, 5050]; // X, Y coords of Throne Room leech spot
 		Config.AutoBaal.LongRangeSupport = false; // Cast long distance skills from a safe spot
-	Scripts.BaalHelper = true;
+	Scripts.BaalHelper = false;
 		Config.BaalHelper.Wait = 120; // Seconds to wait for a runner to be in Throne
 		Config.BaalHelper.KillNihlathak = false; // Kill Nihlathak before going to Throne
 		Config.BaalHelper.FastChaos = false; // Kill Diablo before going to Throne
@@ -252,28 +252,28 @@ function LoadConfig() {
 		Config.BaalAssistant.NextGameMessage = ["Next Game", "Next", "New Game"];	// Next Game message, this is a precautionary quit command, Reccomended setting up: Config.QuitList
 
 	// Town settings
-	Config.HealHP = 25; // Go to a healer if under designated percent of life.
-	Config.HealMP = 0; // Go to a healer if under designated percent of mana.
-	Config.HealStatus = false; // Go to a healer if poisoned or cursed
+	Config.HealHP = 90; // Go to a healer if under designated percent of life.
+	Config.HealMP = 70; // Go to a healer if under designated percent of mana.
+	Config.HealStatus = true; // Go to a healer if poisoned or cursed
 	Config.UseMerc = true; // Use merc. This is ignored and always false in d2classic.
 	Config.MercWatch = false; // Instant merc revive during battle.
 
 	// Potion settings
 	Config.UseHP = 75; // Drink a healing potion if life is under designated percent.
-	Config.UseRejuvHP = 40; // Drink a rejuvenation potion if life is under designated percent.
-	Config.UseMP = 30; // Drink a mana potion if mana is under designated percent.
+	Config.UseRejuvHP = 50; // Drink a rejuvenation potion if life is under designated percent.
+	Config.UseMP = 50; // Drink a mana potion if mana is under designated percent.
 	Config.UseRejuvMP = 0; // Drink a rejuvenation potion if mana is under designated percent.
 	Config.UseMercHP = 50; // Give a healing potion to your merc if his/her life is under designated percent.
 	Config.UseMercRejuv = 25; // Give a rejuvenation potion to your merc if his/her life is under designated percent.
-	Config.HPBuffer = 2; // Number of healing potions to keep in inventory.
-	Config.MPBuffer = 2; // Number of mana potions to keep in inventory.
-	Config.RejuvBuffer = 2; // Number of rejuvenation potions to keep in inventory.
+	Config.HPBuffer = 4; // Number of healing potions to keep in inventory.
+	Config.MPBuffer = 8; // Number of mana potions to keep in inventory.
+	Config.RejuvBuffer = 4; // Number of rejuvenation potions to keep in inventory.
 
 	// Chicken settings
 	Config.LifeChicken = 20; // Exit game if life is less or equal to designated percent.
 	Config.ManaChicken = 0; // Exit game if mana is less or equal to designated percent.
 	Config.MercChicken = 0; // Exit game if merc's life is less or equal to designated percent.
-	Config.TownHP = 0; // Go to town if life is under designated percent.
+	Config.TownHP = 25; // Go to town if life is under designated percent.
 	Config.TownMP = 0; // Go to town if mana is under designated percent.
 
 	/* Inventory lock configuration. !!!READ CAREFULLY!!!
@@ -304,7 +304,7 @@ function LoadConfig() {
 	Config.MinColumn[0] = 3;
 	Config.MinColumn[1] = 3;
 	Config.MinColumn[2] = 3;
-	Config.MinColumn[3] = 0;
+	Config.MinColumn[3] = 3;
 
 	// Pickit config. Default folder is kolbot/pickit.
 	/*Config.PickitFiles.push("Autosmurf/charms.nip");
@@ -320,6 +320,7 @@ function LoadConfig() {
 	
 	
 	Config.PickitFiles.push("Autoequip/Blizzard2.xpac.nip");
+	Config.PickitFiles.push("Autoequip/sorceress.xpac.nip");												   
 	Config.PickitFiles.push("Autoequip/SorcSmurf.xpac.nip");
 	//Config.PickitFiles.push("Autoequip/PreMerc.xpac.nip");
 	Config.PickitFiles.push("Autoequip/Merc.xpac.nip");
@@ -414,6 +415,10 @@ function LoadConfig() {
 	//Config.Recipes.push([Recipe.Gem, "Flawless Diamond"]); // Make Perfect Diamond
 	//Config.Recipes.push([Recipe.Gem, "Flawless Skull"]); // Make Perfect Skull
 
+	//Config.Recipes.push([Recipe.Gem, 578]); // ruby
+	//Config.Recipes.push([Recipe.Gem, 579]); // flawless ruby
+	//Config.Recipes.push([Recipe.Gem, 583]); // diamond
+	//Config.Recipes.push([Recipe.Gem, 584]); // flawless diamond											  
 	//Config.Recipes.push([Recipe.Token]); // Make Token of Absolution
 
 	//Config.Recipes.push([Recipe.Rune, "Pul Rune"]); // Upgrade Pul to Um
@@ -485,15 +490,15 @@ function LoadConfig() {
 	Config.UnpartyShitlisted = false; // Leave party if someone invited a blacklisted player.
 
 	// General config
-	Config.AutoMap = false; // Set to true to open automap at the beginning of the game.
+	Config.AutoMap = true; // Set to true to open automap at the beginning of the game.
 	Config.LastMessage = ""; // Message or array of messages to say at the end of the run. Use $nextgame to say next game - "Next game: $nextgame" (works with lead entry point)
-	Config.MinGameTime = 60; // Min game time in seconds. Bot will TP to town and stay in game if the run is completed before.
-	Config.MaxGameTime = 0; // Maximum game time in seconds. Quit game when limit is reached.
+	Config.MinGameTime = 120; // Min game time in seconds. Bot will TP to town and stay in game if the run is completed before.
+	Config.MaxGameTime = 2400; // Maximum game time in seconds. Quit game when limit is reached.
 	Config.TeleSwitch = false; // Switch to secondary (non-primary) slot when teleporting more than 5 nodes.
-	Config.OpenChests = false; // Open chests. Controls key buying.
+	Config.OpenChests = true; // Open chests. Controls key buying.
 	Config.MiniShopBot = true; // Scan items in NPC shops.
-	Config.PacketShopping = false; // Use packets to shop. Improves shopping speed.
-	Config.TownCheck = false; // Go to town if out of potions
+	Config.PacketShopping = true; // Use packets to shop. Improves shopping speed.
+	Config.TownCheck = true; // Go to town if out of potions
 	Config.LogExperience = true; // Print experience statistics in the manager.
 	Config.PingQuit = [{Ping: 0, Duration: 0}]; // Quit if ping is over the given value for over the given time period in seconds.
 	Config.Silence = false; // Make the bot not say a word. Do not use in combination with LocalChat
@@ -513,7 +518,7 @@ function LoadConfig() {
 	Config.FHR = 255; // 0 - disable, 1 to 255 - set value of faster hit recovery
 	Config.FBR = 255; // 0 - disable, 1 to 255 - set value of faster block recovery
 	Config.IAS = 255; // 0 - disable, 1 to 255 - set value of increased attack speed
-	Config.PacketCasting = 0; // 0 = disable, 1 = packet teleport, 2 = full packet casting.
+	Config.PacketCasting = 2; // 0 = disable, 1 = packet teleport, 2 = full packet casting.
 	Config.WaypointMenu = true;
 
 	// Anti-hostile config
@@ -524,7 +529,7 @@ function LoadConfig() {
 	Config.ViperCheck = false; // Quit if revived Tomb Vipers are sighted
 
 	// DClone config
-	Config.StopOnDClone = true; // Go to town and idle as soon as Diablo walks the Earth
+	Config.StopOnDClone = false; // Go to town and idle as soon as Diablo walks the Earth
 	Config.SoJWaitTime = 5; // Time in minutes to wait for another SoJ sale before leaving game. 0 = disabled
 	Config.KillDclone = false; // Go to Palace Cellar 3 and try to kill Diablo Clone. Pointless if you already have Annihilus.
 	Config.DCloneQuit = false; // 1 = quit when Diablo walks, 2 = quit on soj sales, 0 = disabled
@@ -565,12 +570,12 @@ function LoadConfig() {
 		//"Monster Name": [-1, -1]
 	};
 
-	Config.NoTele = true; // Restrict char from teleporting. Useful for low level/low mana chars
+	Config.NoTele = false; // Restrict char from teleporting. Useful for low level/low mana chars
 	Config.Dodge = true; // Move away from monsters that get too close. Don't use with short-ranged attacks like Poison Dagger.
-	Config.DodgeRange = 15; // Distance to keep from monsters.
+	Config.DodgeRange = 10; // Distance to keep from monsters.
 	Config.DodgeHP = 100; // Dodge only if HP percent is less than or equal to Config.DodgeHP. 100 = always dodge.
-	Config.BossPriority = false; // Set to true to attack Unique/SuperUnique monsters first when clearing
-	Config.ClearType = 0xF; // Monster spectype to kill in level clear scripts (ie. Mausoleum). 0xF = skip normal, 0x7 = champions/bosses, 0 = all
+	Config.BossPriority = true; // Set to true to attack Unique/SuperUnique monsters first when clearing
+	Config.ClearType = 0; // Monster spectype to kill in level clear scripts (ie. Mausoleum). 0xF = skip normal, 0x7 = champions/bosses, 0 = all
 	Config.TeleStomp = false; // Use merc to attack bosses if they're immune to attacks, but not to physical damage
 
 	// Clear while traveling during bot scripts
@@ -589,7 +594,7 @@ function LoadConfig() {
 
 	// Class specific config
 	Config.CastStatic = 50; // Cast static until the target is at designated life percent. 100 = disabled.
-	Config.StaticList = []; // List of monster NAMES or CLASSIDS to static. Example: Config.StaticList = ["Andariel", 243];
+	Config.StaticList = ["Griswold", "Andariel", "Duriel", "Mephisto", "Izual", "Diablo", "Baal"]; // List of monster NAMES or CLASSIDS to static. Example: Config.StaticList = ["Andariel", 243];
 
 	/* AutoSkill builds character based on array defined by the user and it replaces AutoBuild's skill system.
 	 * AutoSkill will automatically spend skill points and it can also allocate any prerequisite skills as required.
@@ -603,7 +608,7 @@ function LoadConfig() {
 	 */
 	Config.AutoSkill.Enabled = false; // Enable or disable AutoSkill system
 	Config.AutoSkill.Save = 0; // Number of skill points that will not be spent and saved
-	Config.AutoSkill.Build = ["Griswold", "Andariel", "Duriel", "Mephisto", "Izual", "Diablo", "Baal"];
+	Config.AutoSkill.Build = [];
 
 	/* AutoStat builds character based on array defined by the user and this will replace AutoBuild's stat system.
 	 * AutoStat will stat Build array order. You may want to stat strength or dexterity first to meet item requirements.
@@ -619,7 +624,7 @@ function LoadConfig() {
 	Config.AutoStat.Enabled = false; // Enable or disable AutoStat system
 	Config.AutoStat.Save = 0; // Number stat points that will not be spent and saved.
 	Config.AutoStat.BlockChance = 0; // An integer value set to desired block chance. This is ignored in classic.
-	Config.AutoStat.UseBulk = true; // Set true to spend multiple stat points at once (up to 100), or false to spend singe point at a time.
+	Config.AutoStat.UseBulk = false; // Set true to spend multiple stat points at once (up to 100), or false to spend singe point at a time.
 	Config.AutoStat.Build = [];
 
 	// AutoBuild System ( See /d2bs/kolbot/libs/config/Builds/README.txt for instructions )
