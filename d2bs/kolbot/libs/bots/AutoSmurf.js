@@ -4561,7 +4561,7 @@ function AutoSmurf() {
 		potion = me.getItem(545); // Already declared var and checked once in this.start(). Now that Golden Bird is complete, check for the unit again.
 
 		if (potion) {
-			print("ÿcÿc4Drinking the Figurine potion!");
+			print("ÿc4Drinking the Figurine potion!");
 
 			if (potion.location > 3) {
 				this.openStash();
