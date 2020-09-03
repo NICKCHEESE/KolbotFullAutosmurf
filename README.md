@@ -1,9 +1,32 @@
-My own personal kolbot setup project. It is very much a work in progress. Feedback and tips are appreciated as I'm learning on the fly here.
+My own personal kolbot setup project. Designed specifically for TCP/IP play.
 
-Credits go to: Kolton, Blizzhackers, GZer, Dark-f, JeanMax and anyone else that I'm not aware of who had a part in making/coding/scripting D2BS/D2Bot/D2NT/ETAL/kolbot/Autosmurf etc etc. I'm just an idiot tinkering with shit.
+My goal here is to do as little setup work as possible and be able to just run the bots and watch them do their thing.
+
+It is very much a work in progress. Feedback and tips are appreciated as I'm learning on the fly here.
+
+Credits go to: Kolton, Blizzhackers, GZer, Dark-f, JeanMax, Alogwe, Imba, Larryw, Noah, QQValpen, Sam, YGM, SiC-666, Jaenster, and anyone else that I'm not aware of who had a part in making/coding/scripting D2BS/D2Bot/D2NT/ETAL/kolbot/Autosmurf etc etc. I'm just an idiot tinkering with shit.
 
 Use at your own risk.
 
+## Instructions 
+
+1. Backup any existing character save files you have
+
+2. Place botting folder wherever your little heart desires
+
+3. Copy Save files from the LvL 1 Char Reset files folder into your current save directory
+
+4. Open the "profile.json" file in the KolbotFullAutosmurf/data/ folder
+
+5. Replace "YOUR D2 PATH HERE" with your current location of your Diablo 2 "Game.exe" file is located example: From "YOUR D2 PATH HERE" to "D:\Diablo II\Game.exe"
+
+6. Run D2Bot.exe
+
+7. Select all bot profiles and press the Start button
+
+8. Watch bots do their thing
+
+9. ???
 
 
 

@@ -2,8 +2,9 @@
 *	@filename	AutoSmurf.js
 *	@author		JeanMax / SiC-666 / Dark-f
 *	@contributors	Alogwe, Imba, Kolton, Larryw, Noah, QQValpen, Sam, YGM
+*	@colorization	NICKCHEESE
 *	@desc		Questing, Leveling & Smurfing
-*	@version	2019
+*	@version	2020
 */
 
 function AutoSmurf() {
