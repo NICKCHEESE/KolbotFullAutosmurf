@@ -747,9 +747,9 @@ var AutoBuildTemplate = {
         Update: function () {
 			Config.AttackSkill = [130, 154, 0, 154, 0, 154, 0];
 			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
-            Config.HPBuffer = 5;
-            Config.MPBuffer = 5;
-            Config.RejuvBuffer = 10;
+            Config.HPBuffer = 0;
+            Config.MPBuffer = 0;
+            Config.RejuvBuffer = 4;
 		}
     },
 

@@ -890,7 +890,7 @@ CursorLoop:
 			return false;
 		}
 
-		print("ÿc4Town ÿc0:: ÿc4MiniShopBot ÿc0:: ÿc9Scanning ÿc5 " + npc.itemcount + " ÿc9items.");
+		print("ÿc4Town ÿc0:: ÿc4MiniShopBot ÿc0:: ÿc9Scanning ÿc5" + npc.itemcount + " ÿc9items.");
 
 		do {
 			if (this.ignoredItemTypes.indexOf(item.itemType) === -1) {

@@ -152,6 +152,7 @@ function LoadConfig() {
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
 	Config.QuitListDelay = [1,9]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
+	/*
 	Scripts.TristramLeech = true; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
 	Scripts.TravincalLeech = true; // Enters portal at back of Travincal.
 		Config.TravincalLeech.Helper = true; // If set to true the character will teleport to the stairs and help attack.
@@ -179,7 +180,7 @@ function LoadConfig() {
 		Config.BaalHelper.KillBaal = true; // Kill Baal. If set to false, you must configure Config.QuitList or the bot will wait indefinitely.
 		Config.BaalHelper.SkipTP = false; // Don't wait for a TP, go to WSK3 and wait for someone to go to throne. Anti PK measure.
 	Scripts.Follower = false; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
-	
+		*/
 	
 	Scripts.TCPIPClientExit = true;
 
@@ -269,9 +270,9 @@ function LoadConfig() {
 	Config.UseRejuvMP = 1; // Drink a rejuvenation potion if mana is under designated percent.
 	Config.UseMercHP = 50; // Give a healing potion to your merc if his/her life is under designated percent.
 	Config.UseMercRejuv = 25; // Give a rejuvenation potion to your merc if his/her life is under designated percent.
-	Config.HPBuffer = 4; // Number of healing potions to keep in inventory.
-	Config.MPBuffer = 8; // Number of mana potions to keep in inventory.
-	Config.RejuvBuffer = 4; // Number of rejuvenation potions to keep in inventory.
+	Config.HPBuffer = 2; // Number of healing potions to keep in inventory.
+	Config.MPBuffer = 2; // Number of mana potions to keep in inventory.
+	Config.RejuvBuffer = 2; // Number of rejuvenation potions to keep in inventory.
 
 	// Chicken settings
 	Config.LifeChicken = 20; // Exit game if life is less or equal to designated percent.

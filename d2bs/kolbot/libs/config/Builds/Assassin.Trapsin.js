@@ -134,7 +134,7 @@ var AutoBuildTemplate = {
         Update: function () {
             Config.Traps = [261, 261, 261, -1, -1]; // Skill IDs for traps to be cast on all mosters except act bosses.
             Config.BossTraps = [261, 261, 261, 261, 261]; // Skill IDs for traps to be cast on act bosses.
-            Config.HPBuffer = 8; // Number of healing potions to keep in inventory.
+            Config.HPBuffer = 2; // Number of healing potions to keep in inventory.
             Config.BeltColumn = ["hp", "hp", "mp", "mp"]; // Keep tons of health potions!
             Config.UseCloakofShadows = true;
             Config.MinColumn[0] = 1;
@@ -215,7 +215,7 @@ var AutoBuildTemplate = {
         StatPoints: [3, 3, 1, 1, 0],
         Update: function () {
             Config.HPBuffer = 2; // Number of healing potions to keep in inventory.
-            Config.MPBuffer = 6; // Number of mana potions to keep in inventory.
+            Config.MPBuffer = 2; // Number of mana potions to keep in inventory.
             Config.TownCheck = true; // Go to town if out of potions
         }
     },
@@ -601,9 +601,9 @@ var AutoBuildTemplate = {
         StatPoints: [3, 3, 3, 3, 3],
         Update: function () {
 			Config.BeltColumn = ["hp", "hp", "mp", "rv"];
-            Config.HPBuffer = 5;
-            Config.MPBuffer = 5;
-            Config.RejuvBuffer = 10;
+            Config.HPBuffer = 0;
+            Config.MPBuffer = 0;
+            Config.RejuvBuffer = 4;
 		}
     },
 

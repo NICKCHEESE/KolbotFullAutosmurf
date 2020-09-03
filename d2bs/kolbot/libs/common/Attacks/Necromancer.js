@@ -399,7 +399,7 @@ MainLoop:
 					}
 				} else if (me.getMinionCount(6) < maxRevives) {
 					if (this.checkCorpse(corpse, true)) {
-						print("ÿc4Attacks ÿc0:: ÿc4Necromancer ÿc0:: ÿc<Reviving ÿc5 " + corpse.name);
+						print("ÿc4Attacks ÿc0:: ÿc4Necromancer ÿc0:: ÿc<Reviving ÿc0:: ÿc5" + corpse.name);
 
 						if (!Skill.cast(95, 0, corpse)) {
 							return false;

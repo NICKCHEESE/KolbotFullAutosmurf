@@ -144,7 +144,7 @@ function LoadConfig() {
 	Config.Leader = "Pagani"; // Leader's ingame character name. Leave blank to try auto-detection (works in AutoBaal, Wakka, MFHelper)
 	Config.QuitList = ["Maserati", "McLaren", "Ferrari", "Saleen", "Jaguar", "Ascari", "Lotus"]; // List of character names to quit with. Example: Config.QuitList = ["MySorc", "MyDin"];
 	Config.QuitListMode = 0; // 0 = use character names; 1 = use profile names (all profiles must run on the same computer).
-	Config.QuitListDelay = [11,15]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
+	Config.QuitListDelay = [15,15]; // Quit the game with random delay in case of using Config.QuitList. Example: Config.QuitListDelay = [1, 10]; will exit with random delay between 1 and 10 seconds.
 
 	Scripts.TristramLeech = false; // Enters Tristram, attempts to stay close to the leader and will try and help kill.
 	Scripts.TravincalLeech = false; // Enters portal at back of Travincal.
@@ -175,7 +175,7 @@ function LoadConfig() {
 	Scripts.Follower = false; // Script that follows a manually played leader around like a merc. For a list of commands, see Follower.js
 
 
-	//Scripts.TCPIPHostExit = true; // Makes the leecher leave game before leader in TCP/IP games. Helps prevent EXP/Quest loss from leader insta-leaving
+	Scripts.TCPIPHostExit = true; // Makes the leecher leave game before leader in TCP/IP games. Helps prevent EXP/Quest loss from leader insta-leaving
 
 
 	
@@ -265,9 +265,9 @@ function LoadConfig() {
 	Config.UseRejuvMP = 0; // Drink a rejuvenation potion if mana is under designated percent.
 	Config.UseMercHP = 50; // Give a healing potion to your merc if his/her life is under designated percent.
 	Config.UseMercRejuv = 25; // Give a rejuvenation potion to your merc if his/her life is under designated percent.
-	Config.HPBuffer = 4; // Number of healing potions to keep in inventory.
-	Config.MPBuffer = 8; // Number of mana potions to keep in inventory.
-	Config.RejuvBuffer = 4; // Number of rejuvenation potions to keep in inventory.
+	Config.HPBuffer = 2; // Number of healing potions to keep in inventory.
+	Config.MPBuffer = 2; // Number of mana potions to keep in inventory.
+	Config.RejuvBuffer = 2; // Number of rejuvenation potions to keep in inventory.
 
 	// Chicken settings
 	Config.LifeChicken = 20; // Exit game if life is less or equal to designated percent.

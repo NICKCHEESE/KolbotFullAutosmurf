@@ -230,9 +230,9 @@ var AutoBuildTemplate = {
             Config.TownCheck = true; 
             Config.MinColumn = [3, 3, 3, 3]; 
             Config.Charge = false; 
-            Config.HPBuffer = 5;
-            Config.MPBuffer = 5;
-            Config.RejuvBuffer = 10;
+            Config.HPBuffer = 0;
+            Config.MPBuffer = 0;
+            Config.RejuvBuffer = 4;
         }
     },
 

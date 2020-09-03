@@ -4403,9 +4403,9 @@ function AutoSmurf() {
 			{
 				return false;
 			}
-
+			delay(1000);
 			unit = getUnit(2, 100);
-
+			delay(1000);
 			if (unit) {
 				for (i = 0; i < 3; i += 1) {
 					if (me.area === unit.area) {
@@ -4417,12 +4417,12 @@ function AutoSmurf() {
 					}
 				}
 			}
-
+			delay(1000);
 			if (me.area !== 73 && !Pather.useUnit(2, 100, 73)) {
 				Attack.clear(10);
 				Pather.useUnit(2, 100, 73);
 			}
-			
+			delay(1000);
 			if (me.area !== 73)
 				return false;
 				
@@ -6611,6 +6611,7 @@ function AutoSmurf() {
 
 		if (!this.partyLevel(baalLvl) || (me.diff === 1 && !this.partyLevel(baalLvlnm)) || (me.diff === 2 && !this.partyLevel(mfLvlhell))) { // If the team hasn't met the level requirement in Normal or Nightmare, don't kill baal.
 			print("ÿc9Not killing Baal. ÿc<This time...");
+			delay(15000);
 			return true;
 		}
 
