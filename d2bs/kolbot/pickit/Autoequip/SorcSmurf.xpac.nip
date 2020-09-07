@@ -25,7 +25,7 @@
 [name] == scrollofidentify
 
 //weapons
-/*
+
 //[type] == orb && [quality] <= rare # ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) >= 1 && ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) <= 49 # [tier] == 1
 //[type] == orb && [quality] <= rare # ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) >= 50 && ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) <= 99 # [tier] == 2
 //[type] == orb && [quality] <= rare # ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) >= 100 && ([skillblizzard]*25 + [skillglacialspike]*20 + [skilliceblast]*20 + [skillicebolt]*15 + [coldskilltab]*30 + [sorceressskills]*35 + [maxhp]*4 + [maxmana]*2.5 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) <= 149 # [tier] == 3
@@ -53,7 +53,7 @@
 [type] == orb && [quality] >= unique # [itemmagicbonus] >= 50 # [tier] == 101 //occy
 [name] == swirlingcrystal && [quality] == set # [itemaddcoldskilltab] == 1 # [tier] == 102 // tal orb
 [name] == swirlingcrystal && [quality] == set # [itemaddcoldskilltab] == 2 # [tier] == 103 // tal orb
-*/
+
 //shields
 
 [type] == shield && [quality] <= rare && [flag] != ethereal # ([maxhp]*4 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) >= 1 && ([maxhp]*4 + [fireresist]*2.4 + [lightresist]*2.4 + [coldresist]*2.4 + [poisonresist]*0.8) <= 19 # [tier] == 1

@@ -36,6 +36,7 @@
 //[name] == tokenofabsolution # # [maxquantity] == 5
 
 //runes
+/*
 [name] == elrune # # [maxquantity] == 5
 [name] == eldrune # # [maxquantity] == 5
 [name] == tirrune # # [maxquantity] == 5
@@ -48,6 +49,7 @@
 [name] == thulrune # # [maxquantity] == 5
 [name] == amnrune # # [maxquantity] == 5
 [name] == solrune # # [maxquantity] == 5
+*/
 [name] == shaelrune # # [maxquantity] == 5
 [name] == dolrune # # [maxquantity] == 5
 [name] == helrune # # [maxquantity] == 5

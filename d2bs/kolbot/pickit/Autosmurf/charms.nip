@@ -643,7 +643,7 @@
 //[Name] == GrandCharm && [Quality] == 4 # [CursesSkillTab] == 1 && [Strength] >= 6
 //[Name] == GrandCharm && [Quality] == 4 # [CursesSkillTab] == 1 && [FRW] >= 7
 
-//[Name] == GrandCharm && [Quality] == 4 # [PaliCombatSkillTab] == 1
+[Name] == GrandCharm && [Quality] == 4 # [PaliCombatSkillTab] == 1
 [Name] == GrandCharm && [Quality] == 4 # [PaliCombatSkillTab] == 1 && [MAXDamage] >= 1
 [Name] == GrandCharm && [Quality] == 4 # [PaliCombatSkillTab] == 1 && [Dexterity] >= 1
 [Name] == GrandCharm && [Quality] == 4 # [PaliCombatSkillTab] == 1 && [FHR] >= 12
@@ -671,13 +671,13 @@
 [Name] == GrandCharm && [Quality] == 4 # [DefensiveAurasSkillTab] == 1 && [FRW] >= 7
 
 [Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [MAXDamage] >= 1
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [Dexterity] >= 6
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [FHR] >= 12
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [ItemGoldBonus] >= 40
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [MaxHP] >= 5
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [Strength] >= 6
-//[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [FRW] >= 7
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [MAXDamage] >= 1
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [Dexterity] >= 6
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [FHR] >= 12
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [ItemGoldBonus] >= 40
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [MaxHP] >= 5
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [Strength] >= 6
+[Name] == GrandCharm && [Quality] == 4 # [WarcriesSkillTab] == 1 && [FRW] >= 7
 
 //[Name] == GrandCharm && [Quality] == 4 # [BarbCombatSkillTab] == 1 
 [Name] == GrandCharm && [Quality] == 4 # [BarbCombatSkillTab] == 1 && [MAXDamage] >= 1
